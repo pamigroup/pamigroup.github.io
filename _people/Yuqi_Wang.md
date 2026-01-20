@@ -1,7 +1,7 @@
 ---
-title: Yuqi Wang
+title: Yuqi Wang 王宇琦
 layout: people
-permalink: /people/Yuqi Wang
+permalink: /people/Yuqi_Wang
 status: Student
 pname: Yuqi Wang
 position: Student
