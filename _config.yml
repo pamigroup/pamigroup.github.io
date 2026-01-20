@@ -1,13 +1,13 @@
 # --- Basic options --- #
 
 # Name of website
-title: Wang Lab
+title: PAMI Lab
 
 # Short description of your site
-description: Chenfei Wang Lab at Tongji University
+description: PAMI Lab at Tongji University
 
 # Your name to show in the footer
-author: Chenfei Wang Lab
+author: PAMI Lab
 
 # --- List of links in the navigation bar --- #
 
@@ -40,9 +40,9 @@ navbar-links:
 # Uncomment the links you want to show and add your information to each one.
 # If you don't want to show a link to an RSS feed, set rss to "false".
 social-network-links:
-  email: 08chenfeiwang@tongji.edu.cn
-  github: wanglabtongji
-  twitter: ChenfeiWangTJ
+  email: bobzhang@um.edu.mo
+  github: pamigroup
+  twitter: 
   rss: false
 #  reddit: yourname
 #  linkedin: daattali
@@ -72,11 +72,7 @@ share-links-active:
   facebook: false
   linkedin: false
   vk: false
-
-# How to display the link to your website in the footer
-# Remove this if you don't want a link in the footer
-# url-pretty: "wanglab-tongji.github.io"
-
+  
 # Create a "tags" index page and make tags on each post clickable
 link-tags: true
 
