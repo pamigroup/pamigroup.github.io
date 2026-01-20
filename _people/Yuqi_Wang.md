@@ -3,7 +3,7 @@ title: Yuqi Wang 王宇琦
 layout: people
 permalink: /people/Yuqi_Wang
 status: Student
-pname: Yuqi Wang
+pname: Yuqi Wang 王宇琦
 position: Student
 eml: yc37500@um.edu.mo
 website: https://github.com/rocher97
