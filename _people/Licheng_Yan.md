@@ -6,7 +6,7 @@ status: Student
 pname: Licheng Yan 鄢禮成
 position: Student
 eml: yc48110@um.edu.mo
-website: https:
+website:
 cv: 
 github: https://github.com/Li-ChengYan
 linkedin:
