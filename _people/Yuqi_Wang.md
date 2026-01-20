@@ -5,7 +5,6 @@ permalink: /people/Yuqi_Wang
 status: Student
 pname: Yuqi Wang
 position: Student
-office: E11-2093
 eml: yc37500@um.edu.mo
 website: https://github.com/rocher97
 cv: 
