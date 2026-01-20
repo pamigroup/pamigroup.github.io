@@ -6,7 +6,7 @@ status: Student
 pname: Licheng Yan 鄢禮成
 position: Student
 eml: yc48110@um.edu.mo
-website: https://www.fst.um.edu.mo/personal/bobzhang/
+website: https:
 cv: 
 github: https://github.com/Li-ChengYan
 linkedin:
