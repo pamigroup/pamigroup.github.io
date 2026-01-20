@@ -1,6 +1,6 @@
 ---
 layout: news
 title: Software
-subtitle: Softwares in Wang Lab
+subtitle: Softwares in PAMI Lab
 permalink: /software/
 ---
