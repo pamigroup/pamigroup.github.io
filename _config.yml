@@ -13,12 +13,12 @@ author: PAMI Lab
 
 navbar-links:
   Home: "/"
-  News & Events: "news"
+  News: "news"
   People: "people"
   Publications: "publications"
-  Software: "software"
+  # Software: "software"
   Positions: "positions"
-  Memories: "photo"
+  # Memories: "photo"
 
 # --- Logo --- #
 
