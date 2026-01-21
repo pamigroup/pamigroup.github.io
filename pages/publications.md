@@ -1,7 +1,7 @@
 ---
 layout: news
 title: Publications
-subtitle: Publications in Wang Lab
+subtitle: Publications in PAMI Lab
 permalink: /publications
 ---
 
