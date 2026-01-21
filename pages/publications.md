@@ -10,12 +10,12 @@ Please visit [Google Scholar](https://scholar.google.com/citations?hl=en&user=dl
 
 # Monographs
 
-1. **Bob Zhang***, Shuping Zhao, Lunke Fei, Shuyi Li, *Advanced Hand-based Biometrics*, Springer Singapore, 2026.
-2. David Zhang, Chaoxun Guo, **Bob Zhang**, *Advanced Medical Biometrics*, World Scientific Publishing Co. Pte Ltd, 2025.
-3. David Zhang, Dandan Fan, Xu Liang, **Bob Zhang**, *Advanced Palmprint Authentication*, Springer Singapore, 2025.
-4. Jinxing Li, **Bob Zhang**, David Zhang, *Information Fusion: Machine Learning Methods*, Springer Singapore, 2022.
-5. **Bob Zhang***, Qijun Zhao, David Zhang, *Facial Multi-Characteristics and Applications*, World Scientific Publishing Co. Pte Ltd, 2018.
-6. David Zhang, Hongzhi Zhang, **Bob Zhang**, *Tongue Image Analysis*, Springer Singapore, 2017.
+1. **Bob Zhang***, Shuping Zhao, Lunke Fei, Shuyi Li, _Advanced Hand-based Biometrics_, Springer Singapore, 2026.
+2. David Zhang, Chaoxun Guo, **Bob Zhang**, _Advanced Medical Biometrics_, World Scientific Publishing Co. Pte Ltd, 2025.
+3. David Zhang, Dandan Fan, Xu Liang, **Bob Zhang**, _Advanced Palmprint Authentication_, Springer Singapore, 2025.
+4. Jinxing Li, **Bob Zhang**, David Zhang, _Information Fusion: Machine Learning Methods_, Springer Singapore, 2022.
+5. **Bob Zhang***, Qijun Zhao, David Zhang, _Facial Multi-Characteristics and Applications_, World Scientific Publishing Co. Pte Ltd, 2018.
+6. David Zhang, Hongzhi Zhang, **Bob Zhang**, _Tongue Image Analysis_, Springer Singapore, 2017.
 
 
 # Journal Publications
