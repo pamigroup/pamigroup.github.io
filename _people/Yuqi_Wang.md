@@ -6,10 +6,9 @@ status: Student
 pname: Yuqi Wang 王宇琦
 position: Student
 eml: yc37500@um.edu.mo
-website:
+website: https://orcid.org/0000-0003-0571-243X
 github: https://github.com/Boom5426
 cv: 
-website: https://orcid.org/0000-0003-0571-243X
 linkedin:
 twitter:
 facebook:
