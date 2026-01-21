@@ -9,7 +9,8 @@ permalink: /positions
 The laboratory of Professor Bob Zhang at University of Macau invites applicants for the positions listed below. 
 
 
-### Postdoc in Computer Science, annual salary MOP700k to MOP1 million
+### Postdoctoral Fellow in Computer Science with an annual salary of MOP 336,000, benefiting from local tax exemptions that reduce the effective tax rate to 5%–7% from a statutory maximum of 12%.
+
 Looking for a highly qualified postdoc to work at the University of Macau, Dept. of Computer and Information Science.
 
 Research areas:
