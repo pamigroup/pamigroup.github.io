@@ -8,7 +8,6 @@ The lab website is built based on [Beautiful Jekyll](https://github.com/daattali
 - [News & Events](#News_and_Events)
 - [People](#People)
 - [Publications](#Publications)
-- [Software](#Software)
 - [Positions](#Positions)
 
 ## Home
