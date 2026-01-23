@@ -2,9 +2,9 @@
 title: Bob Zhang 張一博
 layout: people
 permalink: /people/Bob_Zhang
-status: Principle Investigator
+status: Director
 pname: Bob Zhang 張一博
-position: Principle Investigator
+position: Director
 office: E11-4093
 eml: bobzhang@um.edu.mo
 website: https://www.fst.um.edu.mo/personal/bobzhang/
