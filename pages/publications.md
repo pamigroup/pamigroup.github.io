@@ -329,7 +329,7 @@ Please visit [Google Scholar](https://scholar.google.com/citations?hl=en&user=dl
 71. Qin Li, Jun Wang, Jane You, **Bob Zhang**, and Fakhri Karray, "Refractive error detection via group sparse representation," _Proceedings of the 2010 International Conference on Autonomous and Intelligent Systems (AIS 2010)_, Povoa de Varzim, Portugal, pp. 1–5, 2010.
 72. **Bob Zhang**, Jia You, Fakhri Karray, Chea Su Kee, and Qin Li, "Astigmatism and eye shape," _Proceedings of the 2009 International Conference on Image Processing, Computer Vision, and Pattern Recognition (IPCV 2009)_, pp. 72–77, Dec. 1, 2009.
 73. **Bob Zhang**, Jane You, Qin Li, and Fakhri Karray, "Hierarchical detection of red lesions in retinal images by multiscale correlation filtering," _Proceedings of SPIE_, 2009, doi: 10.1117/12.813913, 2009.
-74. Yi-Bo Zhang, Qin Li, Jane You, and Prabir Bhattacharya, "Palm vein extraction and matching for personal authentication," _Advances in Visual Information Systems_, Q. Qiu, C. Leung, X. Xue, and R. Laurini, Eds., Berlin, Heidelberg: Springer, pp. 154–164, 2007.
+74. **Yi-Bo Zhang**, Qin Li, Jane You, and Prabir Bhattacharya, "Palm vein extraction and matching for personal authentication," _Advances in Visual Information Systems_, Q. Qiu, C. Leung, X. Xue, and R. Laurini, Eds., Berlin, Heidelberg: Springer, pp. 154–164, 2007.
 
 # Book Chapters
 
