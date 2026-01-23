@@ -6,7 +6,7 @@ permalink: /positions
 
 # Positions
 
-The laboratory of Professor Bob Zhang at University of Macau invites applicants for the positions listed below. 
+Prof. Bob Zhang at University of Macau invites applicants for the positions listed below. 
 
 
 ### Postdoctoral Fellow in Computer Science with an annual salary of MOP 336,000
