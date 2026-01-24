@@ -7,11 +7,11 @@ permalink: /people
 
 <h1>People</h1>
 <hr class="large">
-<h3>Principle Investigator</h3>
+<h3>Director</h3>
 <ul>
     {% assign count = 0 %}
     {% for people in site.people %}
-        {% if people.status == "Principle Investigator" %}
+        {% if people.status == "Director" %}
             {% assign count = count | plus:1 %}
             {% if count > 1 %}
             <hr>
