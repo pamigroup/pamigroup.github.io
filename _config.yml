@@ -13,7 +13,7 @@ author: PAMI Research Group
 
 navbar-links:
   Home: "/"
-  News: "news"
+  # News: "news"
   People: "people"
   Publications: "publications"
   # Software: "software"
