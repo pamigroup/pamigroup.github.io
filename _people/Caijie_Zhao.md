@@ -1,7 +1,7 @@
 ---
 title: Caijie Zhao
 layout: people
-permalink: /people/caijie_zhao
+permalink: /people/Caijie_Zhao
 status: Student
 pname: Caijie Zhao 赵彩杰
 position: Student
