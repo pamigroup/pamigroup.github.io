@@ -46,6 +46,17 @@ use-site-title: true
             display: block;
         }
     }
+
+    /* 覆盖主题 main.css 中对 carousel 的裁剪设置（.carousel-inner .carousel-item
+       固定 height:25rem，且 img 用 top:-120px 上移导致顶部被裁）。
+       这里用更高优先级(id 选择器)让首页横幅整图完整、按原始比例显示。 */
+    #carouselExampleIndicators .carousel-item {
+        height: auto;
+    }
+    #carouselExampleIndicators .carousel-item img {
+        position: static;
+        top: 0;
+    }
 </style>
 
 <div class="container">
@@ -53,7 +64,7 @@ use-site-title: true
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/assets/img/pami_group.jpg" class="d-block w-100" alt="PAMI Research Group">
+                    <img src="/assets/img/PAMI_Photo.jpeg" class="d-block w-100" alt="PAMI Research Group">
                 </div>
             </div>
         </div>
