@@ -1,347 +1,65 @@
 ---
 layout: news
 title: Publications
-subtitle: Publications in PAMI Lab
+subtitle: Publications of the PAMI Research Group, University of Macau
 permalink: /publications
 ---
 
-Please visit [Google Scholar](https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&view_op=list_works&sortby=pubdate) for more details.<br>
+<h1>Publications</h1>
 
+<p>
+  {{ site.data.publications.papers | size }} entries. See
+  <a href="https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>
+  for citation counts. <span class="text-muted">An asterisk marks the corresponding author.</span>
+</p>
 
-# Monographs
+{% assign selected = site.data.publications.papers | where: "selected", true %}
+{% if selected.size > 0 %}
+<section class="pub-selected">
+  <h2 class="people-section-title">Selected Publications</h2>
+  <ol class="pub-list">
+    {% for p in selected %}{% include publication.html paper=p %}{% endfor %}
+  </ol>
+</section>
+{% endif %}
 
-1. **Bob Zhang***, Shuping Zhao, Lunke Fei, Shuyi Li, _Advanced Hand-based Biometrics_, Springer Singapore, 2026.
-2. David Zhang, Chaoxun Guo, **Bob Zhang**, _Advanced Medical Biometrics_, World Scientific Publishing Co. Pte Ltd, 2025.
-3. David Zhang, Dandan Fan, Xu Liang, **Bob Zhang**, _Advanced Palmprint Authentication_, Springer Singapore, 2025.
-4. Jinxing Li, **Bob Zhang**, David Zhang, _Information Fusion: Machine Learning Methods_, Springer Singapore, 2022.
-5. **Bob Zhang***, Qijun Zhao, David Zhang, _Facial Multi-Characteristics and Applications_, World Scientific Publishing Co. Pte Ltd, 2018.
-6. David Zhang, Hongzhi Zhang, **Bob Zhang**, _Tongue Image Analysis_, Springer Singapore, 2017.
+<section>
+  <h2 class="people-section-title">All Publications</h2>
 
+  {% assign papers = site.data.publications.papers %}
+  {% assign n_journal = papers | where: "type", "journal" | size %}
+  {% assign n_conf    = papers | where: "type", "conference" | size %}
+  {% assign n_book    = papers | where: "type", "book" | size %}
+  {% assign n_chap    = papers | where: "type", "chapter" | size %}
 
-# Journal Publications
+  <div class="pub-controls" hidden>
+    <div class="pub-filters" role="group" aria-label="Filter publications by type">
+      <button type="button" class="pub-filter is-active" data-filter="all" aria-pressed="true">All <span>{{ papers | size }}</span></button>
+      <button type="button" class="pub-filter" data-filter="journal" aria-pressed="false">Journal <span>{{ n_journal }}</span></button>
+      <button type="button" class="pub-filter" data-filter="conference" aria-pressed="false">Conference <span>{{ n_conf }}</span></button>
+      <button type="button" class="pub-filter" data-filter="book" aria-pressed="false">Books <span>{{ n_book }}</span></button>
+      <button type="button" class="pub-filter" data-filter="chapter" aria-pressed="false">Chapters <span>{{ n_chap }}</span></button>
+    </div>
+    <label class="sr-only" for="pub-search">Search publications</label>
+    <input type="search" id="pub-search" class="pub-search" placeholder="Filter by title, author or venue…" autocomplete="off">
+    <p class="pub-count" id="pub-count" aria-live="polite"></p>
+  </div>
 
-1. Lunke Fei, Kaiting Huang, Shuping Zhao, Qi Zhu, **Bob Zhang***, Wei Jia, "Learning Multilayer Feature Projection for Homogeneous and Heterogeneous Palmprint Recognition," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, 2025.
-2. Chengrui Gao, Ziyuan Yang, Wei Jia, Lu Leng, **Bob Zhang**, Andrew Beng Jin Teoh, "Deep Learning in Palmprint Recognition: A Comprehensive Survey," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, 2025.
-3. Chunwei Tian, Chengyuan Zhang, **Bob Zhang***, Zhiwu Li, C. L. Philip Chen, David Zhang, "A Cosine Network for Image Super-Resolution," _IEEE Transactions on Image Processing_, 2025.
-4. Bo Li, **Bob Zhang***, Chengyang Zhang, Minghao Zhou, Weiliang Huang, Shihang Wang, Qing Wang, Mengran Li, Yong Zhang, Qianqian Song, "PhenoProfiler: advancing phenotypic learning for image-based drug discovery," _Nature Communications_, 2025.
-5. Wenbo Xu, Liang Yan, Chuanyi Liu, Peiyi Han, Haifeng Zhu, Yong Xu, Yingwei Liang, **Bob Zhang**, "TCSR‐SQL: Towards Table Content‐Aware Text‐to‐SQL With Self‐Retrieval," _CAAI Transactions on Intelligence Technology_, pp. 1-15, 2025.
-6. Yunlong Liu, Lu Leng, Ziyuan Yang, Andrew Beng Jin Teoh, **Bob Zhang**, "SF2Net: Sequence Feature Fusion Network for Palmprint Verification," _IEEE Transactions on Information Forensics and Security_, pp. 1-15, 2025.
-7. Ziyuan Yang, Lu Leng, Andrew Beng Jin Teoh, **Bob Zhang***, Yi Zhang, "Beyond Static Features: A Novel Dynamic Palmprint Verification Framework Empowered by Generative Models," _IEEE Signal Processing Letters_, pp. 1-5, 2025.
-8. Qi Zhang, Yuwei Ding, Weiqi Zhang, Yian Zhu, **Bob Zhang**, Jerry Chun-Wei Lin, "Implicit Multi-Scale Swin Transformer Network for Image Denoising," _IEEE Transactions on Consumer Electronics_, vol. 71, no. 2, pp. 5584-5594, 2025.
-9. Zhu Wang, Lunke Fei, Shuping Zhao, **Bob Zhang***, Qi Zhu, Imad Rida, "PalmMamba: Palm Intrinsic Features Learning Selective State Space Model for Palmprint Image Denoising," _IEEE Transactions on Multimedia_, pp. 1-11, 2025.
-10. Fengxiang Liao, Lu Leng, Ziyuan Yang, **Bob Zhang**, "Multi-Order Extension Codes for Palmprint Recognition," _International Journal of Neural Systems_, vol. 35, no. 8, pp. 2550039, 2025.
-11. Shuyi Li, Jianian Hu, **Bob Zhang**, Xin Ning, Lifang Wu, "Dynamic Personalized Federated Learning for Cross-spectral Palmprint Recognition," _IEEE Transactions on Image Processing_, vol. 34, pp. 4885-4895, 2025.
-12. Chunwei Tian, Mingjian Song, Xiaopeng Fan, Xiangtao Zheng, **Bob Zhang***, David Zhang, "A Tree-guided CNN for image super-resolution," _IEEE Transactions on Consumer Electronics_, pp. 1-10, 2025.
-13. Chao Huang, Qianyi Li, **Bob Zhang***, "Prototype-guided and dynamic-aware video anomaly detection," _Neural Networks_, vol. 189, pp. 107583, 2025.
-14. Chunwei Tian, Kai Liu, **Bob Zhang***, Zhixiang Huang, Chia-Wen Lin, David Zhang, "A Dynamic Transformer Network for Vehicle Detection," _IEEE Transactions on Consumer Electronics_, pp. 1-8, 2025.
-15. Chao Huang, Weiliang Huang, Qiuping Jiang, Wei Wang, Jie Wen, **Bob Zhang**, "Multimodal Evidential Learning for Open-World Weakly-Supervised Video Anomaly Detection," _IEEE Transactions on Multimedia_, vol. 27, pp. 3132-3143, 2025.
-16. Jintao Wang, Jianhang Zhou, **Bob Zhang***, "Voice-AttentionNet: Voice-Based Multi-Disease Detection with Lightweight Attention-Based Temporal Convolutional Neural Network," _AI_, vol. 6, no. 4, pp. 68, 2025.
-17. Shuyi Li, **Bob Zhang***, Qinghua Hu, "Dual-Cohesion Metric Learning for Few-Shot Hand-Based Multimodal Recognition," _IEEE Transactions on Information Forensics and Security_, vol. 20, pp. 3566-3575, 2025.
-18. Chengliang Liu, Jie Wen, Yong Xu, **Bob Zhang**, Liqiang Nie, Min Zhang, "Reliable representation learning for incomplete multi-view missing multi-label classification," _IEEE Transactions on Pattern Analysis and Machine Intelligence_, 47, no. 6, pp. 4940-4956, 2025.
-19. Wai Keung Wong, Lusi Li, Lunke Fei, **Bob Zhang**, Anne Toomey, Jie Wen, "Confident Local Structure-Aware Incomplete Multiview Spectral Clustering," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, 55, no. 4, pp. 3013-3025, 2025.
-20. Junjun Wu, Yunbo Rao, Shaoning Zeng, **Bob Zhang**, "Pre-trained SAM as data augmentation for image segmentation," _CAAI Transactions on Intelligence Technology_, vol. 10, no. 1, pp. 268-282, 2025.
-21. Hengmin Zhang, Jian Yang, Wenli Du, **Bob Zhang**, Zhiyuan Zha, Bihan Wen, "Enhanced acceleration for generalized nonconvex low-rank matrix learning," _Chinese Journal of Electronics_, vol. 34, no. 1, pp. 98-113, 2025.
-22. Shuping Zhao, Lunke Fei, **Bob Zhang***, Jie Wen, Jinrong Cui, "Towards Mobile Palmprint Recognition via Multi-view Hierarchical Graph Learning," _IEEE Transactions on Information Forensics and Security_, vol. 20, pp. 101-113, 2025.
-23. Caijie Zhao, Ying Qin, **Bob Zhang***, Yajie Zhao, Baoyun Wu, "An end-to-end occluded person re-identification network with smoothing corrupted feature prediction," _Artificial Intelligence Review_, vol. 58, no. 2, p. 53, 2024.
-24. Chunsheng Zhang, Xu Liang, Dandan Fan, Junan Chen, **Bob Zhang**, Baoyuan Wu, David Zhang, "Hgaiqa: A novel hand-geometry aware image quality assessment framework for contactless palmprint recognition," _IEEE Transactions on Instrumentation and Measurement_, vol. 73, pp. 1-13, 2024.
-25. Ziyuan Yang, Andrew Beng Jin Teoh, **Bob Zhang**, Lu Leng, Yi Zhang, "Physics-driven spectrum-consistent federated learning for palmprint verification," _International Journal of Computer Vision_, vol. 132, no. 10, pp. 4253–4268, 2024.
-26. Shuping Zhao, **Bob Zhang***, Jian Yang, Jianhang Zhou, Yong Xu, "Linear discriminant analysis," _Nature Reviews Methods Primers_, vol. 4, no. 1, p. 70, 2024. **(Highly Cited)**
-27. Shicheng Xu, Wei Li, Zuoyong Li, Tiesong Zhao, **Bob Zhang**, "Facing Differences of Similarity: Intra-and Inter-Correlation Unsupervised Learning for Chest X-Ray Anomaly Detection," _IEEE Transactions on Medical Imaging_, vol. 44, no. 2, pp. 801-814, 2024.
-28. Ziyuan Yang, Ming Kang, Andrew Beng Jin Teoh, Chengrui Gao, Wen Chen, **Bob Zhang**, Yi Zhang, "A dual-level cancelable framework for palmprint verification and hack-proof data storage," _IEEE Transactions on Information Forensics and Security_, vol. 19, pp. 8587-8599, 2024.
-29. Shuyi Li, Lunke Fei, **Bob Zhang**, Xin Ning, Lifang Wu, "Hand-based multimodal biometric fusion: A review," _Information Fusion_, vol. 109, p. 102418, 2024.
-30. Lunke Fei, Le Su, **Bob Zhang**, Shuping Zhao, Jie Wen, Xiaoping Li, "Learning frequency-aware common feature for VIS-NIR heterogeneous palmprint recognition," _IEEE Transactions on Information Forensics and Security_, vol. 19, pp. 7604-7618, 2024.
-31. Jianhang Zhou, Hengmin Zhang, Shuyi Li, **Bob Zhang***, Leyuan Fang, David Zhang, "Dual low-rank structure embedding for robust visual information processing," _Knowledge-Based Systems_, vol. 296, p. 111821, 2024.
-32. Chao Huang, Yushu Shi, **Bob Zhang***, Ke Lyu, "Uncertainty-aware prototypical learning for anomaly detection in medical images," _Neural Networks_, vol. 175, p. 106284, 2024.
-33. Chunwei Tian, Haoyang Gao, Pengwei Wang, **Bob Zhang***, "An Enhanced GAN for Image Generation," _Computers, Materials & Continua_, vol. 80, no. 1, 2024.
-34. Le Su, Lunke Fei, **Bob Zhang**, Shuping Zhao, Jie Wen, Yong Xu, "Complete region of interest for unconstrained palmprint recognition," _IEEE Transactions on Image Processing_, vol. 33, pp. 3662–3675, 2024.
-35. Chunwei Tian, Jingyu Xiao, **Bob Zhang***, Wangmeng Zuo, Yudong Zhang, Chia-Wen Lin, "A self-supervised network for image denoising and watermark removal," _Neural Networks_, vol. 174, p. 106218, 2024.
-36. Ruijun Ma, Yaoxuan Zhang, **Bob Zhang***, Leyuan Fang, Dong Huang, Long Qi, "Learning attention in the frequency domain for flexible real photograph denoising," _IEEE Transactions on Image Processing_, vol. 33, pp. 3707–3721, 2024.
-37. Shuyi Li, Jianhang Zhou, **Bob Zhang***, Lifang Wu, Meng Jian, "Discriminative multiview learning for robust palmprint feature representation and recognition," _IEEE Transactions on Biometrics, Behavior, and Identity Science_, vol. 6, no. 3, pp. 304–313, 2024.
-38. Shuping Zhao, Lunke Fei, **Bob Zhang***, Jie Wen, Pengyang Zhao, "Tensorized multi-view low-rank approximation based robust hand-print recognition," _IEEE Transactions on Image Processing_, vol. 33, pp. 3328–3340, 2024.
-39. Jianhang Zhou, Qi Zhang, Shaoning Zeng, **Bob Zhang***, Leyuan Fang, "Latent linear discriminant analysis for feature extraction via isometric structural learning," _Pattern Recognition_, vol. 149, p. 110218, 2024.
-40. Ling Xiao, Beiji Zou, Xiaoyan Kui, Chengzhang Zhu, Wensheng Zhang, Xuebing Yang, **Bob Zhang**, "A multi-feature-based intelligent redundancy elimination scheme for cloud-assisted health systems," _CAAI Transactions on Intelligence Technology_, vol. 9, no. 2, pp. 491–510, 2024.
-41. Jianhang Zhou, Shuyi Li, Shaoning Zeng, **Bob Zhang***, "Probabilistic nuclear-norm matrix regression regularized by random graph theory," _IEEE Transactions on Emerging Topics in Computational Intelligence_, vol. 8, no. 4, pp. 2762–2774, 2024.
-42. Qi Zhang, Zuobin Ying, Jian Shen, Seng-Ka Kou, Jingzhang Sun, **Bob Zhang***, "Unsupervised color-based nuclei segmentation in histopathology images with various color spaces and K values selection," _International Journal of Image and Graphics_, p. 2550061, 2024.
-43. Xuexue Zhang, Yongjun Zhang, Zewei Wang, Wei Long, Weihao Gao, **Bob Zhang**, "Sparse representation scheme with enhanced medium pixel intensity for face recognition," _CAAI Transactions on Intelligence Technology_, vol. 9, no. 1, pp. 116–127, 2024.
-44. Xiaoling Luo, Wei Wang, Yong Xu, Zhihui Lai, Xiaopeng Jin, **Bob Zhang**, David Zhang, "A deep convolutional neural network for diabetic retinopathy detection via mining local and long-range dependence," _CAAI Transactions on Intelligence Technology_, vol. 9, no. 1, pp. 153–166, 2024.
-45. Shuyi Li, **Bob Zhang***, Lifang Wu, Ruijun Ma, Xin Ning, "Robust and sparse least square regression for finger vein and finger knuckle print recognition," _IEEE Transactions on Information Forensics and Security_, vol. 19, pp. 2709–2719, 2024.
-46. Hengmin Zhang, Jian Yang, **Bob Zhang**, Yang Tang, Wenli Du, Bihan Wen, "Enhancing generalized spectral clustering with embedding Laplacian graph regularization," _CAAI Transactions on Intelligence Technology_, 2024.
-47. Yongjun Zhang, Zewei Wang, Xuexue Zhang, Zhongwei Cui, **Bob Zhang**, Jinrong Cui, Lamin L. Janneh, "Application of improved virtual sample and sparse representation in face recognition," _CAAI Transactions on Intelligence Technology_, vol. 8, no. 4, pp. 1391-1402, 2023.
-48. Jianhang Zhou, Guancheng Wang, Shaoning Zeng, **Bob Zhang***, "Learning with Euler Collaborative Representation for Robust Pattern Analysis," _ACM Transactions on Intelligent Systems and Technology_, vol. 14, no. 6, pp. 1-25, 2023.
-49. Bo Jiang, Yao Lu, **Bob Zhang**, Guangming Lu, "AGP-Net: adaptive graph prior network for image denoising," _IEEE Transactions on Industrial Informatics_, vol. 20, no. 3, pp. 4753-4764, 2023.
-50. Hengmin Zhang, Jiaoyan Zhao, **Bob Zhang***, Chen Gong, Jianjun Qian, Jian Yang, "Unified framework for faster clustering via joint Schatten p-norm factorization with optimal mean," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 35, no. 3, pp. 3012-3026, 2023.
-51. Zhihao Hao, **Bob Zhang***, Dianhui Mao, Jerome Yen, Zhihua Zhao, Min Zuo, Haisheng Li, Cheng-Zhong Xu, "A novel method using LSTM-RNN to generate smart contracts code templates for improved usability," _Multimedia Tools and Applications_, vol. 82, no. 27, pp. 41669-41699, 2023.
-52. Shuyi Li, Ruijun Ma, Jianhang Zhou, **Bob Zhang**, Lifang Wu, "Joint discriminative analysis with low-rank projection for finger vein feature extraction," _IEEE Transactions on Information Forensics and Security_, vol. 19, pp. 959-969, 2023.
-53. Caijie Zhao, Ying Qin, **Bob Zhang***, "Adversarially learning occlusions by backpropagation for face recognition," _Sensors_, vol. 23, no. 20, p. 8559, 2023.
-54. Qi Zhang, Jianhang Zhou, Yong Xu, **Bob Zhang***, "Collaborative representation induced broad learning model for classification," _Applied Intelligence_, vol. 53, no. 20, pp. 23442-23456, 2023.
-55. Qi Zhang, Zuobin Ying, Jianhang Zhou, Jingzhang Sun, **Bob Zhang***, "Broad Learning Model with a Dual Feature Extraction Strategy for Classification," _Mathematics_, vol. 11, no. 19, p. 4087, 2023.
-56. Guancheng Wang, Zhihao Hao, Haisheng Li, **Bob Zhang***, "An activated variable parameter gradient-based neural network for time-variant constrained quadratic programming and its applications," _CAAI Transactions on Intelligence Technology_, vol. 8, no. 3, pp. 670-679, 2023.
-57. Jielu Yan, **Bob Zhang***, Mingliang Zhou, François-Xavier Campbell-Valois, Shirley W.I. Siu, "A deep learning method for predicting the minimum inhibitory concentration of antimicrobial peptides against Escherichia coli using Multi-Branch-CNN and Attention," _mSystems_, vol. 8, no. 4, pp. e00345-23, 2023.
-58. Hengmin Zhang, Bihan Wen, Zhiyuan Zha, **Bob Zhang**, Yang Tang, Guo Yu, Wenli Du, "Accelerated PALM for nonconvex low-rank matrix recovery with theoretical analysis," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 34, no. 4, pp. 2304-2317, 2023.
-59. Ziyuan Yang, Huijie Huangfu, Lu Leng, **Bob Zhang**, Andrew Beng Jin Teoh, Yi Zhang, "Comprehensive competition mechanism in palmprint recognition," _IEEE Transactions on Information Forensics and Security_, vol. 18, pp. 5160-5170, 2023.
-60. Zhihao Hao, Guancheng Wang, **Bob Zhang***, Leyuan Fang, Haisheng Li, "An isomerism learning model to solve time-varying problems through intelligent collaboration," _IEEE/CAA Journal of Automatica Sinica_, vol. 10, no. 8, pp. 1772-1774, 2023.
-61. Ying Qin, **Bob Zhang***, "Privacy-preserving biometrics image encryption and digital signature technique using Arnold and ElGamal," _Applied Sciences_, vol. 13, no. 14, p. 8117, 2023.
-62. Hengmin Zhang, Junbin Gao, Jianjun Qian, Jian Yang, Chunyan Xu, **Bob Zhang**, "Linear regression problem relaxations solved by nonconvex ADMM with convergence analysis," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 34, no. 2, pp. 828-838, 2023.
-63. Shuang Li, Fan Li, Jinxing Li, Huafeng Li, **Bob Zhang**, Dapeng Tao, Xinbo Gao, "Logical relation inference and multiview information interaction for domain adaptation person re-identification," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 35, no. 10, pp. 14770-14782, 2023.
-64. Lilei Sun, Jie Wen, Junqian Wang, Yong Zhao, **Bob Zhang**, Jian Wu, Yong Xu, "Two-view attention-guided convolutional neural network for mammographic image classification," _CAAI Transactions on Intelligence Technology_, vol. 8, no. 2, pp. 453-467, 2023.
-65. Zhihao Hao, Guancheng Wang, **Bob Zhang***, Zhuowen Feng, Haisheng Li, Fahui Chong, Yan Pan, Wei Li, "A novel public sentiment analysis method based on an isomerism learning model via multiphase processing," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 36, no. 1, pp. 249-259, 2023.
-66. Ziyuan Yang, Wenjun Xia, Yifan Qiao, Zexin Lu, **Bob Zhang**, Lu Leng, Yi Zhang, "CO 3 Net: Coordinate-aware contrastive competitive neural network for palmprint recognition," _IEEE Transactions on Instrumentation and Measurement_, vol. 72, pp. 1-14, 2023.
-67. Guancheng Wang, Zhihao Hao, Haoen Huang, **Bob Zhang***, "A proportional-integral iterative algorithm for time-variant equality-constrained quadratic programming problem with applications," _Artificial Intelligence Review_, vol. 56, no. 5, pp. 4535-4556, 2023.
-68. Shuyi Li, Hengmin Zhang, Ruijun Ma, Jianhang Zhou, Jie Wen, **Bob Zhang***, "Linear discriminant analysis with generalized kernel constraint for robust image classification," _Pattern Recognition_, vol. 136, pp. 109196, 2023.
-69. Ziyuan Yang, Lu Leng, Andrew Beng Jin Teoh, **Bob Zhang**, Yi Zhang, "Cross-database attack of different coding-based palmprint templates," _Knowledge-Based Systems_, vol. 264, pp. 110310, 2023.
-70. Ziyuan Yang, Lu Leng, **Bob Zhang**, Ming Li, Jun Chu, "Two novel style-transfer palmprint reconstruction attacks," _Applied Intelligence_, vol. 53, no. 6, pp. 6354-6371, 2023.
-71. Bo Jiang, Yao Lu, **Bob Zhang**, Guangming Lu, "Few-shot learning for image denoising," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 33, no. 9, pp. 4741–4753, 2023.
-72. Shaoning Zeng, Yunbo Rao, **Bob Zhang***, Yong Xu, "Joint Augmented and Compressed Dictionaries for Robust Image Classification," _ACM Transactions on Multimedia Computing, Communications and Applications_, vol. 19, no. 3s, pp. 1–24, 2023.
-73. Chunwei Tian, Menghua Zheng, Wangmeng Zuo, **Bob Zhang**, Yanning Zhang, David Zhang, "Multi-stage image denoising with the wavelet transform," _Pattern Recognition_, vol. 134, pp. 109050, 2023. **(Highly Cited)**
-74. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Learning salient self-representation for image recognition via orthogonal transformation," _Expert Systems with Applications_, vol. 212, pp. 118663, 2023.
-75. Jie Wu, Runmin Cong, Leyuan Fang, Chunle Guo, **Bob Zhang**, Pedram Ghamisi, "Unpaired remote sensing image super-resolution with content-preserving weak supervision neural network," _Science China Information Sciences_, vol. 66, no. 1, 2023.
-76. Guancheng Wang, Zhihao Hao, **Bob Zhang***, Leyuan Fang, Dianhui Mao, "A robust newton iterative algorithm for acoustic location based on solving linear matrix equations in the presence of various noises," _Applied Intelligence_, vol. 53, no. 2, pp. 1219-1232, 2023.
-77. Zhihua Zhao, Zhihao Hao, Guancheng Wang, Dianhui Mao, **Bob Zhang***, Min Zuo, Jerome Yen, Guangjian Tu, "Sentiment analysis of review data using blockchain and LSTM to improve regulation for a sustainable market," _Journal of Theoretical and Applied Electronic Commerce Research_, vol. 17, pp. 1-19, 2021.
-78. Jianhang Zhou, **Bob Zhang***, Shaoning Zeng, "Consensus sparsity: multi-context sparse image representation via L∞-induced matrix variate," _IEEE Transactions on Image Processing_, vol. 32, pp. 603-616, 2022.
-79. Shuping Zhao, Lunke Fei, Jie Wen, **Bob Zhang***, Pengyang Zhao, Shuyi Li, "Structure suture learning-based robust multiview palmprint recognition," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 35, pp. 8401-8413, 2022.
-80. Tan Guo, Xiaoheng Tan, Liu Yang, Zhifang Liang, **Bob Zhang**, Lei Zhang, "Domain adaptive subspace transfer model for sensor drift compensation in biologically inspired electronic nose," _Expert Systems with Applications_, vol. 208, pp. 118237, 2022.
-81. Linshan Wu, Leyuan Fang, Jun Yue, **Bob Zhang**, Pedram Ghamisi, Min He, "Deep bilateral filtering network for point-supervised semantic segmentation in remote sensing images," _IEEE Transactions on Image Processing_, vol. 31, pp. 7419-7434, 2022.
-82. Guancheng Wang, Qinrou Li, Shaoqing Liu, Hua Xiao, **Bob Zhang***, "New zeroing neural network with finite-time convergence for dynamic complex-value linear equation and its applications," _Chaos, Solitons & Fractals_, vol. 164, pp. 112674, 2022.
-83. Qi Zhang, Jie Wen, Jianhang Zhou, **Bob Zhang***, "Missing-view completion for fatty liver disease detection," _Computers in Biology and Medicine_, vol. 150, pp. 106097, 2022.
-84. Xiaohuan Lu, Jiang Long, Jie Wen, Lunke Fei, **Bob Zhang**, Yong Xu, "Locality preserving projection with symmetric graph embedding for unsupervised dimensionality reduction," _Pattern Recognition_, vol. 131, pp. 108844, 2022.
-85. Jianhang Zhou, Qi Zhang, Shaoning Zeng, **Bob Zhang***, "Fuzzy graph subspace convolutional network," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 35, pp. 5641-5655, 2022.
-86. Jielu Yan, Jianxiu Cai, **Bob Zhang***, Yapeng Wang, Derek F Wong, Shirley WI Siu, "Recent progress in the discovery and design of antimicrobial peptides using traditional machine learning and deep learning," _Antibiotics_, vol. 11, pp. 1451, 2022.
-87. Leyuan Fang, Dingshun Zhu, Jun Yue, **Bob Zhang**, Min He, "Geometric-spectral reconstruction learning for multi-source open-set classification with hyperspectral and LiDAR data," _IEEE/CAA Journal of Automatica Sinica_, vol. 9, pp. 1892-1895, 2022.
-88. Lei Liao, Meng Yang, **Bob Zhang**, "Deep supervised dual cycle adversarial network for cross-modal retrieval," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 33, pp. 920-934, 2022.
-89. Shuping Zhao, Jigang Wu, **Bob Zhang***, Lunke Fei, Shuyi Li, Pengyang Zhao, "Adaptive graph embedded preserving projection learning for feature extraction and selection," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, vol. 53, pp. 1060-1073, 2022.
-90. Jie Wen, Zheng Zhang, Lunke Fei, **Bob Zhang***, Yong Xu, Zhao Zhang, Jinxing Li, "A survey on incomplete multiview clustering," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, vol. 53, pp. 1136-1149, 2022. **(Highly Cited)**
-91. Yuwu Lu, Qi Zhu, **Bob Zhang***, Zhihui Lai, Xuelong Li, "Weighted correlation embedding learning for domain adaptation," _IEEE Transactions on Image Processing_, vol. 31, pp. 5303-5316, 2022.
-92. Jielu Yan, **Bob Zhang***, Mingliang Zhou, Hang Fai Kwok, Shirley WI Siu, "Multi-Branch-CNN: Classification of ion channel interacting peptides using multi-branch convolutional neural network," _Computers in Biology and Medicine_, vol. 147, pp. 105717, 2022.
-93. Shuping Zhao, Jigang Wu, Lunke Fei, **Bob Zhang***, Pengyang Zhao, "Double-cohesion learning based multiview and discriminant palmprint recognition," _Information Fusion_, vol. 83, pp. 96-109, 2022.
-94. Jie Wen, Shijie Deng, Lunke Fei, Zheng Zhang, **Bob Zhang**, Zhao Zhang, Yong Xu, "Discriminative regression with adaptive graph diffusion," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 35, pp. 1797-1809, 2022.
-95. Ruijun Ma, Shuyi Li, **Bob Zhang***, Leyuan Fang, Zhengming Li, "Flexible and generalized real photograph denoising exploiting dual meta attention," _IEEE Transactions on Cybernetics_, vol. 53, pp. 6395-6407, 2022.
-96. Shuyi Li, Ruijun Ma, Lunke Fei, **Bob Zhang***, "Learning compact multirepresentation feature descriptor for finger-vein recognition," _IEEE Transactions on Information Forensics and Security_, vol. 17, pp. 1946-1958, 2022.
-97. Hengmin Zhang, Feng Qian, **Bob Zhang**, Wenli Du, Jianjun Qian, Jian Yang, "Incorporating linear regression problems into an adaptive framework with feasible optimizations," _IEEE Transactions on Multimedia_, vol. 25, pp. 4041-4051, 2022.
-98. Guancheng Wang, Zhihao Hao, **Bob Zhang***, Long Jin, "Convergence and robustness of bounded recurrent neural networks for solving dynamic Lyapunov equations," _Information Sciences_, vol. 588, pp. 106-123, 2022.
-99. Lunke Fei, Shuping Zhao, Wei Jia, **Bob Zhang**, Jie Wen, Yong Xu, "Toward efficient palmprint feature extraction by learning a single-layer convolution network," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 34, pp. 9783-9794, 2022.
-100. Shuping Zhao, Jigang Wu, **Bob Zhang***, Lunke Fei, "Low-rank inter-class sparsity based semi-flexible target least squares regression for feature representation," _Pattern Recognition_, vol. 123, pp. 108346, 2022.
-101. Ruijun Ma, Shuyi Li, **Bob Zhang***, Haifeng Hu, "Meta PID attention network for flexible and efficient real-world noisy image denoising," _IEEE Transactions on Image Processing_, vol. 31, pp. 2053-2066, 2022.
-102. Xu Liang, Zhaoqun Li, Dandan Fan, **Bob Zhang**, Guangming Lu, David Zhang, "Innovative contactless palmprint recognition system based on dual-camera alignment," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, vol. 52, pp. 6464-6476, 2022.
-103. Ming Lu, Leyuan Fang, Muxing Li, **Bob Zhang**, Yi Zhang, Pedram Ghamisi, "NFANet: A novel method for weakly supervised water extraction from high-resolution remote-sensing imagery," _IEEE Transactions on Geoscience and Remote Sensing_, vol. 60, pp. 1-14, 2022.
-104. Jianxiu Cai, Manting Liu, Qi Zhang, Ziqi Shao, Jingwen Zhou, Yongjian Guo, Juan Liu, Xiaobin Wang, **Bob Zhang***, Xi Li, "Renal cancer detection: fusing deep and texture features from histopathology images," _BioMed Research International_, vol. 2022, pp. 9821773, 2022.
-105. Tan Guo, Fulin Luo, Leyuan Fang, **Bob Zhang**, "Meta-pixel-driven embeddable discriminative target and background dictionary pair learning for hyperspectral target detection," _Remote Sensing_, vol. 14, pp. 481, 2022.
-106. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Kernel nonnegative representation-based classifier," _Applied Intelligence_, vol. 52, pp. 2269-2289, 2022.
-107. Shuping Zhao, Lunke Fei, Jie Wen, Jigang Wu, **Bob Zhang**, "Intrinsic and complete structure learning based incomplete multiview clustering," _IEEE Transactions on Multimedia_, vol. 25, pp. 1098-1110, 2021.
-108. Jianhang Zhou, **Bob Zhang***, Shaoning Zeng, Qi Lai, "Joint discriminative latent subspace learning for image classification," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 32, pp. 4653-4666, 2021.
-109. Shuyi Li, **Bob Zhang***, Lunke Fei, Shuping Zhao, Yicong Zhou, "Learning sparse and discriminative multimodal feature codes for finger recognition," _IEEE Transactions on Multimedia_, vol. 25, pp. 805-815, 2021.
-110. Wei Jia, Wei Xia, **Bob Zhang***, Yang Zhao, Lunke Fei, Wenxiong Kang, Di Huang, Guodong Guo, "A survey on dorsal hand vein biometrics," _Pattern Recognition_, vol. 120, p. 108122, 2021.
-111. Jie Xie, Leyuan Fang, **Bob Zhang**, Jocelyn Chanussot, Shutao Li, "Super resolution guided deep network for land cover classification from remote sensing images," _IEEE Transactions on Geoscience and Remote Sensing_, vol. 60, pp. 1-12, 2021.
-112. Jianhang Zhou, Qi Zhang, **Bob Zhang***, "Two-phase non-invasive multi-disease detection via sublingual region," _Computers in Biology and Medicine_, vol. 137, p. 104782, 2021.
-113. **Bob Zhang***, Jianhang Zhou, "Multi-feature representation for burn depth classification via burn images," _Artificial Intelligence in Medicine_, vol. 118, p. 102128, 2021.
-114. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Sparsity-induced graph convolutional network for semisupervised learning," _IEEE Transactions on Artificial Intelligence_, vol. 2, pp. 549-563, 2021.
-115. Lunke Fei, **Bob Zhang***, Jie Wen, Shaohua Teng, Shuyi Li, David Zhang, "Jointly learning compact multi-view hash codes for few-shot FKP recognition," _Pattern Recognition_, vol. 115, p. 107894, 2021.
-116. Lunke Fei, **Bob Zhang***, Chunwei Tian, Shaohua Teng, Jie Wen, "Jointly learning multi-instance hand-based biometric descriptor," _Information Sciences_, vol. 562, pp. 1-12, 2021.
-117. Zhihao Hao, Guancheng Wang, Dianhui Mao, **Bob Zhang***, Haisheng Li, Min Zuo, Zhihua Zhao, Jerome Yen, "A novel method for food market regulation by emotional tendencies predictions from food reviews based on blockchain and SAES," _Foods_, vol. 10, no. 6, p. 1398, 2021.
-118. Qi Zhang, Jianhang Zhou, **Bob Zhang***, "Computational traditional Chinese medicine diagnosis: A literature survey," _Computers in Biology and Medicine_, vol. 133, p. 104358, 2021.
-119. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Subspace-level dictionary fusion for robust multimedia classification," _Multimedia Tools and Applications_, vol. 80, no. 14, pp. 21885-21898, 2021.
-120. Ruijun Ma, Shuyi Li, **Bob Zhang***, Zhengming Li, "Towards fast and robust real image denoising with attentive neural network and PID controller," _IEEE Transactions on Multimedia_, vol. 24, pp. 2366-2377, 2021.
-121. Shaoning Zeng, **Bob Zhang**, Jianping Gou, Yong Xu, Wei Huang, "Fast and robust dictionary-based classification for image data," _ACM Transactions on Knowledge Discovery from Data_, vol. 15, no. 6, pp. 1-22, 2021.
-122. Shuai Wu, Yong Xu, **Bob Zhang**, Jian Yang, David Zhang, "Deformable template network (DTN) for object detection," _IEEE Transactions on Multimedia_, vol. 24, pp. 2058-2068, 2021.
-123. Shuyi Li, **Bob Zhang***, "Joint discriminative sparse coding for robust hand-based multimodal recognition," _IEEE Transactions on Information Forensics and Security_, vol. 16, pp. 3186-3198, 2021.
-124. Lunke Fei, **Bob Zhang***, Yong Xu, Chunwei Tian, Imad Rida, David Zhang, "Jointly heterogeneous palmprint discriminant feature learning," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 33, no. 9, pp. 4979-4990, 2021.
-125. Shanshan Du, Jinfeng Yang, Haigang Zhang, **Bob Zhang**, Zhigang Su, "FVSR-Net: An end-to-end finger vein image scattering removal network," _Multimedia Tools and Applications_, vol. 80, no. 7, pp. 10705-10722, 2021.
-126. Shuyi Li, **Bob Zhang***, Lunke Fei, Shuping Zhao, "Joint discriminative feature learning for multimodal finger recognition," _Pattern Recognition_, vol. 111, p. 107704, 2021.
-127. Shuyi Li, **Bob Zhang***, Shuping Zhao, Jinfeng Yang, "Local discriminant coding based convolutional feature representation for multimodal finger recognition," _Information Sciences_, vol. 547, pp. 1170-1181, 2021.
-128. Qi Zhang, Jianhang Zhou, **Bob Zhang***, Enhua Wu, "DsNet: Dual stack network for detecting diabetes mellitus and chronic kidney disease," _Information Sciences_, vol. 547, pp. 945-962, 2021.
-129. Jianhang Zhou, Qi Zhang, **Bob Zhang***, "An automatic multi-view disease detection system via collective deep region-based feature representation," _Future Generation Computer Systems_, vol. 115, pp. 59-75, 2021.
-130. Ruijun Ma, **Bob Zhang***, Yicong Zhou, Zhengming Li, Fangyuan Lei, "PID controller-guided attention neural network learning for fast and effective real photographs denoising," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 33, no. 7, pp. 3010-3023, 2021.
-131. Jie Wen, Huijie Sun, Lunke Fei, Jinxing Li, Zheng Zhang, **Bob Zhang***, "Consensus guided incomplete multi-view spectral clustering," _Neural Networks_, vol. 133, pp. 207-219, 2021.
-132. Jinxing Li, Zhaoqun Li, Guangming Lu, Yong Xu, **Bob Zhang**, David Zhang, "Asymmetric Gaussian process multi-view learning for visual classification," _Information Fusion_, vol. 65, pp. 108-118, 2021.
-133. Qi Zhang, Jianhang Zhou, **Bob Zhang***, "Graph Based Multichannel Feature Fusion for Wrist Pulse Diagnosis," _IEEE Journal of Biomedical and Health Informatics_, vol. 25, pp. 3732–3743, 2020.
-134. Shuping Zhao, **Bob Zhang***, "Learning Complete and Discriminative Direction Pattern for Robust Palmprint Recognition," _IEEE Transactions on Image Processing_, vol. 30, pp. 1001–1014, 2020.
-135. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Linear Representation-Based Methods for Image Classification: A Survey," _IEEE Access_, vol. 8, pp. 216645–216670, 2020.
-136. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Two-Stage Knowledge Transfer Framework for Image Classification," _Pattern Recognition_, vol. 107, p. 107529, 2020.
-137. Shaoning Zeng, **Bob Zhang***, Jianping Gou, Yong Xu, "Regularization on Augmented Data to Diversify Sparse Representation for Robust Image Classification," _IEEE Transactions on Cybernetics_, vol. 52, pp. 4935–4948, 2020.
-138. Jinxing Li, **Bob Zhang**, Guangming Lu, Yong Xu, Feng Wu, David Zhang, "Harmonization Shared Autoencoder Gaussian Process Latent Variable Model with Relaxed Hamming Distance," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 32, pp. 5093–5107, 2020.
-139. Wei Cao, Luan Lyu, Xiaohua Ren, **Bob Zhang**, Zhixin Yang, Enhua Wu, "Fracture Patterns Design for Anisotropic Models with the Material Point Method," _Computer Graphics Forum_, pp. 93–104, 2020.
-140. Jinxing Li, Mu Li, Guangming Lu, **Bob Zhang**, Hongpeng Yin, David Zhang, "Similarity and Diversity Induced Paired Projection for Cross-Modal Retrieval," _Information Sciences_, vol. 539, pp. 215–228, 2020.
-141. Lunke Fei, **Bob Zhang***, Lin Zhang, Wei Jia, Jie Wen, Jigang Wu, "Learning Compact Multifeature Codes for Palmprint Recognition from a Single Training Image per Palm," _IEEE Transactions on Multimedia_, vol. 23, pp. 2930–2942, 2020.
-142. Jie Wen, Ke Yan, Zheng Zhang, Yong Xu, Junqian Wang, Lunke Fei, **Bob Zhang**, "Adaptive Graph Completion Based Incomplete Multi-View Clustering," _IEEE Transactions on Multimedia_, vol. 23, pp. 2493–2504, 2020.
-143. Shaoning Zeng, **Bob Zhang***, Jianping Gou, "Learning Double Weights via Data Augmentation for Robust Sparse and Collaborative Representation-Based Classification," _Multimedia Tools and Applications_, vol. 79, pp. 20617–20638, 2020.
-144. Shaoning Zeng, **Bob Zhang***, Yanghao Zhang, Jianping Gou, "Dual Sparse Learning via Data Augmentation for Robust Facial Image Classification," _International Journal of Machine Learning and Cybernetics_, vol. 11, pp. 1717–1734, 2020.
-145. Qi Zhang, Jianhang Zhou, **Bob Zhang***, Weijia Jia, Enhua Wu, "Automatic Epicardial Fat Segmentation and Quantification of CT Scans Using Dual U-Nets with a Morphological Processing Layer," _IEEE Access_, vol. 8, pp. 128032–128041, 2020.
-146. Shuping Zhao, **Bob Zhang***, "Joint Constrained Least-Square Regression with Deep Convolutional Feature for Palmprint Recognition," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, vol. 52, pp. 511–522, 2020.
-147. Lunke Fei, **Bob Zhang***, Shaohua Teng, Zhenhua Guo, Shuyi Li, Wei Jia, "Joint Multiview Feature Learning for Hand-Print Recognition," _IEEE Transactions on Instrumentation and Measurement_, vol. 69, pp. 9743–9755, 2020.
-148. Tan Guo, Fulin Luo, Lei Zhang, **Bob Zhang**, Xiaoheng Tan, Xiaocheng Zhou, "Learning Structurally Incoherent Background and Target Dictionaries for Hyperspectral Target Detection," _IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing_, vol. 13, pp. 3521–3533, 2020.
-149. Chunwei Tian, Yong Xu, Wangmeng Zuo, **Bob Zhang**, Lunke Fei, Chia-Wen Lin, "Coarse-to-Fine CNN for Image Super-Resolution," _IEEE Transactions on Multimedia_, vol. 23, pp. 1489–1502, 2020.
-150. Ruijun Ma, **Bob Zhang**, Haifeng Hu, "Gaussian Pyramid of Conditional Generative Adversarial Network for Real-World Noisy Image Denoising," _Neural Processing Letters_, vol. 51, pp. 2669–2684, 2020.
-151. Jian Wu, **Bob Zhang**, Yong Xu, David Zhang, "Illuminance Compensation and Texture Enhancement via the Hodge Decomposition," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 31, pp. 956–971, 2020.
-152. Jinxing Li, Xiaobao Guo, Guangming Lu, **Bob Zhang**, Yong Xu, Feng Wu, David Zhang, "DRPL: Deep Regression Pair Learning for Multi-Focus Image Fusion," _IEEE Transactions on Image Processing_, vol. 29, pp. 4816–4831, 2020.
-153. Shuping Zhao, **Bob Zhang***, "Learning Salient and Discriminative Descriptor for Palmprint Feature Extraction and Identification," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 31, pp. 5219–5230, 2020.
-154. Jianjun Qian, Jian Yang, Yong Xu, Jin Xie, Zhihui Lai, **Bob Zhang**, "Image Decomposition Based Matrix Regression with Applications to Robust Face Recognition," _Pattern Recognition_, vol. 102, p. 107204, 2020.
-155. Shuping Zhao, **Bob Zhang***, "Deep Discriminative Representation for Generic Palmprint Recognition," _Pattern Recognition_, vol. 98, p. 107071, 2020.
-156. Lunke Fei, **Bob Zhang***, Wei Jia, Jie Wen, David Zhang, "Feature Extraction for 3-D Palmprint Recognition: A Survey," _IEEE Transactions on Instrumentation and Measurement_, vol. 69, pp. 645–656, 2020.
-157. Wei Cao, Zhixin Yang, Xiaohua Ren, Luan Lyu, **Bob Zhang**, Yanci Zhang, Enhua Wu, "An Improved Solution for Deformation Simulation of Nonorthotropic Geometric Models," _Computer Animation and Virtual Worlds_, vol. 31, p. e1915, 2020.
-158. Zhihao Hao, Dianhui Mao, **Bob Zhang***, Min Zuo, Zhihua Zhao, "A Novel Visual Analysis Method of Food Safety Risk Traceability Based on Blockchain," _International Journal of Environmental Research and Public Health_, vol. 17, p. 2300, 2020.
-159. Jinxing Li, **Bob Zhang**, Guangming Lu, Jane You, David Zhang, "Relaxed asymmetric deep hashing learning: point-to-angle matching," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 31, pp. 4791-4805, 2019.
-160. Jian Wu, **Bob Zhang**, Yong Xu, David Zhang, "Tongue image alignment via conformal mapping for disease detection," _IEEE Access_, vol. 8, pp. 9796-9808, 2019.
-161. Hengmin Zhang, Jianjun Qian, **Bob Zhang**, Jian Yang, Chen Gong, Yang Wei, "Low-rank matrix recovery via modified Schatten-p norm minimization with convergence guarantees," _IEEE Transactions on Image Processing_, vol. 29, pp. 3132-3142, 2019.
-162. Shanshan Wang, Lei Zhang, Wangmeng Zuo, **Bob Zhang**, "Class-specific reconstruction transfer learning for visual recognition across domains," _IEEE Transactions on Image Processing_, vol. 29, pp. 2424-2438, 2019.
-163. Wei Yan, **Bob Zhang***, Zuyuan Yang, Shengli Xie, "Similarity learning-induced symmetric nonnegative matrix factorization for image clustering," _IEEE Access_, vol. 7, pp. 166380-166389, 2019.
-164. Qi Zhang, Jianhang Zhou, Jing He, Xiaodong Cun, Shaoning Zeng, **Bob Zhang***, "A shell dataset, for shell features extraction and recognition," _Scientific Data_, vol. 6, pp. 226, 2019.
-165. Xing Wang, **Bob Zhang**, Meng Yang, Kangyin Ke, Weishi Zheng, "Robust joint representation with triple local feature for face recognition with single sample per person," _Knowledge-Based Systems_, vol. 181, pp. 104790, 2019.
-166. Shaoning Zeng, **Bob Zhang***, Yuandong Lan, Jianping Gou, "Robust collaborative representation-based classification via regularization of truncated total least squares," _Neural Computing and Applications_, vol. 31, pp. 5689–5697, 2019.
-167. Linbin Ye, **Bob Zhang**, Meng Yang, Wei Lian, "Triple-translation GAN with multi-layer sparse representation for face image synthesis," _Neurocomputing_, vol. 358, pp. 294-308, 2019.
-168. Lei Zhang, Ji Liu, **Bob Zhang**, David Zhang, Ce Zhu, "Deep cascade model-based face recognition: when deep-layered learning meets small data," _IEEE Transactions on Image Processing_, vol. 29, pp. 1016-1029, 2019.
-169. Jinxing Li, **Bob Zhang**, Guangming Lu, David Zhang, "Dual asymmetric deep hashing learning," _IEEE Access_, vol. 7, pp. 113372-113384, 2019.
-170. Wei Nie, **Bob Zhang***, "Robust and adaptive ROI extraction for hyperspectral dorsal hand vein images," _IET Computer Vision_, vol. 13, pp. 595-604, 2019.
-171. Shuping Zhao, **Bob Zhang***, CL Philip Chen, "Joint deep convolutional feature representation for hyperspectral palmprint recognition," _Information Sciences_, vol. 489, pp. 167-181, 2019.
-172. Jinxing Li, Guangming Lu, **Bob Zhang**, Jane You, David Zhang, "Shared linear encoder-based multikernel Gaussian process latent variable model for visual classification," _IEEE Transactions on Cybernetics_, vol. 51, pp. 534-547, 2019.
-173. Shuping Zhao, **Bob Zhang***, "Robust and adaptive algorithm for hyperspectral palmprint region of interest extraction," _IET Biometrics_, vol. 8, pp. 391-400, 2019.
-174. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Multi-view classification via a fast and effective multi-view nearest-subspace classifier," _IEEE Access_, vol. 7, pp. 49669-49679, 2019.
-175. Hengmin Zhang, Chen Gong, Jianjun Qian, **Bob Zhang**, Chunyan Xu, Jian Yang, "Efficient recovery of low-rank matrix via double nonconvex nonsmooth rank minimization," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 30, pp. 2916-2925, 2019.
-176. Lunke Fei, **Bob Zhang***, Yong Xu, Zhenhua Guo, Jie Wen, Wei Jia, "Learning discriminant direction binary palmprint descriptor," _IEEE Transactions on Image Processing_, vol. 28, pp. 3808-3820, 2019.
-177. Lunke Fei, **Bob Zhang**, Yong Xu, Wei Jia, Jie Wen, Jigang Wu, "Precision direction and compact surface type representation for 3D palmprint identification," _Pattern Recognition_, vol. 87, pp. 237-247, 2019.
-178. Zuofeng Zhong, Jiajun Wen, **Bob Zhang**, Yong Xu, "A general moving detection method using dual-target nonparametric background model," _Knowledge-Based Systems_, vol. 164, pp. 85-95, 2019.
-179. Lunke Fei, **Bob Zhang***, Yong Xu, Di Huang, Wei Jia, Jie Wen, "Local discriminant direction binary pattern for palmprint representation and recognition," _IEEE Transactions on Circuits and Systems for Video Technology_, vol. 30, pp. 468-481, 2019.
-180. Wei Nie, **Bob Zhang***, Shuping Zhao, "Discriminative local feature for hyperspectral hand biometrics by adjusting image acutance," _Applied Sciences_, vol. 9, pp. 4178, 2019.
-181. Jianhang Zhou, Qi Zhang, **Bob Zhang***, Xiaojiao Chen, "TongueNet: a precise and fast tongue segmentation system using U-Net with a morphological processing layer," _Applied Sciences_, vol. 9, pp. 3128, 2019.
-182. Jianhang Zhou, **Bob Zhang***, "Collaborative representation using non-negative samples for image classification," _Sensors_, vol. 19, pp. 2609, 2019.
-183. Lunke Fei, **Bob Zhang***, Wei Zhang, Shaohua Teng, "Local apparent and latent direction extraction for palmprint recognition," _Information Sciences_, vol. 473, pp. 59-72, 2019.
-184. Jinxing Li, **Bob Zhang**, Guangming Lu, Jane You, David Zhang, "Body surface feature-based multi-modal learning for diabetes mellitus detection," _Information Sciences_, vol. 472, pp. 1-14, 2019.
-185. Jinxing Li, **Bob Zhang**, Guangming Lu, David Zhang, "Generative multi-view and multi-feature learning for classification," _Information Fusion_, vol. 45, pp. 215-226, 2019.
-186. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "An improved noninvasive method to detect diabetes mellitus using the probabilistic collaborative representation based classifier," _Information Sciences_, vol. 467, pp. 477-488, 2018.
-187. **Bob Zhang***, Wei Nie, Shuping Zhao, "A novel Color Rendition Chart for digital tongue image calibration," _Color Research & Application_, vol. 43, no. 5, pp. 749-759, 2018.
-188. Jie Wen, **Bob Zhang***, Yong Xu, Jian Yang, Na Han, "Adaptive weighted nonnegative low-rank representation," _Pattern Recognition_, vol. 81, pp. 326-340, 2018.
-189. Jinxing Li, **Bob Zhang**, David Zhang, "Shared autoencoder Gaussian process latent variable model for visual classification," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 29, no. 9, pp. 4272-4286, 2018.
-190. Jinxing Li, **Bob Zhang**, Guangming Lu, Hu Ren, David Zhang, "Visual classification with multikernel shared Gaussian process latent variable model," _IEEE Transactions on Cybernetics_, vol. 49, no. 8, pp. 2886-2899, 2018.
-191. **Bob Zhang***, Xihua Xiao, Guangming Lu, "Facial beauty analysis based on features prediction and beautification models," _Pattern Analysis and Applications_, vol. 21, no. 2, pp. 529-542, 2018.
-192. Lei Luo, Jian Yang, **Bob Zhang**, Jielin Jiang, Heng Huang, "Nonparametric Bayesian correlated group regression with applications to image classification," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 29, no. 11, pp. 5330-5344, 2018.
-193. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Sparse supervised representation-based classifier for uncontrolled and imbalanced classification," _IEEE Transactions on Neural Networks and Learning Systems_, vol. 31, no. 8, pp. 2847-2856, 2018.
-194. Wei Yan, **Bob Zhang***, Zuyuan Yang, "A novel regularized nonnegative matrix factorization for spectral-spatial dimension reduction of hyperspectral imagery," _IEEE Access_, vol. 6, pp. 77953-77964, 2018.
-195. Jinxing Li, **Bob Zhang**, David Zhang, "Joint discriminative and collaborative representation for fatty liver disease diagnosis," _Expert Systems with Applications_, vol. 89, pp. 31-40, 2017.
-196. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Novel Noninvasive Brain Disease Detection System Using a Facial Image Sensor," _Sensors_, vol. 17, 2843, 2017.
-197. Shaoning Zeng, **Bob Zhang***, Yong Du, "Joint distances by sparse representation and locality-constrained dictionary learning for robust leaf recognition," _Computers and Electronics in Agriculture_, vol. 142, part B, pp. 563-571, 2017.
-198. Wei Yan, **Bob Zhang***, Sihan Ma, Zuyuan Yang, "A novel regularized concept factorization for document clustering," _Knowledge-Based Systems_, vol. 135, pp. 147-158, 2017.
-199. Xiaobo Chen, Zhongjie Wei, Zuoyong Li, Jun Liang, Yingfeng Cai, **Bob Zhang**, "Ensemble correlation-based low-rank matrix completion with applications to traffic data imputation," _Knowledge-Based Systems_, vol. 132, pp. 249-262, 2017.
-200. Wei Jia, **Bob Zhang***, Jingting Lu, Yihai Zhu, Yang Zhao, Wangmeng Zuo, Haibin Ling, "Palmprint recognition based on complete direction representation," _IEEE Transactions on Image Processing_, vol. 26, issue 9, pp. 4483-4498, 2017.
-201. Hengmin Zhang, Jian Yang, Jianchun Xie, Jianjun Qian, **Bob Zhang**, "Weighted sparse coding regularized nonconvex matrix regression for robust face recognition," _Information Sciences_, vol. 394-395, 1-17, 2017.
-202. Kunai Zhang, Da Huang, **Bob Zhang**, David Zhang, "Improving texture analysis performance in biometrics by adjusting image sharpness," _Pattern Recognition_, vol. 66, pp. 16-25, 2017.
-203. Zuofeng Zhong, **Bob Zhang**, Guangming Lu, Yong Zhao, Yong Xu, "An adaptive background modeling method for foreground segmentation," _IEEE Transactions on Intelligent Transportation Systems_, vol. 18, no. 5, pp. 1109-1121, 2017.
-204. Jinxing Li, David Zhang, Yongcheng Li, Jian Wu, **Bob Zhang**, "Joint similar and specific learning for diabetes mellitus and impaired glucose regulation detection," _Information Sciences_, vol. 384, pp. 191-204, 2017.
-205. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "An extensive analysis of various texture feature extractors to detect Diabetes Mellitus using facial specific regions," _Computers in Biology and Medicine_, vol. 83, issue C, pp. 69-83, 2017.
-206. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Effective heart disease detection based on quantitative computerized traditional chinese medicine using representation based classifiers," _Evidence-Based Complementary and Alternative Medicine_, 7483639, 2017.
-207. Yong Xu, Zhengming Li, **Bob Zhang**, Jian Yang, Jane You, "Sample diversity, representation effectiveness and robust dictionary learning for face recognition," _Information Sciences_, vol. 375, pp. 171-182, 2017.
-208. Lunke Fei, Yong Xu, **Bob Zhang**, Xiaozhao Fang, Jie Wen, "Low-rank representation integrated with principal line distance for contactless palmprint recognition," _Neurocomputing_, vol. 218, pp. 264-275, 2016.
-209. Yahui Liu, **Bob Zhang**, Guangming Lu, David Zhang, "Online 3D ear recognition by combining global and local features," _PLOS ONE_, vol. 11, no. 12, p. e0166204, 2016.
-210. Lei Luo, Liang Chen, Jian Yang, Jianjun Qian, **Bob Zhang**, "Tree-structured nuclear norm approximation with applications to robust face recognition," _IEEE Transactions on Image Processing_, vol. 25, no. 12, pp. 5757–5767, 2016.
-211. Lunke Fei, **Bob Zhang**, Yong Xu, Liping Yan, "Palmprint recognition using neighboring direction indicator," _IEEE Transactions on Human-Machine Systems_, vol. 46, no. 6, pp. 787–798, 2016.
-212. Yanan Guo, Dapeng Tao, Jun Cheng, Alan Dougherty, Yaotang Li, Kun Yue, **Bob Zhang**, "Tensor manifold discriminant projections for acceleration-based human activity recognition," _IEEE Transactions on Multimedia_, vol. 18, no. 10, pp. 1977–1987, 2016.
-213. Yue-Tong Luo, Lan-Ying Zhao, **Bob Zhang**, Wei Jia, Feng Xue, Jing-Ting Lu, Yi-Hai Zhu, Bing-Qing Xu, "Local line directional pattern for palmprint recognition," _Pattern Recognition_, vol. 50, pp. 26–44, 2016.
-214. Yong Xu, Jixiang Dong, **Bob Zhang**, Daoyun Xu, "Background modeling methods in video analysis: A review and comparative evaluation," _CAAI Transactions on Intelligence Technology_, vol. 1, no. 1, pp. 43–60, 2016.
-215. Yong Xu, **Bob Zhang**, Zuofeng Zhong, "Multiple representations and sparse representation for image classification," _Pattern Recognition Letters_, vol. 68, pp. 9-14, 2015.
-216. **Bob Zhang*** and Han Zhang, "Significant geometry features in tongue image analysis," _Evidence-Based Complementary and Alternative Medicine_, vol. 2015, no. 1, 897580, 2015.
-217. Ting Shu, **Bob Zhang***, "Non-invasive health status detection system using gabor filters based on facial block texture features," _Journal of Medical Systems_, vol. 39, no. 4, 41, 2015.
-218. Yahui Liu, **Bob Zhang***, David Zhang, "Ear-parotic face angle: A unique feature for 3D ear recognition," _Pattern Recognition Letters_, vol. 53, pp. 9-15, 2015.
-219. Xingzheng Wang, **Bob Zhang**, Zhimin Yang, Haoqian Wang, David Zhang, "Statistical analysis of tongue images for feature extraction and diagnostics," _IEEE Transactions on Image Processing_, vol. 22, no. 12, pp. 5336-5347, 2013.
-220. **Bob Zhang***, B.V.K. Vijaya Kumar, David Zhang, "Noninvasive diabetes mellitus detection using facial block color with a sparse representation classifier," _IEEE Transactions on Biomedical Engineering_, vol. 61, no. 4, pp. 1027-1033, 2013.
-221. **Bob Zhang***, V.K. Vijaya Kumar, David Zhang, "Detecting diabetes mellitus and nonproliferative diabetic retinopathy using tongue color, texture, and geometry features," _IEEE Transactions on Biomedical Engineering_, vol. 61, no. 2, pp. 491-501, 2013.
-222. Xingzheng Wang, **Bob Zhang**, Zhenhua Guo, David Zhang, "Facial image medical analysis system using quantitative chromatic feature," _Expert Systems with Applications_, vol. 40, no. 9, pp. 3738-3746, 2013.
-223. **Bob Zhang**, Xingzheng Wang, Jane You, David Zhang, "Tongue color analysis for medical application," _Evidence‐Based Complementary and Alternative Medicine_, vol. 2013, no. 1, 264742, 2013.
-224. **Bob Zhang**, Wei Li, Pei Qing, David Zhang, "Palm-print classification by global features," _IEEE Transactions on Systems, Man, and Cybernetics: Systems_, vol. 43, no. 2, pp. 370-378, 2013.
-225. **Bob Zhang**, Xingzheng Wang, Fakhri Karray, Zhimin Yang, David Zhang, "Computerized facial diagnosis using both color and texture features," _Information Sciences_, vol. 221, pp. 49-59, 2013.
-226. **Bob Zhang***, Fakhri Karray, Qin Li, and Lei Zhang, "Sparse representation classifier for microaneurysm detection and retinal blood vessel extraction," _Information Sciences_, vol. 200, pp. 78–90, 2012.
-227. **Bob Zhang***, Jane You, and Fakhri Karray, "Detecting optic disc on Asians by multiscale Gaussian filtering," _International Journal of Biomedical Imaging_, vol. 2012, 2012.
-228. Wei Li, **Bob Zhang**, Lei Zhang, and J. Yan, "Principal line-based alignment refinement for palmprint recognition," _IEEE Transactions on Systems, Man, and Cybernetics, Part C (Applications and Reviews)_, vol. 42, no. 6, pp. 1491–1499, 2012.
-229. **Bob Zhang**, Xiangqian Wu, Jane You, Qin Li, and Fakhri Karray, "Detection of microaneurysms using multi-scale correlation coefficients," _Pattern Recognition_, vol. 43, no. 6, pp. 2237–2248, 2010.
-230. Meindert Niemeijer, Bram van Ginneken, Michael J. Cree, Atsushi Mizutani, Gwénolé Quellec, Clara I. Sanchez, **Bob Zhang**, Roberto Hornero, Mathieu Lamard, Chisako Muramatsu, Xiangqian Wu, Guy Cazuguel, Jane You, Agustín Mayo, Qin Li, Yuji Hatanaka, Béatrice Cochener, Christian Roux, Fakhri Karray, María Garcia, Hiroshi Fujita, and Michael D. Abramoff, "Retinopathy Online Challenge: Automatic Detection of Microaneurysms in Digital Color Fundus Photographs," _IEEE Transactions on Medical Imaging_, vol. 29, no. 1, pp. 185–195, 2010.
-231. **Bob Zhang**, Lin Zhang, Lei Zhang, Fakhri Karray, "Retinal vessel extraction by matched filter with first-order derivative of Gaussian," _Computers in Biology and Medicine_, vol. 40, no. 4, pp. 438–445, 2010.
+  {% assign by_year = papers | group_by: "year" | sort: "name" | reverse %}
 
+  <nav class="pub-years" aria-label="Jump to year">
+    {% for g in by_year %}<a href="#y{{ g.name }}">{{ g.name }}</a>{% endfor %}
+  </nav>
 
+  {% for g in by_year %}
+  <div class="pub-year-block" data-year="{{ g.name }}">
+    <h3 id="y{{ g.name }}" class="pub-year">{{ g.name }}</h3>
+    <ol class="pub-list">
+      {% assign ordered = g.items | sort: "type" %}
+      {% for p in ordered %}{% include publication.html paper=p %}{% endfor %}
+    </ol>
+  </div>
+  {% endfor %}
+</section>
 
-# Conference Publications
-
-1. Caijie Zhao, **Bob Zhang***, "CondDiff-AMO: Integrating Conditional Diffusion Mechanism for Unified Amodal Mask Generation," _Proceedings of the AAAI Conference on Artificial Intelligence_, 40, 2026.
-2. Zhihao Hao, **Bob Zhang***, Haisheng Li, "Towards a Global Spatial-Temporal Food Memory: A Vision for Privacy-Preserving Collaborative Multimedia Analysis," _Proceedings of the 33rd ACM International Conference on Multimedia_, pp. 1-8, 2025.
-3. Chao Huang, Qianyi Li, Jie Wen, **Bob Zhang***, "Omni-Dimensional State Space Model-driven SAM for Pixel-level Anomaly Detection," _IJCAI 2025 – 34th International Joint Conference on Artificial Intelligence_, Montreal/Guangzhou, Canada/China, pp. 1-9, 2025.
-4. Weichao Cai, Weiliang Huang, Yunkang Cao, Chao Huang, Fei Yuan, **Bob Zhang**, Jie Wen, "Towards VLM-based Hybrid Explainable Prompt Enhancement for Zero-Shot Industrial Anomaly Detection," _IJCAI 2025 – 34th International Joint Conference on Artificial Intelligence_, Montreal/Guangzhou, Canada/China, pp. 1-9, 2025.
-5. Jian Hwee Ang, Aotong Li, Jintao Wang, **Bob Zhang***, "Integrating LLM in Privacy-Sensitive Age Estimation: A Tongue-Based Biometric Framework," _IJCB 2025 – 2025 IEEE International Joint Conference on Biometrics (IJCB)_, pp. 1-8, 2025.
-6. Yuqi Wang, **Bob Zhang***, "A GAN-based Data Poisoning Backdoor Attack Method for Palmprint Recognition CNNs," _2025 IEEE International Conference on Multimedia and Expo (ICME)_, Nantes, France, pp. 1-6, 2025.
-7. Hao Yang, Shuyi Li, **Bob Zhang***, Yuqi Wang, "Multi-scale parallel hybrid network for palmprint recognition," _ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, pp. 1-5, 2025.
-8. Zhihao Hao, **Bob Zhang***, Haisheng Li, "Transforming Classification with Federated Learning on Blockchain: A Unique Model Integration Approach," _ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, pp. 1-5, 2025.
-9. Zhihao Hao, **Bob Zhang***, Haisheng Li, "DCHM: Dynamic Collaboration of Heterogeneous Models Through Isomerism Learning in a Blockchain-Powered Federated Learning Framework," _Proceedings of the AAAI Conference on Artificial Intelligence_, vol. 39, no. 16, pp. 17077-17084, 2025.
-10. Yuqi Wang, **Bob Zhang***, Shuyi Li, Hao Yang, "A Generative Method for Finger Knuckle Print Recognition," _International Conference on Pattern Recognition_, pp. 288–302, 2024.
-11. Hao Yang, Shuyi Li, **Bob Zhang***, "A Multi-Slice Encoding Direction Extraction Network for Palmprint Recognition," _Proceedings of the 2024 3rd International Symposium on Computing and Artificial Intelligence_, pp. 29–35, 2024. **(Best Poster Award)**
-12. Wulin Xie, Xiaohuan Lu, Yadong Liu, Jiang Long, **Bob Zhang**, Shuping Zhao, Jie Wen, "Uncertainty-aware pseudo-labeling and dual graph driven network for incomplete multi-view multi-label classification," _Proceedings of the 32nd ACM International Conference on Multimedia_, pp. 6656–6665, 2024.
-13. Bo Jiang, Yao Lu, Guangming Lu, **Bob Zhang**, "QFormer: An efficient quaternion transformer for image denoising," _Proceedings of the 33rd International Joint Conference on Artificial Intelligence_, pp. 4237–4245, 2024.
-14. Yao Lu, Bo Jiang, Guangming Lu, **Bob Zhang**, "Implicit prompt learning for image denoising," _Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence_, pp. 4678–4686, 2024.
-15. Shuoyuan Wang, Jindong Wang, Huajun Xi, **Bob Zhang***, Lei Zhang, Hongxin Wei, "Optimization-free test-time adaptation for cross-person activity recognition," _Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies_, vol. 7, no. 4, pp. 1–27, 2024.
-16. Shuoyuan Wang, Jindong Wang, Guoqing Wang, **Bob Zhang**, Kaiyang Zhou, Hongxin Wei, "Open-vocabulary calibration for fine-tuned CLIP," _Proceedings of the 41st International Conference on Machine Learning_, pp. 51734-51754, 2024.
-17. Shuping Zhao, Jie Wen, Lunke Fei, **Bob Zhang***, "Tensorized incomplete multi-view clustering with intrinsic graph completion," _AAAI 2023 – 37th AAAI Conference on Artificial Intelligence_, Washington, DC, USA, pp. 11327-11335, 2023.
-18. Shuping Zhao, Lunke Fei, Jie Wen, **Bob Zhang***, Pengyang Zhao, "Incomplete Multi-View Clustering with Regularized Hierarchical Graph," _ACM Multimedia 2023 – 31st ACM International Conference on Multimedia_, Ottawa, ON, Canada, pp. 3060-3068, 2023.
-19. Ruijun Ma, Shuyi Li, **Bob Zhang***, Zhengming Li, "Generative Adaptive Convolutions for Real-World Noisy Image Denoising," _AAAI 2022 – 2022 AAAI Conference on Artificial Intelligence (AAAI)_, pp. 1935-1943, 2022.
-20. Shuyi Li, Ruijun Ma, Jianhang Zhou, **Bob Zhang***, "Row-Sparsity Binary Feature Learning for Open-Set Palmprint Recognition," _IJCB 2022 – 2022 IEEE International Joint Conference on Biometrics (IJCB)_, pp. 1-8, 2022.
-21. Qi Zhang, Jianhang Zhou, **Bob Zhang***, "Multi-Feature Representation for Fatty Liver Disease Detection with Breath Sample Analysis," _BIBM 2022 – 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)_, Las Vegas, NV, USA, pp. 3908-3910, 2022.
-22. Jianxiu Cai, Qi Zhang, **Bob Zhang***, Bihui Cao, Manting Liu, Cheng Zhi, Deji Che, Kangshun Zhu, "Discriminative Multi-feature Representation for Renal Cancer Detection based on Histopathology Images," _2021 7th International Conference on Computer and Communications (ICCC)_, Chengdu, China, pp. 1848-1852, 2021.
-23. Qi Zhang, **Bob Zhang***, "Low Rank Based Discriminative Least Squares Regression with Sparse Autoencoder Processing for Image Classification," _2021 7th International Conference on Computer and Communications (ICCC)_, Chengdu, China, pp. 836-840, 2021.
-24. Jie Wen, Zhihao Wu, Zheng Zhang, Lunke Fei, **Bob Zhang***, Yong Xu, "Structural Deep Incomplete Multi-view Clustering Network," _2021 30th ACM International Conference on Information & Knowledge Management (CIKM’21)_, New York, USA, pp. 3538–3542, 2021.
-25. Shuang Gu, Guancheng Wang, **Bob Zhang***, "COMASNet: Precise Face Mask Detector Network," _2021 4th International Conference on Pattern Recognition and Artificial Intelligence (PRAI)_, Yibin, China, pp. 129-133, 2021.
-26. Hengmin Zhang, Wei Luo, Wenli Du, Jianjun Qian, Jian Yang, **Bob Zhang***, "Robust recovery of low rank matrix by nonconvex rank regularization," _International Conference on Image and Graphics_, pp. 106-119, 2021.
-27. Shaoning Zeng, **Bob Zhang***, "Noise Homogenization via Multi-Channel Wavelet Filtering for High-Fidelity Sample Generation in Gans," _2021 IEEE International Conference on Multimedia and Expo (ICME)_, Shenzhen, China, pp. 1-6, 2021.
-28. Yuwei Zhang, **Bob Zhang***, "Hierarchical Automatic COVID-19 Detection via CT Scan Images," _2021 IEEE 4th International Conference on Big Data and Artificial Intelligence (BDAI)_, Qingdao, China, pp. 219-224, 2021.
-29. Shuyi Li, **Bob Zhang***, "An Adaptive Discriminant and Sparsity Feature Descriptor for Finger Vein Recognition," _ICASSP 2021 – 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, Toronto, ON, Canada, pp. 2140-2144, 2021.
-30. Jie Wen, Zheng Zhang, Zhao Zhang, Lei Zhu, Lunke Fei, **Bob Zhang**, Yong Xu, "Unified Tensor Framework for Incomplete Multi-view Clustering and Missing-view Inferring," _AAAI Conference on Artificial Intelligence_, pp. 10273-10281, 2021.
-31. Hengmin Zhang, Wenli Dul, Xiaoqian Liu, **Bob Zhang**, Feng Qian, "Regression Methods: Optimizations," _Cognitive Systems and Signal Processing: 5th International Conference, ICCSIP 2020_, Zhuhai, China, vol. 1387, p. 121, 2021.
-32. Lunke Fei, Jianyang Qin, Peng Liu, Jie Wen, Chunwei Tian, **Bob Zhang***, Shuping Zhao, "Jointly Learning Multiple Curvature Descriptor for 3D Palmprint Recognition," _2020 25th International Conference on Pattern Recognition (ICPR)_, Milan, Italy, 2021, pp. 302-308, 2021.
-33. Jie Wen, Zheng Zhang, Yong Xu, **Bob Zhang**, Lunke Fei, Guo-Sen Xie, "Cdimc-net: Cognitive deep incomplete multi-view clustering network," _Twenty-Ninth International Conference on International Joint Conferences on Artificial Intelligence_, New York, USA, pp. 3230-3236, 2021.
-34. Hengmin Zhang, Wenli Du, Xiaoqian Liu, **Bob Zhang**, Feng Qian, "Factored Trace Lasso Based Linear Regression Methods: Optimizations and Applications," _International Conference on Cognitive Systems and Signal Processing_, pp. 121–130, 2020.
-35. Jianzhao Zhang, Guojun Chen, Yue Dong, Jian Shi, **Bob Zhang**, Enhua Wu, "Deep Inverse Rendering for Practical Object Appearance Scan with Uncalibrated Illumination," _Computer Graphics International Conference_, pp. 71–82, 2020.
-36. Jie Wen, Zheng Zhang, Zhao Zhang, Zhihao Wu, Lunke Fei, Yong Xu, **Bob Zhang***, "Dimc-net: Deep Incomplete Multi-View Clustering Network," _Proceedings of the 28th ACM International Conference on Multimedia_, pp. 3753–3761, 2020.
-37. Qi Zhang, Jianhang Zhou, **Bob Zhang***, "A Noninvasive Method to Detect Diabetes Mellitus and Lung Cancer Using the Stacked Sparse Autoencoder," _ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, pp. 1409–1413, 2020.
-38. Shuping Zhao, **Bob Zhang***, Shuyi Li, "Discriminant and Sparsity Based Least Squares Regression with L1 Regularization for Feature Representation," _ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)_, pp. 1504–1508, 2020.
-39. Jianhang Zhou, Qi Zhang, **Bob Zhang***, "A Progressive Stack Face-Based Network for Detecting Diabetes Mellitus and Breast Cancer," _2020 IEEE International Joint Conference on Biometrics (IJCB)_, pp. 1–9, 2020.
-40. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "Two-stage image classification supervised by a single teacher single student model," _BMVC 2019 – 30th British Machine Vision Conference_, 2019.
-41. Qi Zhang, Shaoning Zeng, **Bob Zhang***, "Initial investigation of different classifiers for plant leaf classification using multiple features," _ICDIP 2019 – 11th International Conference on Digital Image Processing_, vol. 11179, 2019.
-42. Jianhang Zhou, Shaoning Zeng, **Bob Zhang***, "A novel fusion strategy for probabilistic sparse representation classifier guided by support vector machines," _ICDIP 2019 – 11th International Conference on Digital Image Processing_, vol. 11179, 2019.
-43. Yao Lu, Guangming Lu, **Bob Zhang**, Yuanrong Xu, Jinxing Li, "Super sparse convolutional neural networks," _AAAI 2019 – Proceedings of the AAAI 2019 Conference on Artificial Intelligence_, pp. 4440-4447, 2019.
-44. Jie Wen, Zheng Zhang, Yong Xu, **Bob Zhang**, Lunke Fei, Hong Liu, "Unified embedding alignment with missing views inferring for incomplete multi-view clustering," _AAAI 2019 – Proceedings of the AAAI 2019 Conference on Artificial Intelligence_, pp. 5393-5400, 2019.
-45. Lunke Fei, **Bob Zhang***, Shaohua Teng, An Zeng, Chunwei Tian, Wei Zhang, "Learning discriminative finger-knuckle-print descriptor," _ICASSP 2019 – 2019 IEEE International Conference on Acoustics, Speech and Signal Processing_, pp. 2137-2141, 2019.
-46. Jianhang Zhou, Qi Zhang, **Bob Zhang***, "Applying L-SRC for non-invasive disease detection using facial chromaticity and texture features," _ICBCB 2019 – IEEE 7th International Conference on Bioinformatics and Computational Biology_, pp. 156-161, 2019.
-47. Wei Nie, **Bob Zhang***, Shuping Zhao, "A novel hyperspectral based dorsal hand recognition system," _ICMLC 2019 – Proceedings of the 11th International Conference on Machine Learning and Computing_, pp. 362-367, 2019.
-48. Shuping Zhao, Wei Nie, **Bob Zhang***, "Multi-feature fusion using collaborative residual for hyperspectral palmprint recognition," _2018 IEEE 4th International Conference on Computer and Communications (ICCC)_, pp. 1402-1406, 2018.
-49. Jinxing Li, **Bob Zhang**, Guangming Lu, David Zhang, "Shared linear encoder-based Gaussian process latent variable model for visual classification," _Proceedings of the 26th ACM International Conference on Multimedia (ACM MM)_, pp. 26-34, 2018.
-50. Jingru Fu, Lei Zhang, **Bob Zhang**, Wei Jia, "Guided learning: A new paradigm for multi-task classification," _Chinese Conference on Biometric Recognition (CCBR)_, pp. 239-246, 2018.
-51. Ting Shu, **Bob Zhang***, Yuan-Yan Tang, "Computer-assisted non-invasive diabetes mellitus detection system via facial key block analysis," _2018 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)_, pp. 101-106, 2018. **(Best Paper Award)**
-52. Li Zhang, **Bob Zhang***, "Non-invasive multi-disease classification via facial image analysis using a convolutional neural network," _2018 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)_, pp. 66-71, 2018.
-53. Jinxing Li, Hongwei Yong, **Bob Zhang**, Mu Li, Lei Zhang, David Zhang, "A probabilistic hierarchical model for multi-view and multi-feature classification," _Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)_, pp. 3498-3505, 2018.
-54. Shaoning Zeng, **Bob Zhang***, Yanghao Zhang, Jianping Gou, "Collaboratively weighting deep and classic representation via l2 regularization for image classification," _Asian Conference on Machine Learning (ACML)_, pp. 502-517, 2018.
-55. Yao Lu, Guangming Lu, Yuanrong Xu, **Bob Zhang**, "AAR-CNNs: Auto Adaptive Regularized Convolutional Neural Networks," _International Joint Conference on Artificial Intelligence (IJCAI)_, pp. 2511-2517, 2018.
-56. Feng Chen, David Zhang, Jian Wu, **Bob Zhang**, "Computerized analysis of tongue sub-lingual veins to detect lung and breast cancers," _ICCC 2017 – 2017 3rd IEEE International Conference on Computer and Communications (ICCC)_, Chengdu, China, pp. 2708-2712, 2017.
-57. Wei Yan, **Bob Zhang***, Sihan Ma, "Robust semi-supervised concept factorization," _IJCNN 2017 – 2017 International Joint Conference on Neural Networks (IJCNN)_, Anchorage, AK, USA, pp. 1011-1017, 2017.
-58. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Using k-NN with weights to detect diabetes mellitus based on genetic algorithm feature selection," _2016 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)_, 2016.
-59. Peng Zhang, **Bob Zhang***, "A study of diabetes mellitus detection using sparse representation algorithms with facial block color features," _2016 IEEE International Conference on Signal and Image Processing (ICSIP)_, pp. 563-567, 2016.
-60. Jingting Lu, Hui Ye, Wei Jia, Yang Zhao, Hai Min, Wenxiong Kang, **Bob Zhang**, "A performance evaluation of local descriptors, direction coding and correlation filters for palm vein recognition," _Chinese Conference on Biometric Recognition_, pp. 279-287, 2016.
-61. Qiang Zhao, David Zhang, **Bob Zhang**, "Digital tongue image analysis in medical applications using a new tongue ColorChecker," _IEEE International Conference on Computer and Communications (ICCC)_, pp. 803-807, 2016.
-62. Shuhua Chen, David Zhang, Jian Wu, **Bob Zhang**, "Facial color feature extraction for disease diagnosis using non-base colors," _IEEE International Conference on Computer and Communications (ICCC)_, pp. 808-813, 2016.
-63. Ting Shu, **Bob Zhang***, "Facial color analysis of Overweight-Obesity and its relationship to Healthy and Diabetes Mellitus using statistical pattern recognition," _TENCON 2015-2015 IEEE Region 10 Conference_, IEEE, pp. 1-4, 2015.
-64. Ting Shu, **Bob Zhang***, Yuan Yan Tang, "Simplified and improved patch ordering for diabetes mellitus detection," _2015 IEEE 2nd International Conference on Cybernetics (CYBCONF)_, IEEE, pp. 371-376, 2015.
-65. Ting Shu, **Bob Zhang***, "Diabetes mellitus detection based on facial block texture features using the Gabor filter," _2014 IEEE 17th International Conference on Computational Science and Engineering_, IEEE, pp. 1-6, 2014.
-66. Han Zhang, **Bob Zhang***, "Disease detection using tongue geometry features with sparse representation classifier," _2014 International Conference on Medical Biometrics_, IEEE, pp. 102-107, 2014.
-67. **Bob Zhang**, Lei Zhang, Jane You, and Fakhri Karray, "Microaneurysm (MA) detection via sparse representation classifier with MA and non-MA dictionary learning," _Proceedings of the 2010 20th International Conference on Pattern Recognition (ICPR 2010)_, Istanbul, Turkey, pp. 277–280, 2010.
-68. **Bob Zhang**, Qin Li, Lei Zhang, Jane You, and Fakhri Karray, "Retinal vessel centerline extraction using multiscale matched filter and sparse representation-based classifier," _Proceedings of the Second International Conference on Medical Biometrics (ICMB 2010)_, Hong Kong, China, pp. 181–190, 2010.
-69. **Bob Zhang**, Fakhri Karray, "Optic disc detection by multi-scale Gaussian filtering with scale production and a vessels’ directional matched filter," _Proceedings of the Second International Conference on Medical Biometrics (ICMB 2010)_, Hong Kong, China, pp. 173–180, 2010.
-70. **Bob Zhang**, Fakhri Karray, "Optic disc and fovea detection via multi-scale matched filters and a vessels’ directional matched filter," _Proceedings of the 2010 International Conference on Autonomous and Intelligent Systems (AIS 2010)_, Povoa de Varzim, Portugal, pp. 1–5, 2010.
-71. Qin Li, Jun Wang, Jane You, **Bob Zhang**, and Fakhri Karray, "Refractive error detection via group sparse representation," _Proceedings of the 2010 International Conference on Autonomous and Intelligent Systems (AIS 2010)_, Povoa de Varzim, Portugal, pp. 1–5, 2010.
-72. **Bob Zhang**, Jia You, Fakhri Karray, Chea Su Kee, and Qin Li, "Astigmatism and eye shape," _Proceedings of the 2009 International Conference on Image Processing, Computer Vision, and Pattern Recognition (IPCV 2009)_, pp. 72–77, Dec. 1, 2009.
-73. **Bob Zhang**, Jane You, Qin Li, and Fakhri Karray, "Hierarchical detection of red lesions in retinal images by multiscale correlation filtering," _Proceedings of SPIE_, 2009, doi: 10.1117/12.813913, 2009.
-74. **Yi-Bo Zhang**, Qin Li, Jane You, and Prabir Bhattacharya, "Palm vein extraction and matching for personal authentication," _Advances in Visual Information Systems_, Q. Qiu, C. Leung, X. Xue, and R. Laurini, Eds., Berlin, Heidelberg: Springer, pp. 154–164, 2007.
-
-# Book Chapters
-
-1. S. Zhao, W. Nie, and **B. Zhang***, "Deep Learning-Based Hyperspectral Multimodal Biometric Authentication System Using Palmprint and Dorsal Hand Vein," in _AI and Deep Learning in Biometric Security_, G. Jaswal, V. Kanhangad, and R. Ramachandra, Eds., USA: CRC Press-Taylor and Francis, 2021.
-2. Y. Wei, and **B. Zhang***, "Robust Constrained Concept Factorization," in _Computational Intelligence for Pattern Recognition_, W. Pedrycz, and S.Y. Chen, Eds., Springer International Publishing, 2018, pp. 207-225.
-3. **B. Zhang***, "Tongue Pattern Recognition to Detect Diabetes Mellitus and Non-Proliferative Diabetic Retinopathy," in _Pattern Recognition and Big Data_, A. Pal, and S.K. Pal, Eds., Singapore: World Scientific Publishing, 2017, pp. 663-686.
-
-
-
-
-
-
-
-
-
+<script src="{{ '/assets/js/publications.js' | relative_url }}"></script>

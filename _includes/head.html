@@ -2,7 +2,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator | default: '-' }} {{ site.description }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+  <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator | default: '-' }} {{ site.description }}{% elsif page.title %}{{ page.title }} | PAMI Research Group{% else %}{{ site.title }}{% endif %}</title>
 
   {% if site.author %}
   <meta name="author" content="{{ site.author }}">
@@ -115,6 +120,8 @@
       {{ page.thumbnail-img }}
     {% elsif site.avatar %}
       {{ site.avatar }}
+    {% elsif site.og-image %}
+      {{ site.og-image }}
     {% endif %}
   {% endcapture %}
   {% assign shareimg=shareimg | strip %}
@@ -130,8 +137,10 @@
   {% else %}
   <meta name="twitter:card" content="summary">
   {% endif %}
+  {% if site.social-network-links.twitter %}
   <meta name="twitter:site" content="@{{ site.social-network-links.twitter }}">
   <meta name="twitter:creator" content="@{{ site.social-network-links.twitter }}">
+  {% endif %}
 
   {% if page.meta-title %}
   <meta name="twitter:title" content="{{ page.meta-title }}">
@@ -161,6 +170,8 @@
   <!-- Staticman -->
   <link rel="stylesheet" href="{{ "/assets/css/staticman.css" | relative_url }}">
   {% endif %}
+
+  {% include structured-data.html %}
 
   {% if page.head-extra %}
     {% include {{ page.head-extra }} %}

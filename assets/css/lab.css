@@ -1,0 +1,265 @@
+/* PAMI Research Group 站点自定义样式。
+   与主题 main.css 分离，升级 beautiful-jekyll 时不会被覆盖。 */
+
+/* ---------- 人员卡片 ---------- */
+
+/* 关键修复：主题只有全局 img{max-width:100%}，圆形头像容器固定 200x200 却没有
+   object-fit，导致非正方形照片被拉伸或在圆内留白。改为 img 自身定尺寸 + cover。 */
+.person-avatar {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+
+.person-card { padding: 1.75rem 0; }
+.person-card + .person-card { border-top: 1px solid #eee; }
+
+.person-aside { text-align: center; }
+
+.person-links {
+  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  word-break: break-word;
+}
+.person-links li { margin-bottom: 0.2rem; }
+.person-links i { color: #757575; margin-right: 0.3rem; }
+
+.person-icons a {
+  display: inline-block;
+  font-size: 1.15rem;
+  margin: 0 0.35rem;
+  color: #555;
+}
+.person-icons a:hover { color: #314f96; }
+
+.person-name { margin-top: 0; margin-bottom: 0.15rem; }
+
+.person-position {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+.person-joined { color: #757575; }
+
+.person-desp { text-align: justify; margin-bottom: 0; }
+
+.people-section { margin-bottom: 2rem; }
+.people-section-title {
+  border-bottom: 2px solid #314f96;
+  padding-bottom: 0.35rem;
+  margin-top: 2.5rem;
+}
+
+/* ---------- 校友 ---------- */
+
+.alumni-group { margin-bottom: 1.75rem; }
+.alumni-list { list-style: none; padding-left: 0; }
+.alumni-list li {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.alumni-name { font-weight: 600; }
+.alumni-years { color: #757575; font-size: 0.9rem; }
+.alumni-now { color: #555; }
+.alumni-note {
+  color: #7a5c00;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .person-aside { margin-bottom: 1rem; }
+  .person-desp { text-align: left; }
+}
+
+/* ---------- 出版物 ---------- */
+
+.pub-controls { margin: 1.25rem 0 0.75rem; }
+
+.pub-filters { margin-bottom: 0.6rem; }
+.pub-filter {
+  background: #fff;
+  border: 1px solid #ccd;
+  border-radius: 999px;
+  padding: 0.22rem 0.8rem;
+  margin: 0 0.3rem 0.4rem 0;
+  font-size: 0.88rem;
+  color: #444;
+  cursor: pointer;
+}
+.pub-filter span { color: #757575; margin-left: 0.25rem; }
+.pub-filter:hover { border-color: #314f96; }
+.pub-filter.is-active {
+  background: #314f96;
+  border-color: #314f96;
+  color: #fff;
+}
+.pub-filter.is-active span { color: #cdd8f0; }
+
+.pub-search {
+  width: 100%;
+  max-width: 26rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #ccd;
+  border-radius: 4px;
+  font-size: 0.92rem;
+}
+.pub-count { color: #757575; font-size: 0.85rem; margin: 0.4rem 0 0; min-height: 1.2em; }
+
+.pub-years {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  line-height: 2;
+}
+.pub-years a {
+  display: inline-block;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.86rem;
+  color: #555;
+}
+.pub-years a:hover { color: #314f96; }
+
+.pub-year {
+  margin-top: 1.6rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #eee;
+  scroll-margin-top: 4.5rem;   /* 固定导航栏遮挡补偿 */
+}
+
+.pub-list { padding-left: 1.4rem; }
+.pub-item {
+  padding: 0.45rem 0;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+.pub-item[hidden] { display: none; }
+.pub-year-block[hidden] { display: none; }
+
+.pub-title  { color: #222; }
+.pub-venue  { color: #444; }
+.pub-authors strong { color: #314f96; }
+
+.pub-note {
+  display: inline-block;
+  background: #fff3cd;
+  color: #7a5c00;
+  border-radius: 3px;
+  padding: 0 0.35rem;
+  font-size: 0.8rem;
+}
+
+.pub-badges { white-space: nowrap; }
+.pub-badge {
+  display: inline-block;
+  border: 1px solid #ccd;
+  border-radius: 3px;
+  padding: 0 0.35rem;
+  margin-left: 0.25rem;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #555;
+}
+.pub-badge:hover {
+  background: #314f96;
+  border-color: #314f96;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- 首页 ---------- */
+
+.home-title { margin-bottom: 0.35rem; }
+.home-lead  { color: #666; font-size: 1.05rem; margin-bottom: 1rem; }
+.home-intro { text-align: justify; }
+.home-motto { color: #314f96; font-style: italic; margin-bottom: 0; }
+
+.home-section {
+  border-bottom: 2px solid #314f96;
+  padding-bottom: 0.35rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.home-cta {
+  background: #f5f7fb;
+  border: 1px solid #dde3f0;
+  border-radius: 6px;
+  padding: 1.4rem 1.5rem;
+}
+.home-cta .btn { margin-right: 0.5rem; margin-top: 0.35rem; }
+
+.home-contact { line-height: 1.75; color: #444; font-style: normal; }
+
+/* ---------- 动态 ---------- */
+
+.news-list { list-style: none; padding-left: 0; }
+.news-item {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.6;
+}
+.news-date {
+  display: inline-block;
+  min-width: 4.6rem;
+  color: #757575;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+.news-tag {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0 0.4rem;
+  margin-right: 0.4rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #eee;
+  color: #666;
+}
+.news-tag-paper   { background: #e3ecff; color: #2b4a91; }
+.news-tag-award   { background: #fff3cd; color: #7a5c00; }
+.news-tag-book    { background: #e8f5e9; color: #2e6b31; }
+.news-tag-people  { background: #f3e8ff; color: #5b2d8e; }
+.news-tag-release { background: #e0f7fa; color: #00646e; }
+
+/* ---------- 软件 ---------- */
+
+.sw-list { list-style: none; padding-left: 0; }
+.sw-item { padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; }
+.sw-name { font-weight: 600; font-size: 1.05rem; }
+.sw-paper {
+  margin-left: 0.5rem;
+  font-size: 0.82rem;
+  color: #666;
+  background: #f2f4f8;
+  border-radius: 3px;
+  padding: 0.05rem 0.4rem;
+}
+.sw-desc { margin: 0.3rem 0 0; color: #444; }
+
+.sw-prior {
+  margin-left: 0.4rem;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #6b5b00;
+  background: #fff8e1;
+  border-radius: 3px;
+  padding: 0 0.35rem;
+}
+.pub-years a[hidden] { display: none; }

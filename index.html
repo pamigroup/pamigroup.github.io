@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Pattern Analysis and Machine Intelligence (PAMI) Research Group
-subtitle: PAMI Research Group at the University of Macau
+subtitle: The PAMI Research Group at the University of Macau works on biometrics, pattern recognition, image processing, medical AI, and computational biology.
 use-site-title: true
 ---
 
 <style>
     /* 基础图片样式 */
     .research-img {
-        width: 45%; /* 这里控制图片大小，45%比之前的col-4(33%)要大 */
+        width: 45%;
+        height: auto;   /* 必须显式声明，配合 img 的 width/height 属性预留宽高比，消除 CLS */
         margin-bottom: 0.5rem;
-        object-fit: cover; /* 保持图片比例 */
     }
 
     /* 图片靠左，文字环绕在右 */
@@ -47,41 +47,69 @@ use-site-title: true
         }
     }
 
-    /* 覆盖主题 main.css 中对 carousel 的裁剪设置（.carousel-inner .carousel-item
-       固定 height:25rem，且 img 用 top:-120px 上移导致顶部被裁）。
-       这里用更高优先级(id 选择器)让首页横幅整图完整、按原始比例显示。 */
-    #carouselExampleIndicators .carousel-item {
+    /* 横幅：width/height 属性用于预留宽高比消除 CLS，height:auto 让实际高度按比例走 */
+    .banner-img {
+        width: 100%;
         height: auto;
-    }
-    #carouselExampleIndicators .carousel-item img {
-        position: static;
-        top: 0;
+        display: block;
     }
 </style>
 
 <div class="container">
     <div class="row">
-        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/assets/img/pami_group.jpg" class="d-block w-100" alt="PAMI Research Group">
-                </div>
-            </div>
+        <div class="col-12">
+            <img class="banner-img"
+                 src="/assets/img/pami_group.jpg"
+                 srcset="/assets/img/pami_group.jpg 1110w, /assets/img/pami_group@2x.jpg 2220w"
+                 sizes="(min-width: 1200px) 1110px, 100vw"
+                 width="1110" height="440"
+                 fetchpriority="high" decoding="async"
+                 alt="Members of the PAMI Research Group, University of Macau">
         </div>
     </div>
 
-    <div class="row" style="margin-top: 3rem; margin-bottom: 2rem;">
+    <div class="row" style="margin-top: 2.5rem;">
         <div class="col-12">
-            <h2>Our Motto is: “Research Never Stops”</h2>
-            <p> Our research interests include pattern recognition, biometrics, image processing, and artificial intelligence.
+            <h1 class="home-title">Pattern Analysis and Machine Intelligence (PAMI) Research Group</h1>
+            <p class="home-lead">Department of Computer and Information Science, Faculty of Science and Technology, University of Macau</p>
+            <p class="home-intro">
+                We build recognition, imaging, and learning systems that work on real data: hand-based
+                biometrics and their security, non-invasive medical diagnosis from tongue and facial
+                imaging, robust representation learning, image restoration, and AI for cell biology and
+                drug discovery. The group is led by
+                <a href="{{ '/people/Bob_Zhang' | relative_url }}">Prof. Bob Zhang</a>.
             </p>
+            <p class="home-motto">Our motto is: &ldquo;Research Never Stops&rdquo;</p>
         </div>
+    </div>
+
+    {% assign news = site.data.news %}
+    {% if news and news.size > 0 %}
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="home-section">Recent News</h2>
+            <ul class="news-list">
+                {% for n in news limit: 5 %}
+                <li class="news-item">
+                    <span class="news-date">{{ n.date }}</span>
+                    {% if n.tag %}<span class="news-tag news-tag-{{ n.tag }}">{{ n.tag }}</span>{% endif %}
+                    <span class="news-text">{{ n.text | markdownify | remove: '<p>' | remove: '</p>' }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <p><a href="{{ '/news' | relative_url }}">All news &rarr;</a></p>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-12"><h2 class="home-section">Research</h2></div>
     </div>
 
     <div class="row mb-5">
         <div class="col-12 clearfix">
             <h3>Advanced Hand-based Biometrics: Recognition Algorithms, Systems, and Security Vulnerabilities</h3>
-            <img class="research-img img-left" src="/assets/img/research/PAMI1.png" alt="Hand Biometrics">
+            <img class="research-img img-left" src="/assets/img/research/PAMI1.webp" width="838" height="495" loading="lazy" decoding="async" alt="Hand-based biometrics: palmprint, finger knuckle and dorsal hand vein recognition">
             <p class="research-text">
                 Biometric authentication based on hand features, including palmprint, finger knuckle print, dorsal hand veins, etc., offers a balance of high security and user convenience. Our research encompasses all aspects of this domain, addressing real-world challenges such as uncontrolled lighting, pose variations, and complex feature matching. To overcome these limitations, our team has pioneered a series of deep learning and representation-based frameworks. We have developed Deep Discriminative Representation for generic palmprint recognition (<a href="https://www.sciencedirect.com/science/article/pii/S0031320319303723">Pattern Recognition 2020</a>) and Discriminant Direction Binary Descriptors to capture intrinsic features and coordinate-aware contrasts (<a href="https://ieeexplore.ieee.org/abstract/document/8661663">IEEE TIP 2019</a>). To further enhance feature robustness, we introduced Salient and Discriminative Descriptors for extraction and identification (<a href="https://ieeexplore.ieee.org/document/8976291">IEEE TNNLS 2020</a>), alongside Joint Constrained Least-Square Regression integrated with deep convolutional features (<a href="https://ieeexplore.ieee.org/document/9133148">IEEE TSMC: Systems 2020</a>). Furthermore, our work extends to finger vein and knuckle recognition using robust sparse least square regression (<a href="https://ieeexplore.ieee.org/document/10387426">IEEE TIFS 2024</a>). Addressing the critical security vulnerabilities of biometric systems, we have also investigated GAN-based data poisoning backdoor attacks and generative methods, exposing weaknesses in recognition CNNs to develop more resilient countermeasures (<a href="https://ieeexplore.ieee.org/document/11209521">ICME 2025</a>). These innovations, summarized in our monographs Advanced Hand-based Biometrics (<a href="https://link.springer.com/book/10.1007/978-981-95-0970-6">Springer 2026</a>) and Advanced Palmprint Authentication (<a href="https://link.springer.com/book/10.1007/978-981-96-7101-4">Springer 2025</a>), significantly enhance the accuracy and reliability of contactless and mobile biometric systems.
             </p>
@@ -91,7 +119,7 @@ use-site-title: true
     <div class="row mb-5">
         <div class="col-12 clearfix">
             <h3>Medical Biometrics: Non-invasive Diagnosis via Intelligent Imaging</h3>
-            <img class="research-img img-right" src="/assets/img/research/PAMI2.png" alt="Medical Biometrics">
+            <img class="research-img img-right" src="/assets/img/research/PAMI2.webp" width="878" height="560" loading="lazy" decoding="async" alt="Medical biometrics: tongue, facial and sub-lingual image based non-invasive diagnosis">
             <p class="research-text">
                 The integration of artificial intelligence with traditional medical diagnosis provides a pathway to non-invasive, objective, and efficient health monitoring. Traditional diagnostic methods, such as tongue and facial diagnosis, often lack standardization and quantitative analysis, while Western medicine can be invasive and time-consuming. Our research bridges this gap by developing computerized diagnostic systems. We have constructed advanced frameworks like TongueNet for precise tongue segmentation and feature extraction, covering color, texture, and geometry analysis (<a href="https://www.mdpi.com/2076-3417/9/19/4178">Applied Sciences 2019</a>). Beyond tongue imaging, we utilize facial block color and texture features to detect chronic diseases such as diabetes mellitus and non-proliferative diabetic retinopathy (<a href="https://ieeexplore.ieee.org/document/6603314">IEEE TBE 2013</a>). To further enhance diagnostic precision, we developed an automatic multi-view disease detection system via Collective Deep Region-based Feature Representation, which fuses physiological information from the face, tongue, and sub-lingual veins (<a href="https://www.sciencedirect.com/science/article/pii/S0167739X20303897">Future Generation Computer Systems 2021</a>). By synthesizing these physiological features with sparse representation classifiers and deep neural networks, our work, highlighted in Advanced Medical Biometrics (<a href="https://www.worldscientific.com/worldscibooks/10.1142/14426">World Scientific 2025</a>), Facial Multi-characteristics and Applications (<a href="https://www.amazon.com/-/zh_TW/Bob-Zhang/dp/9813234571">World Scientific 2018</a>) and Tongue Image Analysis (<a href="https://dl.acm.org/doi/book/10.5555/3092625">Springer 2017</a>), establishes a scientific foundation for computational medicine, enabling early detection and personalized healthcare monitoring.
             </p>
@@ -101,9 +129,9 @@ use-site-title: true
     <div class="row mb-5">
         <div class="col-12 clearfix">
             <h3>Pattern Recognition: Robust Feature Learning and Representation</h3>
-            <img class="research-img img-left" src="/assets/img/research/PAMI3.png" alt="Pattern Recognition">
+            <img class="research-img img-left" src="/assets/img/research/PAMI3.webp" width="682" height="484" loading="lazy" decoding="async" alt="Pattern recognition: subspace learning, representation-based classifiers and multi-view clustering">
             <p class="research-text">
-                Fundamental pattern recognition algorithms are the engine driving high-performance AI systems, yet they often struggle with issues like high dimensionality, data noise, and small sample sizes. Our team focuses on developing mathematically rigorous and computationally efficient learning models. We have advanced the field of subspace learning by providing a definitive primer on Linear Discriminant Analysis (LDA) (<a href="https://www.nature.com/articles/s43586-024-00346-y">Nature Reviews Methods Primers 2024</a>) and developing robust variants such as latent linear discriminant analysis (<a href="https://www.sciencedirect.com/science/article/pii/S0031320323009159">Pattern Recognition 2024</a>). We also pioneered Collaborative Representation and Sparse Representation based classifiers to handle robust visual classification tasks (<a href="https://ieeexplore.ieee.org/document/9999717">IEEE TIP 2022</a>, <a href="https://ieeexplore.ieee.org/document/9408606">IEEE TIFS 2021</a>, <a href="https://www.mdpi.com/2076-3417/9/19/4178">IEEE TMM 2021</a>, <a href="https://ieeexplore.ieee.org/document/9633020">IEEE TCYB 2020</a>, <a href="https://ieeexplore.ieee.org/document/8587119">IEEE TNNLS 2018</a>, <a href="https://ieeexplore.ieee.org/document/6675828">IEEE TBE 2014</a>, <a href="https://dl.acm.org/doi/abs/10.1109/ICPR.2010.77">Information Sciences 2012</a>). Recent innovations include sophisticated Incomplete Multi-View Clustering frameworks. Specifically, we developed DIMC-net (<a href="https://dl.acm.org/doi/10.1145/3394171.3413807">ACM Multimedia 2020</a>) and tensorized graph completion methods to effectively handle missing views in complex data (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26340">AAAI 2023</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3612241">ACM Multimedia 2023</a>). These contributions, thoroughly examined in our monograph Information Fusion: Machine Learning Methods (<a href="https://link.springer.com/book/10.1007/978-981-16-8976-5">Springer 2022</a>), provide the theoretical backbone for handling complex multimodal data, ensuring robustness and generalization across various visual understanding tasks.
+                Fundamental pattern recognition algorithms are the engine driving high-performance AI systems, yet they often struggle with issues like high dimensionality, data noise, and small sample sizes. Our team focuses on developing mathematically rigorous and computationally efficient learning models. We have advanced the field of subspace learning by providing a definitive primer on Linear Discriminant Analysis (LDA) (<a href="https://www.nature.com/articles/s43586-024-00346-y">Nature Reviews Methods Primers 2024</a>) and developing robust variants such as latent linear discriminant analysis (<a href="https://www.sciencedirect.com/science/article/pii/S0031320323009159">Pattern Recognition 2024</a>). We also pioneered Collaborative Representation and Sparse Representation based classifiers to handle robust visual classification tasks (<a href="https://ieeexplore.ieee.org/document/9999717">IEEE TIP 2022</a>, <a href="https://ieeexplore.ieee.org/document/9408606">IEEE TIFS 2021</a>, IEEE TMM 2021, <a href="https://ieeexplore.ieee.org/document/9633020">IEEE TCYB 2020</a>, <a href="https://ieeexplore.ieee.org/document/8587119">IEEE TNNLS 2018</a>, <a href="https://ieeexplore.ieee.org/document/6675828">IEEE TBE 2014</a>, <a href="https://doi.org/10.1016/j.ins.2012.03.003">Information Sciences 2012</a>). Recent innovations include sophisticated Incomplete Multi-View Clustering frameworks. Specifically, we developed DIMC-net (<a href="https://dl.acm.org/doi/10.1145/3394171.3413807">ACM Multimedia 2020</a>) and tensorized graph completion methods to effectively handle missing views in complex data (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/26340">AAAI 2023</a>, <a href="https://dl.acm.org/doi/abs/10.1145/3581783.3612241">ACM Multimedia 2023</a>). These contributions, thoroughly examined in our monograph Information Fusion: Machine Learning Methods (<a href="https://link.springer.com/book/10.1007/978-981-16-8976-5">Springer 2022</a>), provide the theoretical backbone for handling complex multimodal data, ensuring robustness and generalization across various visual understanding tasks.
             </p>
         </div>
     </div>
@@ -111,7 +139,7 @@ use-site-title: true
     <div class="row mb-5">
         <div class="col-12 clearfix">
             <h3>Image Processing: Denoising, Restoration, and Enhancement via Generative AI</h3>
-            <img class="research-img img-right" src="/assets/img/research/PAMI4.png" alt="Image Processing">
+            <img class="research-img img-right" src="/assets/img/research/PAMI4.webp" width="921" height="443" loading="lazy" decoding="async" alt="Image processing: denoising, super-resolution and restoration via generative models">
             <p class="research-text">
                 High-fidelity imaging is a prerequisite for accurate analysis, particularly in complex environments where data is corrupted by noise, blur, or low resolution. Our research addresses these inverse problems by leveraging cutting-edge generative AI and attention mechanisms. To achieve state-of-the-art performance in image denoising, we have developed QFormer (<a href="https://www.ijcai.org/proceedings/2024/0468.pdf">IJCAI 2024</a>) and PID controller-guided attention networks (<a href="https://ieeexplore.ieee.org/document/9325537">IEEE TNNLS 2021</a>). For super-resolution, we proposed the Cosine Network (<a href="https://ieeexplore.ieee.org/document/11313780">IEEE TIP 2025</a>) and Tree-guided CNNs (<a href="https://ieeexplore.ieee.org/document/11010139">IEEE TCE 2025</a>), which effectively recover high-frequency details from low-resolution inputs. Furthermore, to enhance generalizability across diverse datasets and address the complexities of different camera sensors and in-camera signal processing pipelines, we introduced Dual Meta Attention (<a href="https://ieeexplore.ieee.org/document/9777247">IEEE TCYB 2022</a>) and Generative Adaptive Convolutions (<a href="https://ojs.aaai.org/index.php/AAAI/article/view/20088">AAAI 2022</a>) for robust real-world photograph denoising. These technologies not only enhance visual quality, but also significantly improve the downstream performance of recognition and diagnostic systems.
             </p>
@@ -121,10 +149,39 @@ use-site-title: true
     <div class="row mb-5">
         <div class="col-12 clearfix">
             <h3>Computational Biology: Phenotypic Learning and Virtual Cell Modeling</h3>
-            <img class="research-img img-left" src="/assets/img/research/PAMI5.png" alt="Computational Biology">
+            <img class="research-img img-left" src="/assets/img/research/PAMI5.webp" width="781" height="462" loading="lazy" decoding="async" alt="Computational biology: phenotypic learning and virtual cell modelling">
             <p class="research-text">
                 Understanding cellular phenotypes and predicting their responses to drug perturbations are pivotal challenges in modern computational biology. Traditional high-throughput screening often fails to capture subtle, high-dimensional morphological changes essential for accurate drug characterization. To bridge this gap, our research pioneers the intersection of AI and biotechnology. We developed PhenoProfiler (<a href="https://www.nature.com/articles/s41467-025-67479-w">Nature Communications 2025</a>), a flagship framework that advances phenotypic learning for image-based drug discovery, enabling the precise quantification of drug effects. Building on this foundation, we are advancing towards multimodal virtual cell models that integrate diverse data sources to simulate dynamic cellular behaviors under physiological and pathological conditions. By synergizing generative AI with large-scale phenotypic data, we aim to unravel the molecular mechanisms driving cell fate and optimize the drug development pipeline, marking a transformative step towards AI-driven precision medicine.
             </p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="home-cta">
+                <h2 class="home-section" style="margin-top:0">Join Us</h2>
+                <p>We have openings for PhD students, MSc students, and post-doctoral fellows in
+                   biometrics, computer vision, pattern recognition, image processing, machine learning,
+                   and AI for biology and medicine.</p>
+                <p>
+                    <a class="btn btn-primary" href="{{ '/positions' | relative_url }}">Open positions</a>
+                    <a class="btn btn-outline-secondary" href="{{ '/publications' | relative_url }}">What we publish</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12">
+            <h2 class="home-section">Contact</h2>
+            <address class="home-contact">
+                PAMI Research Group<br>
+                Department of Computer and Information Science<br>
+                Faculty of Science and Technology, University of Macau<br>
+                Avenida da Universidade, Taipa, Macau, China<br>
+                <a href="mailto:bobzhang@um.edu.mo">bobzhang@um.edu.mo</a> &nbsp;&middot;&nbsp;
+                <a href="https://github.com/pamigroup">github.com/pamigroup</a>
+            </address>
         </div>
     </div>
 </div>
