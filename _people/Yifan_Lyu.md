@@ -1,11 +1,11 @@
 ---
 title: Yifan Lyu 呂逸凡
 pname: Yifan Lyu 呂逸凡
-layout: people
-permalink: /people/Yifan_Lyu
+photo: /assets/img/people/Yifan_Lyu.jpg
 status: MSc
-position: M.Sc. Student
+position:
 joined:
+um_id: mc45158
 office: 
 eml: mc45158@um.edu.mo
 website: 

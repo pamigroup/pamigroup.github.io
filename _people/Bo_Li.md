@@ -1,11 +1,11 @@
 ---
 title: Bo Li 李波
 pname: Bo Li 李波
-layout: people
-permalink: /people/Bo_Li
+photo: /assets/img/people/Bo_Li.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
+um_id: yc47955
 eml: Boom985426@gmail.com
 website: https://boom5426.github.io/
 google_scholar: https://scholar.google.com/citations?hl=zh-CN&user=y1myk_IAAAAJ&view_op=list_works&sortby=pubdate

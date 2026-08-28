@@ -1,23 +1,18 @@
 {%- comment -%}
-  单一人员卡片。people 页与个人页共用，避免同一段标记复制多份。
-  参数：
-    person   必填，_people 集合中的一个文档
-    heading  可选，姓名使用的标题级别，默认 h3（个人页传 h1）
+  单一人员卡片。只渲染成员本人提供的信息，不做任何推断补充。
+  姓名链接到本人主页（website）；没有主页的就是纯文本，不另开个人页。
+  参数：person（必填，_people 集合中的一个文档）
 {%- endcomment -%}
 {%- assign p = include.person -%}
-{%- assign hl = include.heading | default: 'h3' -%}
-{%- if p.photo -%}
-  {%- assign photo = p.photo -%}
-{%- else -%}
-  {%- assign photo = p.permalink | prepend: '/assets/img' | append: '.jpg' -%}
-{%- endif -%}
 
 <div class="person-card">
   <div class="row">
     <div class="col-lg-3 col-md-4 person-aside">
-      <img class="person-avatar" src="{{ photo | relative_url }}"
+      {%- if p.photo %}
+      <img class="person-avatar" src="{{ p.photo | relative_url }}"
            width="200" height="200" loading="lazy" decoding="async"
            alt="Portrait of {{ p.pname | strip }}">
+      {%- endif %}
 
       <ul class="person-links list-unstyled">
         {%- if p.office %}
@@ -55,11 +50,15 @@
     </div>
 
     <div class="col-lg-9 col-md-8">
-      <{{ hl }} class="person-name">
-        {%- if hl == 'h1' -%}{{ p.pname }}{%- else -%}<a href="{{ p.permalink | relative_url }}">{{ p.pname }}</a>{%- endif -%}
-      </{{ hl }}>
-      {%- if p.position %}
-      <p class="person-position">{{ p.position }}{% if p.joined %} <span class="person-joined">since {{ p.joined }}</span>{% endif %}</p>
+      <h3 class="person-name">
+        {%- if p.website -%}<a href="{{ p.website }}">{{ p.pname }}</a>{%- else -%}{{ p.pname }}{%- endif -%}
+      </h3>
+      {%- if p.position or p.joined %}
+      <p class="person-position">
+        {{- p.position -}}
+        {%- if p.position and p.joined %}, {% endif -%}
+        {%- if p.joined %}joined {{ p.joined }}{% endif -%}
+      </p>
       {%- endif %}
       <p class="person-desp">{{ p.desp }}</p>
     </div>

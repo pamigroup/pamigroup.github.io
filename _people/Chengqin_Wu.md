@@ -1,11 +1,11 @@
 ---
 title: Chengqin Wu 吴成钦
 pname: Chengqin Wu 吴成钦
-layout: people
-permalink: /people/Chengqin_Wu
+photo: /assets/img/people/Chengqin_Wu.jpg
 status: MSc
-position: M.Sc. Student
+position:
 joined:
+um_id: mc55216
 eml: mc55216@um.edu.mo
 website:
 google_scholar:

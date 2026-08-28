@@ -27,7 +27,6 @@ navbar-links:
   News: "news"
   People: "people"
   Publications: "publications"
-  Software: "software"
   Positions: "positions"
 
 # --- Logo --- #
@@ -230,7 +229,8 @@ plugins:
 
 collections:
   people:
-    output: true
+    # 不单独生成个人页：卡片上的姓名直接链到本人主页，另开一页没有更多信息
+    output: false
 
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189

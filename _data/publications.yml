@@ -1,15 +1,19 @@
 # PAMI Research Group 出版物数据（唯一数据源）。
-# 由 tools/parse_publications.py + tools/backfill_dois.py 从旧的 pages/publications.md 生成。
-# 新增论文：在本文件顶部按同样字段加一条即可，页面会自动按年份分组渲染。
+# 与 Bob Zhang 的 Google Scholar 主页对齐：
+#   https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&sortby=pubdate
 #
 # 字段说明:
-#   title / authors / venue / year / type(book|journal|conference|chapter)  必填
+#   title / authors / venue / year / type  必填
+#     type: book | journal | conference | chapter | preprint
 #   detail    卷期页码等
 #   doi       仅在能确认指向本文时填；宁可留空也不要填错
-#   url       没有 DOI 时的官方链接（例如 IJCAI proceedings）
-#   code      代码仓库；project 项目主页；pdf 本地或外部 PDF
+#   url       没有 DOI 时的官方链接
+#   code / project / pdf   相关资源
 #   note      奖项 / 高被引等
-#   selected  true 时会出现在页面顶部的 Selected Publications
+#
+# 两个待人工处理的标记（处理完请删掉该行）:
+#   _needs_full_authors  作者名来自 Scholar 缩写，CrossRef 尚无记录，待补全名与通讯作者星号
+#   _doi_unresolved      DOI 存疑，原因见该行
 
 papers:
   - title: "Advanced Hand-based Biometrics"
@@ -29,6 +33,142 @@ papers:
     doi: 10.1609/aaai.v40i15.38308
     url:
     code:
+  - title: "H-MEM: Hierarchical Memory for High-Efficiency Long-Term Reasoning in LLM Agents"
+    authors: "Haoran Sun, Shaoning Zeng, <strong>Bob Zhang</strong>"
+    venue: "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    year: 2026
+    type: conference
+    doi: 10.18653/v1/2026.eacl-long.15
+  - title: "MFANet: A Lightweight Network Combining CNN and Mamba for Medical Image Segmentation"
+    authors: "Haozhuo Zhang, <strong>Bob Zhang</strong>, Pinxian Zeng"
+    venue: "International Conference on Pattern Recognition (ICPR)"
+    year: 2026
+    type: conference
+    doi: 10.1007/978-3-032-31666-0_13
+    url:
+    code:
+  - title: "Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification"
+    authors: "C Liu, B Li, <strong>B Zhang</strong>, X Luo, Y Liu, J Wen"
+    venue: "International Conference on Learning Representations 2026"
+    year: 2026
+    type: conference
+    _needs_full_authors: true
+  - title: "Plug-in-and-Play Dual-Domain Mixup Augmentation Network for PET Denoising at Multiple Dose Levels"
+    authors: "Pinxian Zeng, <strong>Bob Zhang</strong>, Haozhuo Zhang"
+    venue: "ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+    year: 2026
+    type: conference
+    doi: 10.1109/icassp55912.2026.11461611
+    url:
+    code:
+  - title: "A Heterogeneous CNN with Transformers for Image Denoising"
+    authors: "Chunwei Tian, Tongtong Cheng, Yingpeng Ma, Qi Zhu, <strong>Bob Zhang</strong>, David Zhang"
+    venue: "IEEE Transactions on Consumer Electronics"
+    year: 2026
+    type: journal
+    doi: 10.1109/tce.2026.3665312
+  - title: "Adaptive fine-grained fusion network for multimodal UAV object detection"
+    authors: "Zhanyan Tang, Zhihao Wu, Mu Li, Jie Wen, <strong>Bob Zhang</strong>, Yong Xu, Jianqiang Li"
+    venue: "IEEE Transactions on Image Processing"
+    year: 2026
+    type: journal
+    doi: 10.1109/tip.2026.3661868
+  - title: "Deep Hashing Palmprint Recognition Framework with Controllable Minimum Inter-Class Distance"
+    authors: "Z Liao, L Leng, Y Liu, J Chu, W Min, ABJ Teoh, <strong>B Zhang</strong>"
+    venue: "IEEE Transactions on Multimedia"
+    year: 2026
+    type: journal
+    _needs_full_authors: true
+  - title: "FedPalm: A general federated learning framework for closed-and open-set palmprint verification"
+    authors: "Ziyuan Yang, Yingyu Chen, Chengrui Gao, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Yi Zhang"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    doi: 10.1109/tifs.2026.3671064
+  - title: "FRIL: Blockchain-Powered Heterogeneous Model Fusion for Robust Food Recognition"
+    authors: "Zhihao Hao, Haisheng Li, <strong>Bob Zhang</strong>, Junping Du"
+    venue: "IEEE Transactions on Multimedia"
+    year: 2026
+    type: journal
+    doi: 10.1109/tmm.2026.3721338
+  - title: "High-Confident Block Diagonal Analysis for Multi-View Palmprint Recognition in Unrestrained Environment"
+    authors: "Shuping Zhao, Lunke Fei, Tingting Chai, Jie Wen, <strong>Bob Zhang</strong>, Jinrong Cui"
+    venue: "IEEE Transactions on Image Processing"
+    year: 2026
+    type: journal
+    doi: 10.1109/tip.2026.3659325
+  - title: "Identity and Style Feature Decoupling Network for Cross-domain Palmprint Recognition"
+    authors: "Yunlong Liu, Lu Leng, Jun Chu, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Ziyuan Yang"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    doi: 10.1109/tifs.2026.3675481
+  - title: "Learning compact semantic information and reliable pseudo-labels for incomplete multi-view multi-label classification"
+    authors: "Yadong Liu, Chengliang Liu, Jie Wen, Li Shen, <strong>Bob Zhang</strong>, Yong Xu"
+    venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+    year: 2026
+    type: journal
+    doi: 10.1109/tpami.2026.3665813
+  - title: "LocSAM: Modular SAM enhancement for dense object localization in complex scenes"
+    authors: "Jingjing Wang, Yong Zhang, Bo Li, Yongli Hu, <strong>Bob Zhang</strong>, Baocai Yin"
+    venue: "Computer Vision and Image Understanding"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.cviu.2026.104878
+  - title: "M2GO: Multimodal protein function prediction via heterogeneous expert interaction"
+    authors: "Xiaoling Luo, Ruli Zheng, Peng Chen, Xiaopeng Jin, Baoyi Pan, <strong>Bob Zhang</strong>, Chengliang Liu"
+    venue: "Pattern Recognition"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.patcog.2026.114434
+  - title: "Multi-layer Subspace Knowledge Transfer Framework for Open-set Recognition"
+    authors: "Jianhang Zhou, Shaoning Zeng, Jia Gu, Yong Xu, Shuping Zhao, <strong>Bob Zhang</strong>, David Zhang"
+    venue: "IEEE Open Journal of the Computer Society"
+    year: 2026
+    type: journal
+    doi: 10.1109/ojcs.2026.3683032
+  - title: "PalmIR: Blind Palmprint Image Restoration with Palm-oriented Mixture-of-Experts and Downstream Alignment for Robust Identification"
+    authors: "P Zeng, C Wu, <strong>B Zhang</strong>"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    _needs_full_authors: true
+  - title: "Palmprint de-identification via diffusion model for high-quality and diverse synthesis"
+    authors: "Licheng Yan, <strong>Bob Zhang</strong>, Andrew Beng Jin Teoh, Lu Leng, Shuyi Li, Yuqi Wang, Ziyuan Yang"
+    venue: "Pattern Recognition"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.patcog.2026.114334
+  - title: "Real2Real: Invariant Style Alignment for Unsupervised One-Shot Real Noisy Image Denoising"
+    authors: "Ruijun Ma, Fubin Pan, Pingwen Liang, Liudan Diao, Jiteng Li, <strong>Bob Zhang</strong>, Long Qi"
+    venue: "Information Fusion"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.inffus.2026.104410
+  - title: "TransCNN-MLDFN: A Multi-level Dynamic Fusion Framework for Incomplete Palmprint and Palm Vein Recognition"
+    authors: "Shanping Yu, Qingqing Sun, Zixin Ye, Liang Zeng, <strong>Bob Zhang</strong>, Shuyi Li"
+    venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
+    year: 2026
+    type: journal
+    doi: 10.1109/tbiom.2026.3707218
+  - title: "MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes"
+    authors: "Bo Li, Qing Wang, Shihang Wang, <strong>Bob Zhang</strong>, Yuzhong Peng, Pinxian Zeng, Chengliang Liu, Mengran Li, Ziyang Tang, Xiaojun Yao, Chuxia Deng, Qianqian Song"
+    venue: "bioRxiv, 2026.04. 22.720110"
+    year: 2026
+    type: preprint
+    doi: 10.64898/2026.04.22.720110
+  - title: "PalmBridge: A Plug-and-Play Feature Alignment Framework for Open-Set Palmprint Verification"
+    authors: "C Zhang, Z Yang, L Yan, S Li, ABJ Teoh, <strong>B Zhang</strong>, Y Zhang"
+    venue: "arXiv preprint arXiv:2601.20351"
+    year: 2026
+    type: preprint
+    _needs_full_authors: true
+  - title: "SurgWMBench: A Vision-Based Benchmark for World-Modeling Surgical Instrument Motion Planning"
+    authors: "H Liu, W Huang, <strong>B Zhang</strong>, W Cai, C Tian, Q Li"
+    venue: "arXiv preprint arXiv:2608.08070"
+    year: 2026
+    type: preprint
+    _needs_full_authors: true
   - title: "Advanced Medical Biometrics"
     authors: "David Zhang, Chaoxun Guo, <strong>Bob Zhang</strong>"
     venue: "World Scientific Publishing Co. Pte Ltd"
@@ -54,6 +194,12 @@ papers:
     doi: 10.1109/icme59968.2025.11209521
     url:
     code:
+  - title: "AdaGV: An Adaptive Generation-Validation Framework for Food Flavor QA Construction"
+    authors: "Lingyu Liu, Jian Cao, Zhihao Hao, Haisheng Li, <strong>Bob Zhang</strong>"
+    venue: "2025 Asian Conference on Artificial Intelligence Technology (ACAIT)"
+    year: 2025
+    type: conference
+    doi: 10.1109/acait67930.2025.11522006
   - title: "DCHM: Dynamic Collaboration of Heterogeneous Models Through Isomerism Learning in a Blockchain-Powered Federated Learning Framework"
     authors: "Zhihao Hao, <strong>Bob Zhang</strong>*, Haisheng Li"
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence"
@@ -72,6 +218,12 @@ papers:
     doi: 10.1109/ijcb65343.2025.11410665
     url:
     code:
+  - title: "Low Rank Based Discriminative Broad Learning Model for Feature Extraction and Classification"
+    authors: "Yujun Mao, Zuobin Ying, Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>"
+    venue: "2025 8th International Conference on Robotic Systems and Applications (ICRSA)"
+    year: 2025
+    type: conference
+    doi: 10.1109/icrsa66467.2025.11383792
   - title: "Multi-scale parallel hybrid network for palmprint recognition"
     authors: "Hao Yang, Shuyi Li, <strong>Bob Zhang</strong>*, Yuqi Wang"
     venue: "ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
@@ -87,7 +239,7 @@ papers:
     year: 2025
     type: conference
     detail: "Montreal/Guangzhou, Canada/China, pp. 1-9"
-    doi: 10.24963/ijcai.2024/129
+    _doi_unresolved: "CrossRef 上同名条目属 IJCAI 2024(第33届)，与本条 IJCAI 2025 不符，待作者确认"
     url:
     code:
   - title: "Towards a Global Spatial-Temporal Food Memory: A Vision for Privacy-Preserving Collaborative Multimedia Analysis"
@@ -105,7 +257,7 @@ papers:
     year: 2025
     type: conference
     detail: "Montreal/Guangzhou, Canada/China, pp. 1-9"
-    doi: 10.24963/ijcai.2024/80
+    _doi_unresolved: "CrossRef 上同名条目属 IJCAI 2024(第33届)，与本条 IJCAI 2025 不符，待作者确认"
     url:
     code:
   - title: "Transforming Classification with Federated Learning on Blockchain: A Unique Model Integration Approach"
@@ -168,6 +320,12 @@ papers:
     type: journal
     url:
     code:
+  - title: "DpFedFKP: Dynamic Personalized Federated Learning for Finger Knuckle Print Recognition"
+    authors: "Shuyi Li, Jianian Hu, <strong>Bob Zhang</strong>, Shanping Yu, Lifang Wu"
+    venue: "Pattern Recognition"
+    year: 2025
+    type: journal
+    doi: 10.1016/j.patcog.2025.112966
   - title: "Dual-Cohesion Metric Learning for Few-Shot Hand-Based Multimodal Recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*, Qinghua Hu"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -245,7 +403,6 @@ papers:
     year: 2025
     type: journal
     doi: 10.1038/s41467-025-67479-w
-    selected: true
     url:
     code:
   - title: "Pre-trained SAM as data augmentation for image segmentation"
@@ -273,7 +430,6 @@ papers:
     type: journal
     detail: "47, no. 6, pp. 4940-4956"
     doi: 10.1109/tpami.2025.3546356
-    selected: true
     url:
     code:
   - title: "SF2Net: Sequence Feature Fusion Network for Palmprint Verification"
@@ -329,7 +485,6 @@ papers:
     detail: "pp. 29–35"
     doi: 10.1145/3711507.3711535
     note: "Best Poster Award"
-    selected: true
     url:
     code:
   - title: "Implicit prompt learning for image denoising"
@@ -523,7 +678,6 @@ papers:
     type: journal
     detail: "vol. 4, no. 1, p. 70"
     note: "Highly Cited"
-    selected: true
     url:
     code:
   - title: "Physics-driven spectrum-consistent federated learning for palmprint verification"
@@ -830,7 +984,6 @@ papers:
     detail: "vol. 134, pp. 109050"
     doi: 10.1016/j.patcog.2022.109050
     note: "Highly Cited"
-    selected: true
     url:
     code:
   - title: "Privacy-preserving biometrics image encryption and digital signature technique using Arnold and ElGamal"
@@ -878,6 +1031,12 @@ papers:
     doi: 10.1007/s11432-021-3575-1
     url:
     code:
+  - title: "A Distributed Computation Model Based on Federated Learning Integrates Heterogeneous models and Consortium Blockchain for Solving Time-Varying Problems"
+    authors: "Z Hao, G Wang, C Tian, <strong>B Zhang</strong>"
+    venue: "arXiv preprint arXiv:2306.16023"
+    year: 2023
+    type: preprint
+    _needs_full_authors: true
   - title: "Information Fusion: Machine Learning Methods"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, David Zhang"
     venue: "Springer Singapore"
@@ -920,7 +1079,6 @@ papers:
     detail: "vol. 53, pp. 1136-1149"
     doi: 10.1109/tsmc.2022.3192635
     note: "Highly Cited"
-    selected: true
     url:
     code:
   - title: "Adaptive graph embedded preserving projection learning for feature extraction and selection"
@@ -2185,7 +2343,6 @@ papers:
     detail: "pp. 101-106"
     doi: 10.1109/icwapr.2018.8521271
     note: "Best Paper Award"
-    selected: true
     url:
     code:
   - title: "Guided learning: A new paradigm for multi-task classification"

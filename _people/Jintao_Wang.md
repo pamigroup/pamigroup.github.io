@@ -1,11 +1,11 @@
 ---
 title: Jintao Wang 王錦濤
 pname: Jintao Wang 王錦濤
-layout: people
-permalink: /people/Jintao_Wang
+photo: /assets/img/people/Jintao_Wang.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
+um_id: yc27444
 office: 
 eml: yc27444@um.edu.mo
 website: 

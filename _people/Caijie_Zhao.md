@@ -1,11 +1,11 @@
 ---
 title: Carina Zhao 赵彩杰
 pname: Carina Zhao 赵彩杰
-layout: people
-permalink: /people/Caijie_Zhao
+photo: /assets/img/people/Caijie_Zhao.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
+um_id: yc47911
 eml: yc47911@um.edu.mo
 website: 
 google_scholar: https://scholar.google.com/citations?hl=en&user=tgdNKeEAAAAJ
