@@ -6,6 +6,17 @@ title: Pattern Analysis and Machine Intelligence (PAMI) Research Group
 # Short description of your site
 description: Pattern Analysis and Machine Intelligence (PAMI) Research Group at the University of Macau
 
+# Canonical site URL. GitHub Pages injects these in production, but local builds,
+# jekyll-sitemap, og:url and rel=canonical all need them set explicitly.
+url: "https://pamigroup.github.io"
+baseurl: ""
+lang: en
+
+keywords: "PAMI, University of Macau, biometrics, palmprint recognition, pattern recognition, computer vision, image processing, medical biometrics, computational biology, machine learning, Bob Zhang"
+
+# 社交分享卡片的默认图（页面自身没有 share-img 时使用）
+og-image: "/assets/img/pami_group.jpg"
+
 # Your name to show in the footer
 author: PAMI Research Group
 
@@ -13,12 +24,11 @@ author: PAMI Research Group
 
 navbar-links:
   Home: "/"
-  # News: "news"
+  News: "news"
   People: "people"
   Publications: "publications"
-  # Software: "software"
+  Software: "software"
   Positions: "positions"
-  # Memories: "photo"
 
 # --- Logo --- #
 
@@ -42,7 +52,6 @@ navbar-links:
 social-network-links:
   email: bobzhang@um.edu.mo
   github: pamigroup
-  twitter: 
   rss: false
 #  reddit: yourname
 #  linkedin: daattali
@@ -73,9 +82,6 @@ share-links-active:
   linkedin: false
   vk: false
   
-# Create a "tags" index page and make tags on each post clickable
-link-tags: true
-
 # Excerpt Word Length - Truncates the excerpt to the specified number of words on the index page
 excerpt_length: 50
 
@@ -107,9 +113,9 @@ footer-link-col: "#404040"
 # Suggest a colour for mobile browsers to use as the browser's theme. This is only supported by a few mobile browsers.
 #mobile-theme-col: "#0085A1"
 
-# For any extra customization, you can include additional CSS files in every page on your site
-#site-css:
-#  - "/assets/css/custom-styles.css"
+# 站点自定义样式，与主题 main.css 分离
+site-css:
+  - "/assets/css/lab.css"
 
 # --- Web Statistics Section --- #
 
@@ -182,7 +188,6 @@ timezone: "Asia/Shanghai"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
-paginate: 5
 
 kramdown:
   input: GFM
@@ -215,18 +220,18 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - beautiful-jekyll-theme.gemspec
+  - staticman.yml
+  - tools/
+  - _drafts/
 
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
 
 collections:
   people:
     output: true
-#    permalink: /people/:title
-  pages:
-    output: true
-    
+
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
 

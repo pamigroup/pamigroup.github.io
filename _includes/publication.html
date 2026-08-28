@@ -1,0 +1,15 @@
+{%- assign p = include.paper -%}
+{%- capture search -%}{{ p.title }} {{ p.authors | strip_html }} {{ p.venue }} {{ p.year }}{%- endcapture -%}
+<li class="pub-item" data-type="{{ p.type }}" data-search="{{ search | downcase | strip | escape }}">
+  <span class="pub-authors">{{ p.authors }}</span>,
+  <span class="pub-title">{{ p.title }}</span>,
+  <em class="pub-venue">{{ p.venue }}</em>{% if p.detail %}, {{ p.detail }}{% endif %}, {{ p.year }}.
+  {%- if p.note %} <span class="pub-note">{{ p.note }}</span>{% endif %}
+  <span class="pub-badges">
+    {%- if p.doi %}<a class="pub-badge" href="https://doi.org/{{ p.doi }}" title="DOI {{ p.doi }}">DOI</a>{% endif %}
+    {%- if p.url %}<a class="pub-badge" href="{{ p.url }}">Link</a>{% endif %}
+    {%- if p.pdf %}<a class="pub-badge" href="{{ p.pdf | relative_url }}">PDF</a>{% endif %}
+    {%- if p.code %}<a class="pub-badge" href="{{ p.code }}">Code</a>{% endif %}
+    {%- if p.project %}<a class="pub-badge" href="{{ p.project }}">Project</a>{% endif %}
+  </span>
+</li>

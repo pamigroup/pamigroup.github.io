@@ -1,0 +1,60 @@
+{%- comment -%}
+  schema.org 结构化数据。首页输出 Organization，个人页输出 Person。
+  Google 用它把实验室名、单位、成员关系连成一个实体。
+{%- endcomment -%}
+{%- if page.url == '/' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "Pattern Analysis and Machine Intelligence (PAMI) Research Group",
+  "alternateName": "PAMI Research Group",
+  "url": {{ site.url | append: site.baseurl | jsonify }},
+  "description": {{ site.description | jsonify }},
+  "email": {{ site.social-network-links.email | jsonify }},
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Macau",
+    "url": "https://www.um.edu.mo/"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Avenida da Universidade, Taipa",
+    "addressLocality": "Macau",
+    "addressCountry": "CN"
+  },
+  "member": [
+    {%- assign members = site.people -%}
+    {%- for m in members -%}
+    {
+      "@type": "Person",
+      "name": {{ m.pname | strip | jsonify }},
+      "jobTitle": {{ m.position | default: '' | jsonify }},
+      "url": {{ m.permalink | absolute_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{%- elsif page.collection == 'people' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ page.pname | strip | jsonify }},
+  "jobTitle": {{ page.position | default: '' | jsonify }},
+  "email": {{ page.eml | default: '' | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  {% if page.orcid %}"identifier": {{ page.orcid | jsonify }},{% endif %}
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Macau"
+  },
+  "memberOf": {
+    "@type": "ResearchOrganization",
+    "name": "Pattern Analysis and Machine Intelligence (PAMI) Research Group",
+    "url": {{ '/' | absolute_url | jsonify }}
+  }
+}
+</script>
+{%- endif -%}

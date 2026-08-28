@@ -1,0 +1,53 @@
+# 实验室动态。首页取最新 5 条，/news 页显示全部。
+#
+# 每条字段:
+#   date   'YYYY-MM' 或 'YYYY'。以下条目均由仓库内已有材料（publications.yml、
+#          alumni.yml、成员 bio）回填，只能确定到年份，请补上准确月份。
+#   text   一句话，可含 Markdown 链接。只写发生在本组的事；成员加入前的成果要写清
+#          是加入之前的工作，不要写成本组动态。
+#   tag    可选: paper / award / book / people / release
+
+- date: '2026'
+  tag: paper
+  text: '"CondDiff-AMO: Integrating Conditional Diffusion Mechanism for Unified Amodal Mask Generation" (Carina Zhao, Bob Zhang) is accepted at **AAAI 2026**.'
+
+- date: '2026'
+  tag: book
+  text: 'Our monograph *Advanced Hand-based Biometrics* is published by [Springer](https://doi.org/10.1007/978-981-95-0970-6).'
+
+- date: '2025'
+  tag: paper
+  text: '[PhenoProfiler](https://doi.org/10.1038/s41467-025-67479-w), our framework for phenotypic learning in image-based drug discovery, is published in **Nature Communications**. [Code](https://github.com/QSong-github/PhenoProfiler)'
+
+- date: '2025'
+  tag: paper
+  text: '"Reliable Representation Learning for Incomplete Multi-View Missing Multi-Label Classification" is accepted at **IEEE TPAMI**. [Code](https://github.com/justsmart/RANK)'
+
+- date: '2025'
+  tag: paper
+  text: '"A Cosine Network for Image Super-Resolution" is accepted at **IEEE Transactions on Image Processing**.'
+
+- date: '2025'
+  tag: award
+  text: 'Hao Yang receives the **2025 FST Best MSc Student Award** and continues to a PhD at the University of Macau.'
+
+- date: '2025'
+  tag: book
+  text: 'Two monographs appear this year: *Advanced Medical Biometrics* (World Scientific) and *Advanced Palmprint Authentication* ([Springer](https://doi.org/10.1007/978-981-96-7101-4)).'
+
+- date: '2024'
+  tag: paper
+  text: 'Our primer on **Linear Discriminant Analysis** is published in [Nature Reviews Methods Primers](https://doi.org/10.1038/s43586-024-00346-y).'
+
+- date: '2024'
+  tag: paper
+  text: '"QFormer: An Efficient Quaternion Transformer for Image Denoising" is accepted at **IJCAI 2024**.'
+
+- date: '2024'
+  tag: award
+  text: 'Shuoyuan Wang receives the **2024 FST Best MSc Student Award** and continues to a PhD at South China University of Technology.'
+
+- date: '2024'
+  tag: people
+  text: 'Chengliang Liu joins the group as a post-doctoral fellow. His earlier doctoral work
+         at Harbin Institute of Technology received the **AAAI 2023 Distinguished Paper Award**.'

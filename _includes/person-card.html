@@ -1,0 +1,67 @@
+{%- comment -%}
+  单一人员卡片。people 页与个人页共用，避免同一段标记复制多份。
+  参数：
+    person   必填，_people 集合中的一个文档
+    heading  可选，姓名使用的标题级别，默认 h3（个人页传 h1）
+{%- endcomment -%}
+{%- assign p = include.person -%}
+{%- assign hl = include.heading | default: 'h3' -%}
+{%- if p.photo -%}
+  {%- assign photo = p.photo -%}
+{%- else -%}
+  {%- assign photo = p.permalink | prepend: '/assets/img' | append: '.jpg' -%}
+{%- endif -%}
+
+<div class="person-card">
+  <div class="row">
+    <div class="col-lg-3 col-md-4 person-aside">
+      <img class="person-avatar" src="{{ photo | relative_url }}"
+           width="200" height="200" loading="lazy" decoding="async"
+           alt="Portrait of {{ p.pname | strip }}">
+
+      <ul class="person-links list-unstyled">
+        {%- if p.office %}
+        <li><i class="fas fa-building" aria-hidden="true"></i> {{ p.office }}</li>
+        {%- endif %}
+        {%- if p.eml %}
+        <li><i class="fas fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:{{ p.eml }}">{{ p.eml }}</a></li>
+        {%- endif %}
+      </ul>
+
+      <p class="person-icons">
+        {%- if p.website %}
+        <a href="{{ p.website }}" title="Personal website" aria-label="{{ p.pname | strip }}: personal website"><i class="fas fa-globe" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.google_scholar %}
+        <a href="{{ p.google_scholar }}" title="Google Scholar" aria-label="{{ p.pname | strip }}: Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.orcid %}
+        <a href="{{ p.orcid }}" title="ORCID" aria-label="{{ p.pname | strip }}: ORCID"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.github %}
+        <a href="{{ p.github }}" title="GitHub" aria-label="{{ p.pname | strip }}: GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.linkedin %}
+        <a href="{{ p.linkedin }}" title="LinkedIn" aria-label="{{ p.pname | strip }}: LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.twitter %}
+        <a href="{{ p.twitter }}" title="Twitter" aria-label="{{ p.pname | strip }}: Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        {%- endif %}
+        {%- if p.cv %}
+        <a href="{{ p.cv | relative_url }}" title="Curriculum vitae" aria-label="{{ p.pname | strip }}: CV"><i class="fas fa-file-alt" aria-hidden="true"></i></a>
+        {%- endif %}
+      </p>
+    </div>
+
+    <div class="col-lg-9 col-md-8">
+      <{{ hl }} class="person-name">
+        {%- if hl == 'h1' -%}{{ p.pname }}{%- else -%}<a href="{{ p.permalink | relative_url }}">{{ p.pname }}</a>{%- endif -%}
+      </{{ hl }}>
+      {%- if p.position %}
+      <p class="person-position">{{ p.position }}{% if p.joined %} <span class="person-joined">since {{ p.joined }}</span>{% endif %}</p>
+      {%- endif %}
+      <p class="person-desp">{{ p.desp }}</p>
+    </div>
+  </div>
+</div>
