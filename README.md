@@ -141,6 +141,9 @@ python3 tools/check_site.py
 `<strong>` 标出本组作者，`*` 表示通讯作者。年份分组、锚点、DOI 徽章、
 类型筛选和搜索都是自动的，不用改页面。
 
+**收录标准：Bob Zhang 必须是作者之一。** 他不在作者列表里的论文不算本组论文，
+即使合作者是本组成员。`tools/check_site.py` 会强制这一条，加错了会直接报错。
+
 数据与 [Bob Zhang 的 Google Scholar](https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&sortby=pubdate)
 对齐。文件里两个待人工处理的标记，处理完把该行删掉：
 

@@ -116,6 +116,10 @@ def check_data():
     p = '_data/publications.yml'
     if os.path.isfile(p):
         d = yaml.safe_load(open(p, encoding='utf-8')) or {}
+        # 收录标准：Bob Zhang 必须是作者之一，他不在的不算本组论文
+        BOB = re.compile(r'\b(Bob\s+Zhang|Yi-?Bo\s+(Bob\s+)?Zhang|B\.\s*Zhang|B\s+Zhang'
+                         r'|Y\.?\s*B\.?\s*Zhang)\b')
+        seen_titles = {}
         for i, x in enumerate(d.get('papers', []), 1):
             for k in ('title', 'authors', 'venue', 'year', 'type'):
                 if not x.get(k):
@@ -125,6 +129,18 @@ def check_data():
             doi = str(x.get('doi') or '')
             if doi and not doi.startswith('10.'):
                 errors.append(f'{p} 第 {i} 条: doi 应以 10. 开头，实际 {doi}')
+
+            authors = re.sub(r'<[^>]*>', '', str(x.get('authors') or ''))
+            title = str(x.get('title') or '')
+            if authors and not BOB.search(authors):
+                errors.append(f'{p} 第 {i} 条: 作者中没有 Bob Zhang，不属于本组论文 -> {title[:60]}')
+            elif authors and '<strong>' not in str(x.get('authors') or ''):
+                warnings.append(f'{p} 第 {i} 条: Bob Zhang 没有用 <strong> 标出 -> {title[:60]}')
+
+            key = re.sub(r'[^a-z0-9]', '', title.lower())[:70]
+            if key and key in seen_titles:
+                warnings.append(f'{p} 第 {i} 条: 标题与第 {seen_titles[key]} 条高度重复 -> {title[:60]}')
+            seen_titles[key] = i
 
 
 def check_assets():
