@@ -70,7 +70,7 @@ phd:
 
 msc:
   - name: Haozhuo Zhang
-    years:          # TODO 待补：在组年份，例如 '2024-2026'
+    years: '2024-2026'
     url: https://adasiii.github.io/
   - name: Tak Hei Wan
     years: '2023-2025'
