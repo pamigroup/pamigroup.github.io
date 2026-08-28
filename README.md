@@ -47,8 +47,8 @@ desp: >-
   三到五句英文第三人称简介，用本人给的原文，不要替他补写。
 
 # ---------- 选填, 留空即可 ----------
-joined: 2026                            # 进入 UM 的年份，决定组内排序
-um_id: ycXXXXX                          # UM 学号；joined 留空时按它排序（学号本身按入学先后递增）
+joined: 2026-08                         # 入组时间，YYYY 或 YYYY-MM，只用于显示
+um_id: mcXXXXX                          # UM 学号，决定组内排序（学号本身按入学先后递增）
 position:                               # 只在职称不能由分组标题表达时才填（例如 Associate Professor）
 office:
 website:                                # 个人主页；填了姓名就会链到这里
@@ -64,7 +64,8 @@ cv:
 两个容易出错的地方：
 
 - `status` 决定此人出现在 People 页的哪一组，**拼错就整个人不显示且不报错**。
-- `joined` 决定组内顺序（进入 UM 越早排越前）。不填的会排在填了的后面，按 `um_id` 排。
+- `um_id` 决定组内顺序，学号越小排越前。**不填的会掉到该组最后**。
+  `joined` 只显示不排序，因为只有部分人填了 `joined` 时会把顺序搞乱。
 
 成员没有提供的信息就留空，不要替他推断补写。
 
@@ -90,6 +91,15 @@ python3 tools/check_site.py
 
 会检查必填字段、`status` 合法性、照片是否存在 / 是否真 JPEG / 是否正方形、
 是否把同一个链接错挂到两个人身上。
+
+如果本地构建过，再核对一次构建产物：
+
+```bash
+jekyll build && python3 tools/check_site.py --site _site
+```
+
+这一步专门挡"构建成功但页面是空的"：Liquid 里写错一个变量名不会报错，
+只会安静地渲染出零个人，Jekyll 照样返回成功。
 
 ### When a member graduates
 
@@ -154,7 +164,7 @@ python3 tools/check_site.py
 
 | 脚本 | 用途 |
 |---|---|
-| `tools/check_site.py` | 站点自检，改完数据跑一次 |
+| `tools/check_site.py` | 站点自检，改完数据跑一次；加 `--site _site` 还会核对构建产物条目数 |
 | `tools/parse_publications.py` | 从旧的 Markdown 出版物列表解析出结构化记录（一次性迁移用） |
 | `tools/backfill_dois.py` | 用 CrossRef 严格回填 DOI，匹配不确定时宁可留空 |
 | `tools/gen_publications_yml.py` | 由上面两步的结果生成 `_data/publications.yml` |

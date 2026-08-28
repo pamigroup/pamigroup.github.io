@@ -1,17 +1,18 @@
 {%- comment -%}
   按 status 渲染一组人员。
-  排序：先按 joined（进入 UM 的年份）升序，资深在前；joined 为空的按 um_id
-  排在后面（UM 学号本身即按入学先后递增）。想要精确顺序，在各人的 md 里填上 joined。
+  排序：按 um_id（UM 学号）升序，学号本身即按入学先后递增，所以资深的排在前面。
+  没有 um_id 的（例如校外合作者）排在最后，按姓名排。
+  joined 只用于显示，不参与排序，避免只有部分人填了 joined 时顺序错乱。
   组内无人时整节不渲染，避免出现空标题。
   参数：status（必填）、title（必填）
 {%- endcomment -%}
 {%- assign grp = site.people | where: 'status', include.status -%}
 {%- if grp.size > 0 -%}
-  {%- assign dated   = grp | where_exp: 'p', 'p.joined' | sort: 'joined' -%}
-  {%- assign undated = grp | where_exp: 'p', 'p.joined == nil' | sort: 'um_id' -%}
+  {%- assign withid = grp | where_exp: 'p', 'p.um_id' | sort: 'um_id' -%}
+  {%- assign noid   = grp | where_exp: 'p', 'p.um_id == nil' | sort: 'pname' -%}
 <section class="people-section">
   <h2 class="people-section-title">{{ include.title }}</h2>
-  {%- for p in dated %}{% include person-card.html person=p %}{% endfor -%}
-  {%- for p in undated %}{% include person-card.html person=p %}{% endfor -%}
+  {%- for p in withid %}{% include person-card.html person=p %}{% endfor -%}
+  {%- for p in noid %}{% include person-card.html person=p %}{% endfor -%}
 </section>
 {%- endif -%}
