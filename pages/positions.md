@@ -7,8 +7,8 @@ permalink: /positions
 
 # Open Positions
 
-Prof. Bob Zhang at the University of Macau, Department of Computer and Information
-Science, invites applications for the positions below.
+Prof. Bob Zhang at the University of Macau, Faculty of Information Science and
+Computing, invites applications for the positions below.
 
 **Research areas.** Biometrics, computer vision, pattern recognition, image processing,
 machine learning, and AI for biology and medicine. See our

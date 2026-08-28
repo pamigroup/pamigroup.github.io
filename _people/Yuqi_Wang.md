@@ -1,10 +1,9 @@
 ---
 title: Yuqi Wang 王宇琦
 pname: Yuqi Wang 王宇琦
-layout: people
-permalink: /people/Yuqi_Wang
+photo: /assets/img/people/Yuqi_Wang.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
 eml: yc37500@um.edu.mo
 website:

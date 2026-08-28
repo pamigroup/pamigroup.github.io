@@ -1,10 +1,9 @@
 ---
 title: Weijing Zhao 赵伟靖
 pname: Weijing Zhao 赵伟靖
-layout: people
-permalink: /people/Weijing_Zhao
+photo: /assets/img/people/Weijing_Zhao.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
 office: E11-2039
 eml: yc47428@um.edu.mo

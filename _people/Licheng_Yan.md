@@ -1,10 +1,9 @@
 ---
 title: Licheng Yan 鄢禮成
 pname: Licheng Yan 鄢禮成
-layout: people
-permalink: /people/Licheng_Yan
+photo: /assets/img/people/Licheng_Yan.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
 eml: yc48110@um.edu.mo
 website:

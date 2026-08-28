@@ -1,15 +1,19 @@
 # PAMI Research Group 出版物数据（唯一数据源）。
-# 由 tools/parse_publications.py + tools/backfill_dois.py 从旧的 pages/publications.md 生成。
-# 新增论文：在本文件顶部按同样字段加一条即可，页面会自动按年份分组渲染。
+# 与 Bob Zhang 的 Google Scholar 主页对齐：
+#   https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&sortby=pubdate
 #
 # 字段说明:
-#   title / authors / venue / year / type(book|journal|conference|chapter)  必填
+#   title / authors / venue / year / type  必填
+#     type: book | journal | conference | chapter | preprint
 #   detail    卷期页码等
 #   doi       仅在能确认指向本文时填；宁可留空也不要填错
-#   url       没有 DOI 时的官方链接（例如 IJCAI proceedings）
-#   code      代码仓库；project 项目主页；pdf 本地或外部 PDF
+#   url       没有 DOI 时的官方链接
+#   code / project / pdf   相关资源
 #   note      奖项 / 高被引等
-#   selected  true 时会出现在页面顶部的 Selected Publications
+#
+# 两个待人工处理的标记（处理完请删掉该行）:
+#   _needs_full_authors  作者名来自 Scholar 缩写，CrossRef 尚无记录，待补全名与通讯作者星号
+#   _doi_unresolved      DOI 存疑，原因见该行
 
 papers:
   - title: "Advanced Hand-based Biometrics"
@@ -18,8 +22,6 @@ papers:
     year: 2026
     type: book
     doi: 10.1007/978-981-95-0970-6
-    url:
-    code:
   - title: "CondDiff-AMO: Integrating Conditional Diffusion Mechanism for Unified Amodal Mask Generation"
     authors: "Carina Zhao, <strong>Bob Zhang</strong>*"
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence"
@@ -27,6 +29,164 @@ papers:
     type: conference
     detail: "40"
     doi: 10.1609/aaai.v40i15.38308
+  - title: "H-MEM: Hierarchical Memory for High-Efficiency Long-Term Reasoning in LLM Agents"
+    authors: "Haoran Sun, Shaoning Zeng, <strong>Bob Zhang</strong>"
+    venue: "Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)"
+    year: 2026
+    type: conference
+    doi: 10.18653/v1/2026.eacl-long.15
+    url:
+    code:
+  - title: "Permutation-Consistent Variational Encoding for Incomplete Multi-View Multi-Label Classification"
+    authors: "C Liu, B Li, <strong>B Zhang</strong>, X Luo, Y Liu, J Wen"
+    venue: "International Conference on Learning Representations 2026"
+    year: 2026
+    type: conference
+    _needs_full_authors: true
+    url:
+    code:
+  - title: "A Heterogeneous CNN with Transformers for Image Denoising"
+    authors: "Chunwei Tian, Tongtong Cheng, Yingpeng Ma, Qi Zhu, <strong>Bob Zhang</strong>, David Zhang"
+    venue: "IEEE Transactions on Consumer Electronics"
+    year: 2026
+    type: journal
+    doi: 10.1109/tce.2026.3665312
+    url:
+    code:
+  - title: "Adaptive fine-grained fusion network for multimodal UAV object detection"
+    authors: "Zhanyan Tang, Zhihao Wu, Mu Li, Jie Wen, <strong>Bob Zhang</strong>, Yong Xu, Jianqiang Li"
+    venue: "IEEE Transactions on Image Processing"
+    year: 2026
+    type: journal
+    doi: 10.1109/tip.2026.3661868
+    url:
+    code:
+  - title: "Deep Hashing Palmprint Recognition Framework with Controllable Minimum Inter-Class Distance"
+    authors: "Z Liao, L Leng, Y Liu, J Chu, W Min, ABJ Teoh, <strong>B Zhang</strong>"
+    venue: "IEEE Transactions on Multimedia"
+    year: 2026
+    type: journal
+    _needs_full_authors: true
+    url:
+    code:
+  - title: "FedPalm: A general federated learning framework for closed-and open-set palmprint verification"
+    authors: "Ziyuan Yang, Yingyu Chen, Chengrui Gao, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Yi Zhang"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    doi: 10.1109/tifs.2026.3671064
+    url:
+    code:
+  - title: "FRIL: Blockchain-Powered Heterogeneous Model Fusion for Robust Food Recognition"
+    authors: "Zhihao Hao, Haisheng Li, <strong>Bob Zhang</strong>, Junping Du"
+    venue: "IEEE Transactions on Multimedia"
+    year: 2026
+    type: journal
+    doi: 10.1109/tmm.2026.3721338
+    url:
+    code:
+  - title: "High-Confident Block Diagonal Analysis for Multi-View Palmprint Recognition in Unrestrained Environment"
+    authors: "Shuping Zhao, Lunke Fei, Tingting Chai, Jie Wen, <strong>Bob Zhang</strong>, Jinrong Cui"
+    venue: "IEEE Transactions on Image Processing"
+    year: 2026
+    type: journal
+    doi: 10.1109/tip.2026.3659325
+    url:
+    code:
+  - title: "Identity and Style Feature Decoupling Network for Cross-domain Palmprint Recognition"
+    authors: "Yunlong Liu, Lu Leng, Jun Chu, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Ziyuan Yang"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    doi: 10.1109/tifs.2026.3675481
+    url:
+    code:
+  - title: "Learning compact semantic information and reliable pseudo-labels for incomplete multi-view multi-label classification"
+    authors: "Yadong Liu, Chengliang Liu, Jie Wen, Li Shen, <strong>Bob Zhang</strong>, Yong Xu"
+    venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+    year: 2026
+    type: journal
+    doi: 10.1109/tpami.2026.3665813
+    url:
+    code:
+  - title: "LocSAM: Modular SAM enhancement for dense object localization in complex scenes"
+    authors: "Jingjing Wang, Yong Zhang, Bo Li, Yongli Hu, <strong>Bob Zhang</strong>, Baocai Yin"
+    venue: "Computer Vision and Image Understanding"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.cviu.2026.104878
+    url:
+    code:
+  - title: "M2GO: Multimodal protein function prediction via heterogeneous expert interaction"
+    authors: "Xiaoling Luo, Ruli Zheng, Peng Chen, Xiaopeng Jin, Baoyi Pan, <strong>Bob Zhang</strong>, Chengliang Liu"
+    venue: "Pattern Recognition"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.patcog.2026.114434
+    url:
+    code:
+  - title: "Multi-layer Subspace Knowledge Transfer Framework for Open-set Recognition"
+    authors: "Jianhang Zhou, Shaoning Zeng, Jia Gu, Yong Xu, Shuping Zhao, <strong>Bob Zhang</strong>, David Zhang"
+    venue: "IEEE Open Journal of the Computer Society"
+    year: 2026
+    type: journal
+    doi: 10.1109/ojcs.2026.3683032
+    url:
+    code:
+  - title: "PalmIR: Blind Palmprint Image Restoration with Palm-oriented Mixture-of-Experts and Downstream Alignment for Robust Identification"
+    authors: "P Zeng, C Wu, <strong>B Zhang</strong>"
+    venue: "IEEE Transactions on Information Forensics and Security"
+    year: 2026
+    type: journal
+    _needs_full_authors: true
+    url:
+    code:
+  - title: "Palmprint de-identification via diffusion model for high-quality and diverse synthesis"
+    authors: "Licheng Yan, <strong>Bob Zhang</strong>, Andrew Beng Jin Teoh, Lu Leng, Shuyi Li, Yuqi Wang, Ziyuan Yang"
+    venue: "Pattern Recognition"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.patcog.2026.114334
+    url:
+    code:
+  - title: "Real2Real: Invariant Style Alignment for Unsupervised One-Shot Real Noisy Image Denoising"
+    authors: "Ruijun Ma, Fubin Pan, Pingwen Liang, Liudan Diao, Jiteng Li, <strong>Bob Zhang</strong>, Long Qi"
+    venue: "Information Fusion"
+    year: 2026
+    type: journal
+    doi: 10.1016/j.inffus.2026.104410
+    url:
+    code:
+  - title: "TransCNN-MLDFN: A Multi-level Dynamic Fusion Framework for Incomplete Palmprint and Palm Vein Recognition"
+    authors: "Shanping Yu, Qingqing Sun, Zixin Ye, Liang Zeng, <strong>Bob Zhang</strong>, Shuyi Li"
+    venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
+    year: 2026
+    type: journal
+    doi: 10.1109/tbiom.2026.3707218
+    url:
+    code:
+  - title: "MVCBench: A Multimodal Benchmark for Drug-induced Virtual Cell Phenotypes"
+    authors: "Bo Li, Qing Wang, Shihang Wang, <strong>Bob Zhang</strong>, Yuzhong Peng, Pinxian Zeng, Chengliang Liu, Mengran Li, Ziyang Tang, Xiaojun Yao, Chuxia Deng, Qianqian Song"
+    venue: "bioRxiv, 2026.04. 22.720110"
+    year: 2026
+    type: preprint
+    doi: 10.64898/2026.04.22.720110
+    url:
+    code:
+  - title: "PalmBridge: A Plug-and-Play Feature Alignment Framework for Open-Set Palmprint Verification"
+    authors: "C Zhang, Z Yang, L Yan, S Li, ABJ Teoh, <strong>B Zhang</strong>, Y Zhang"
+    venue: "arXiv preprint arXiv:2601.20351"
+    year: 2026
+    type: preprint
+    _needs_full_authors: true
+    url:
+    code:
+  - title: "SurgWMBench: A Vision-Based Benchmark for World-Modeling Surgical Instrument Motion Planning"
+    authors: "H Liu, W Huang, <strong>B Zhang</strong>, W Cai, C Tian, Q Li"
+    venue: "arXiv preprint arXiv:2608.08070"
+    year: 2026
+    type: preprint
+    _needs_full_authors: true
     url:
     code:
   - title: "Advanced Medical Biometrics"
@@ -35,16 +195,12 @@ papers:
     year: 2025
     type: book
     doi: 10.1142/14426
-    url:
-    code:
   - title: "Advanced Palmprint Authentication"
     authors: "David Zhang, Dandan Fan, Xu Liang, <strong>Bob Zhang</strong>"
     venue: "Springer Singapore"
     year: 2025
     type: book
     doi: 10.1007/978-981-96-7101-4
-    url:
-    code:
   - title: "A GAN-based Data Poisoning Backdoor Attack Method for Palmprint Recognition CNNs"
     authors: "Yuqi Wang, <strong>Bob Zhang</strong>*"
     venue: "2025 IEEE International Conference on Multimedia and Expo (ICME)"
@@ -52,6 +208,12 @@ papers:
     type: conference
     detail: "Nantes, France, pp. 1-6"
     doi: 10.1109/icme59968.2025.11209521
+  - title: "AdaGV: An Adaptive Generation-Validation Framework for Food Flavor QA Construction"
+    authors: "Lingyu Liu, Jian Cao, Zhihao Hao, Haisheng Li, <strong>Bob Zhang</strong>"
+    venue: "2025 Asian Conference on Artificial Intelligence Technology (ACAIT)"
+    year: 2025
+    type: conference
+    doi: 10.1109/acait67930.2025.11522006
     url:
     code:
   - title: "DCHM: Dynamic Collaboration of Heterogeneous Models Through Isomerism Learning in a Blockchain-Powered Federated Learning Framework"
@@ -61,8 +223,6 @@ papers:
     type: conference
     detail: "vol. 39, no. 16, pp. 17077-17084"
     doi: 10.1609/aaai.v39i16.33877
-    url:
-    code:
   - title: "Integrating LLM in Privacy-Sensitive Age Estimation: A Tongue-Based Biometric Framework"
     authors: "Jian Hwee Ang, Aotong Li, Jintao Wang, <strong>Bob Zhang</strong>*"
     venue: "IJCB 2025 – 2025 IEEE International Joint Conference on Biometrics (IJCB)"
@@ -70,6 +230,12 @@ papers:
     type: conference
     detail: "pp. 1-8"
     doi: 10.1109/ijcb65343.2025.11410665
+  - title: "Low Rank Based Discriminative Broad Learning Model for Feature Extraction and Classification"
+    authors: "Yujun Mao, Zuobin Ying, Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>"
+    venue: "2025 8th International Conference on Robotic Systems and Applications (ICRSA)"
+    year: 2025
+    type: conference
+    doi: 10.1109/icrsa66467.2025.11383792
     url:
     code:
   - title: "Multi-scale parallel hybrid network for palmprint recognition"
@@ -79,17 +245,13 @@ papers:
     type: conference
     detail: "pp. 1-5"
     doi: 10.1109/icassp49660.2025.10890432
-    url:
-    code:
   - title: "Omni-Dimensional State Space Model-driven SAM for Pixel-level Anomaly Detection"
     authors: "Chao Huang, Qianyi Li, Jie Wen, <strong>Bob Zhang</strong>*"
     venue: "IJCAI 2025 – 34th International Joint Conference on Artificial Intelligence"
     year: 2025
     type: conference
     detail: "Montreal/Guangzhou, Canada/China, pp. 1-9"
-    doi: 10.24963/ijcai.2024/129
-    url:
-    code:
+    _doi_unresolved: "CrossRef 上同名条目属 IJCAI 2024(第33届)，与本条 IJCAI 2025 不符，待作者确认"
   - title: "Towards a Global Spatial-Temporal Food Memory: A Vision for Privacy-Preserving Collaborative Multimedia Analysis"
     authors: "Zhihao Hao, <strong>Bob Zhang</strong>*, Haisheng Li"
     venue: "Proceedings of the 33rd ACM International Conference on Multimedia"
@@ -97,17 +259,13 @@ papers:
     type: conference
     detail: "pp. 1-8"
     doi: 10.1145/3746027.3758154
-    url:
-    code:
   - title: "Towards VLM-based Hybrid Explainable Prompt Enhancement for Zero-Shot Industrial Anomaly Detection"
     authors: "Weichao Cai, Weiliang Huang, Yunkang Cao, Chao Huang, Fei Yuan, <strong>Bob Zhang</strong>, Jie Wen"
     venue: "IJCAI 2025 – 34th International Joint Conference on Artificial Intelligence"
     year: 2025
     type: conference
     detail: "Montreal/Guangzhou, Canada/China, pp. 1-9"
-    doi: 10.24963/ijcai.2024/80
-    url:
-    code:
+    _doi_unresolved: "CrossRef 上同名条目属 IJCAI 2024(第33届)，与本条 IJCAI 2025 不符，待作者确认"
   - title: "Transforming Classification with Federated Learning on Blockchain: A Unique Model Integration Approach"
     authors: "Zhihao Hao, <strong>Bob Zhang</strong>*, Haisheng Li"
     venue: "ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
@@ -115,16 +273,12 @@ papers:
     type: conference
     detail: "pp. 1-5"
     doi: 10.1109/icassp49660.2025.10888555
-    url:
-    code:
   - title: "A Cosine Network for Image Super-Resolution"
     authors: "Chunwei Tian, Chengyuan Zhang, <strong>Bob Zhang</strong>*, Zhiwu Li, C. L. Philip Chen, David Zhang"
     venue: "IEEE Transactions on Image Processing"
     year: 2025
     type: journal
     doi: 10.1109/tip.2025.3645630
-    url:
-    code:
   - title: "A Dynamic Transformer Network for Vehicle Detection"
     authors: "Chunwei Tian, Kai Liu, <strong>Bob Zhang</strong>*, Zhixiang Huang, Chia-Wen Lin, David Zhang"
     venue: "IEEE Transactions on Consumer Electronics"
@@ -132,8 +286,6 @@ papers:
     type: journal
     detail: "pp. 1-8"
     doi: 10.1109/tce.2025.3565318
-    url:
-    code:
   - title: "A Tree-guided CNN for image super-resolution"
     authors: "Chunwei Tian, Mingjian Song, Xiaopeng Fan, Xiangtao Zheng, <strong>Bob Zhang</strong>*, David Zhang"
     venue: "IEEE Transactions on Consumer Electronics"
@@ -141,8 +293,6 @@ papers:
     type: journal
     detail: "pp. 1-10"
     doi: 10.1109/tce.2025.3572732
-    url:
-    code:
   - title: "Beyond Static Features: A Novel Dynamic Palmprint Verification Framework Empowered by Generative Models"
     authors: "Ziyuan Yang, Lu Leng, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>*, Yi Zhang"
     venue: "IEEE Signal Processing Letters"
@@ -150,8 +300,6 @@ papers:
     type: journal
     detail: "pp. 1-5"
     doi: 10.1109/lsp.2025.3611328
-    url:
-    code:
   - title: "Confident Local Structure-Aware Incomplete Multiview Spectral Clustering"
     authors: "Wai Keung Wong, Lusi Li, Lunke Fei, <strong>Bob Zhang</strong>, Anne Toomey, Jie Wen"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -159,13 +307,17 @@ papers:
     type: journal
     detail: "55, no. 4, pp. 3013-3025"
     doi: 10.1109/tsmc.2025.3537801
-    url:
-    code:
   - title: "Deep Learning in Palmprint Recognition: A Comprehensive Survey"
     authors: "Chengrui Gao, Ziyuan Yang, Wei Jia, Lu Leng, <strong>Bob Zhang</strong>, Andrew Beng Jin Teoh"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
     year: 2025
     type: journal
+  - title: "DpFedFKP: Dynamic Personalized Federated Learning for Finger Knuckle Print Recognition"
+    authors: "Shuyi Li, Jianian Hu, <strong>Bob Zhang</strong>, Shanping Yu, Lifang Wu"
+    venue: "Pattern Recognition"
+    year: 2025
+    type: journal
+    doi: 10.1016/j.patcog.2025.112966
     url:
     code:
   - title: "Dual-Cohesion Metric Learning for Few-Shot Hand-Based Multimodal Recognition"
@@ -175,8 +327,6 @@ papers:
     type: journal
     detail: "vol. 20, pp. 3566-3575"
     doi: 10.1109/tifs.2025.3551646
-    url:
-    code:
   - title: "Dynamic Personalized Federated Learning for Cross-spectral Palmprint Recognition"
     authors: "Shuyi Li, Jianian Hu, <strong>Bob Zhang</strong>, Xin Ning, Lifang Wu"
     venue: "IEEE Transactions on Image Processing"
@@ -184,8 +334,6 @@ papers:
     type: journal
     detail: "vol. 34, pp. 4885-4895"
     doi: 10.1109/tip.2025.3592508
-    url:
-    code:
   - title: "Enhanced acceleration for generalized nonconvex low-rank matrix learning"
     authors: "Hengmin Zhang, Jian Yang, Wenli Du, <strong>Bob Zhang</strong>, Zhiyuan Zha, Bihan Wen"
     venue: "Chinese Journal of Electronics"
@@ -193,8 +341,6 @@ papers:
     type: journal
     detail: "vol. 34, no. 1, pp. 98-113"
     doi: 10.23919/cje.2023.00.340
-    url:
-    code:
   - title: "Implicit Multi-Scale Swin Transformer Network for Image Denoising"
     authors: "Qi Zhang, Yuwei Ding, Weiqi Zhang, Yian Zhu, <strong>Bob Zhang</strong>, Jerry Chun-Wei Lin"
     venue: "IEEE Transactions on Consumer Electronics"
@@ -202,16 +348,12 @@ papers:
     type: journal
     detail: "vol. 71, no. 2, pp. 5584-5594"
     doi: 10.1109/tce.2025.3565390
-    url:
-    code:
   - title: "Learning Multilayer Feature Projection for Homogeneous and Heterogeneous Palmprint Recognition"
     authors: "Lunke Fei, Kaiting Huang, Shuping Zhao, Qi Zhu, <strong>Bob Zhang</strong>*, Wei Jia"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
     year: 2025
     type: journal
     doi: 10.1109/tsmc.2025.3647704
-    url:
-    code:
   - title: "Multi-Order Extension Codes for Palmprint Recognition"
     authors: "Fengxiang Liao, Lu Leng, Ziyuan Yang, <strong>Bob Zhang</strong>"
     venue: "International Journal of Neural Systems"
@@ -219,8 +361,6 @@ papers:
     type: journal
     detail: "vol. 35, no. 8, pp. 2550039"
     doi: 10.1142/s012906572550039x
-    url:
-    code:
   - title: "Multimodal Evidential Learning for Open-World Weakly-Supervised Video Anomaly Detection"
     authors: "Chao Huang, Weiliang Huang, Qiuping Jiang, Wei Wang, Jie Wen, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Multimedia"
@@ -228,8 +368,6 @@ papers:
     type: journal
     detail: "vol. 27, pp. 3132-3143"
     doi: 10.1109/tmm.2025.3557682
-    url:
-    code:
   - title: "PalmMamba: Palm Intrinsic Features Learning Selective State Space Model for Palmprint Image Denoising"
     authors: "Zhu Wang, Lunke Fei, Shuping Zhao, <strong>Bob Zhang</strong>*, Qi Zhu, Imad Rida"
     venue: "IEEE Transactions on Multimedia"
@@ -237,17 +375,12 @@ papers:
     type: journal
     detail: "pp. 1-11"
     doi: 10.1109/tmm.2025.3599093
-    url:
-    code:
   - title: "PhenoProfiler: advancing phenotypic learning for image-based drug discovery"
     authors: "Bo Li, <strong>Bob Zhang</strong>*, Chengyang Zhang, Minghao Zhou, Weiliang Huang, Shihang Wang, Qing Wang, Mengran Li, Yong Zhang, Qianqian Song"
     venue: "Nature Communications"
     year: 2025
     type: journal
     doi: 10.1038/s41467-025-67479-w
-    selected: true
-    url:
-    code:
   - title: "Pre-trained SAM as data augmentation for image segmentation"
     authors: "Junjun Wu, Yunbo Rao, Shaoning Zeng, <strong>Bob Zhang</strong>"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -255,8 +388,6 @@ papers:
     type: journal
     detail: "vol. 10, no. 1, pp. 268-282"
     doi: 10.1049/cit2.12381
-    url:
-    code:
   - title: "Prototype-guided and dynamic-aware video anomaly detection"
     authors: "Chao Huang, Qianyi Li, <strong>Bob Zhang</strong>*"
     venue: "Neural Networks"
@@ -264,8 +395,6 @@ papers:
     type: journal
     detail: "vol. 189, pp. 107583"
     doi: 10.1016/j.neunet.2025.107583
-    url:
-    code:
   - title: "Reliable representation learning for incomplete multi-view missing multi-label classification"
     authors: "Chengliang Liu, Jie Wen, Yong Xu, <strong>Bob Zhang</strong>, Liqiang Nie, Min Zhang"
     venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
@@ -273,9 +402,6 @@ papers:
     type: journal
     detail: "47, no. 6, pp. 4940-4956"
     doi: 10.1109/tpami.2025.3546356
-    selected: true
-    url:
-    code:
   - title: "SF2Net: Sequence Feature Fusion Network for Palmprint Verification"
     authors: "Yunlong Liu, Lu Leng, Ziyuan Yang, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -283,8 +409,6 @@ papers:
     type: journal
     detail: "pp. 1-15"
     doi: 10.1109/tifs.2025.3611692
-    url:
-    code:
   - title: "TCSR‐SQL: Towards Table Content‐Aware Text‐to‐SQL With Self‐Retrieval"
     authors: "Wenbo Xu, Liang Yan, Chuanyi Liu, Peiyi Han, Haifeng Zhu, Yong Xu, Yingwei Liang, <strong>Bob Zhang</strong>"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -292,8 +416,6 @@ papers:
     type: journal
     detail: "pp. 1-15"
     doi: 10.1049/cit2.70071
-    url:
-    code:
   - title: "Towards Mobile Palmprint Recognition via Multi-view Hierarchical Graph Learning"
     authors: "Shuping Zhao, Lunke Fei, <strong>Bob Zhang</strong>*, Jie Wen, Jinrong Cui"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -301,8 +423,6 @@ papers:
     type: journal
     detail: "vol. 20, pp. 101-113"
     doi: 10.1109/tifs.2024.3497805
-    url:
-    code:
   - title: "Voice-AttentionNet: Voice-Based Multi-Disease Detection with Lightweight Attention-Based Temporal Convolutional Neural Network"
     authors: "Jintao Wang, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "AI"
@@ -310,8 +430,6 @@ papers:
     type: journal
     detail: "vol. 6, no. 4, pp. 68"
     doi: 10.3390/ai6040068
-    url:
-    code:
   - title: "A Generative Method for Finger Knuckle Print Recognition"
     authors: "Yuqi Wang, <strong>Bob Zhang</strong>*, Shuyi Li, Hao Yang"
     venue: "International Conference on Pattern Recognition"
@@ -319,8 +437,6 @@ papers:
     type: conference
     detail: "pp. 288–302"
     doi: 10.1007/978-3-031-78104-9_20
-    url:
-    code:
   - title: "A Multi-Slice Encoding Direction Extraction Network for Palmprint Recognition"
     authors: "Hao Yang, Shuyi Li, <strong>Bob Zhang</strong>*"
     venue: "Proceedings of the 2024 3rd International Symposium on Computing and Artificial Intelligence"
@@ -329,25 +445,18 @@ papers:
     detail: "pp. 29–35"
     doi: 10.1145/3711507.3711535
     note: "Best Poster Award"
-    selected: true
-    url:
-    code:
   - title: "Implicit prompt learning for image denoising"
     authors: "Yao Lu, Bo Jiang, Guangming Lu, <strong>Bob Zhang</strong>"
     venue: "Proceedings of the Thirty-Third International Joint Conference on Artificial Intelligence"
     year: 2024
     type: conference
     detail: "pp. 4678–4686"
-    url:
-    code:
   - title: "Open-vocabulary calibration for fine-tuned CLIP"
     authors: "Shuoyuan Wang, Jindong Wang, Guoqing Wang, <strong>Bob Zhang</strong>, Kaiyang Zhou, Hongxin Wei"
     venue: "Proceedings of the 41st International Conference on Machine Learning"
     year: 2024
     type: conference
     detail: "pp. 51734-51754"
-    url:
-    code:
   - title: "Optimization-free test-time adaptation for cross-person activity recognition"
     authors: "Shuoyuan Wang, Jindong Wang, Huajun Xi, <strong>Bob Zhang</strong>*, Lei Zhang, Hongxin Wei"
     venue: "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies"
@@ -355,16 +464,12 @@ papers:
     type: conference
     detail: "vol. 7, no. 4, pp. 1–27"
     doi: 10.1145/3631450
-    url:
-    code:
   - title: "QFormer: An efficient quaternion transformer for image denoising"
     authors: "Bo Jiang, Yao Lu, Guangming Lu, <strong>Bob Zhang</strong>"
     venue: "Proceedings of the 33rd International Joint Conference on Artificial Intelligence"
     year: 2024
     type: conference
     detail: "pp. 4237–4245"
-    url:
-    code:
   - title: "Uncertainty-aware pseudo-labeling and dual graph driven network for incomplete multi-view multi-label classification"
     authors: "Wulin Xie, Xiaohuan Lu, Yadong Liu, Jiang Long, <strong>Bob Zhang</strong>, Shuping Zhao, Jie Wen"
     venue: "Proceedings of the 32nd ACM International Conference on Multimedia"
@@ -372,8 +477,6 @@ papers:
     type: conference
     detail: "pp. 6656–6665"
     doi: 10.1145/3664647.3680932
-    url:
-    code:
   - title: "A deep convolutional neural network for diabetic retinopathy detection via mining local and long-range dependence"
     authors: "Xiaoling Luo, Wei Wang, Yong Xu, Zhihui Lai, Xiaopeng Jin, <strong>Bob Zhang</strong>, David Zhang"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -381,8 +484,6 @@ papers:
     type: journal
     detail: "vol. 9, no. 1, pp. 153–166"
     doi: 10.1049/cit2.12155
-    url:
-    code:
   - title: "A dual-level cancelable framework for palmprint verification and hack-proof data storage"
     authors: "Ziyuan Yang, Ming Kang, Andrew Beng Jin Teoh, Chengrui Gao, Wen Chen, <strong>Bob Zhang</strong>, Yi Zhang"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -390,8 +491,6 @@ papers:
     type: journal
     detail: "vol. 19, pp. 8587-8599"
     doi: 10.1109/tifs.2024.3461869
-    url:
-    code:
   - title: "A multi-feature-based intelligent redundancy elimination scheme for cloud-assisted health systems"
     authors: "Ling Xiao, Beiji Zou, Xiaoyan Kui, Chengzhang Zhu, Wensheng Zhang, Xuebing Yang, <strong>Bob Zhang</strong>"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -399,8 +498,6 @@ papers:
     type: journal
     detail: "vol. 9, no. 2, pp. 491–510"
     doi: 10.1049/cit2.12211
-    url:
-    code:
   - title: "A self-supervised network for image denoising and watermark removal"
     authors: "Chunwei Tian, Jingyu Xiao, <strong>Bob Zhang</strong>*, Wangmeng Zuo, Yudong Zhang, Chia-Wen Lin"
     venue: "Neural Networks"
@@ -408,8 +505,6 @@ papers:
     type: journal
     detail: "vol. 174, p. 106218"
     doi: 10.1016/j.neunet.2024.106218
-    url:
-    code:
   - title: "An end-to-end occluded person re-identification network with smoothing corrupted feature prediction"
     authors: "Carina Zhao, Ying Qin, <strong>Bob Zhang</strong>*, Yajie Zhao, Baoyun Wu"
     venue: "Artificial Intelligence Review"
@@ -417,8 +512,6 @@ papers:
     type: journal
     detail: "vol. 58, no. 2, p. 53"
     doi: 10.1007/s10462-024-11047-z
-    url:
-    code:
   - title: "An Enhanced GAN for Image Generation"
     authors: "Chunwei Tian, Haoyang Gao, Pengwei Wang, <strong>Bob Zhang</strong>*"
     venue: "Computers, Materials & Continua"
@@ -426,16 +519,12 @@ papers:
     type: journal
     detail: "vol. 80, no. 1"
     doi: 10.32604/cmc.2024.052097
-    url:
-    code:
   - title: "Complete region of interest for unconstrained palmprint recognition"
     authors: "Le Su, Lunke Fei, <strong>Bob Zhang</strong>, Shuping Zhao, Jie Wen, Yong Xu"
     venue: "IEEE Transactions on Image Processing"
     year: 2024
     type: journal
     detail: "vol. 33, pp. 3662–3675"
-    url:
-    code:
   - title: "Discriminative multiview learning for robust palmprint feature representation and recognition"
     authors: "Shuyi Li, Jianhang Zhou, <strong>Bob Zhang</strong>*, Lifang Wu, Meng Jian"
     venue: "IEEE Transactions on Biometrics, Behavior, and Identity Science"
@@ -443,8 +532,6 @@ papers:
     type: journal
     detail: "vol. 6, no. 3, pp. 304–313"
     doi: 10.1109/tbiom.2024.3401574
-    url:
-    code:
   - title: "Dual low-rank structure embedding for robust visual information processing"
     authors: "Jianhang Zhou, Hengmin Zhang, Shuyi Li, <strong>Bob Zhang</strong>*, Leyuan Fang, David Zhang"
     venue: "Knowledge-Based Systems"
@@ -452,16 +539,12 @@ papers:
     type: journal
     detail: "vol. 296, p. 111821"
     doi: 10.1016/j.knosys.2024.111821
-    url:
-    code:
   - title: "Enhancing generalized spectral clustering with embedding Laplacian graph regularization"
     authors: "Hengmin Zhang, Jian Yang, <strong>Bob Zhang</strong>, Yang Tang, Wenli Du, Bihan Wen"
     venue: "CAAI Transactions on Intelligence Technology"
     year: 2024
     type: journal
     doi: 10.1049/cit2.12308
-    url:
-    code:
   - title: "Facing Differences of Similarity: Intra-and Inter-Correlation Unsupervised Learning for Chest X-Ray Anomaly Detection"
     authors: "Shicheng Xu, Wei Li, Zuoyong Li, Tiesong Zhao, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Medical Imaging"
@@ -469,8 +552,6 @@ papers:
     type: journal
     detail: "vol. 44, no. 2, pp. 801-814"
     doi: 10.1109/tmi.2024.3461231
-    url:
-    code:
   - title: "Hand-based multimodal biometric fusion: A review"
     authors: "Shuyi Li, Lunke Fei, <strong>Bob Zhang</strong>, Xin Ning, Lifang Wu"
     venue: "Information Fusion"
@@ -478,8 +559,6 @@ papers:
     type: journal
     detail: "vol. 109, p. 102418"
     doi: 10.1016/j.inffus.2024.102418
-    url:
-    code:
   - title: "Hgaiqa: A novel hand-geometry aware image quality assessment framework for contactless palmprint recognition"
     authors: "Chunsheng Zhang, Xu Liang, Dandan Fan, Junan Chen, <strong>Bob Zhang</strong>, Baoyuan Wu, David Zhang"
     venue: "IEEE Transactions on Instrumentation and Measurement"
@@ -487,8 +566,6 @@ papers:
     type: journal
     detail: "vol. 73, pp. 1-13"
     doi: 10.1109/tim.2024.3485454
-    url:
-    code:
   - title: "Latent linear discriminant analysis for feature extraction via isometric structural learning"
     authors: "Jianhang Zhou, Qi Zhang, Shaoning Zeng, <strong>Bob Zhang</strong>*, Leyuan Fang"
     venue: "Pattern Recognition"
@@ -496,8 +573,6 @@ papers:
     type: journal
     detail: "vol. 149, p. 110218"
     doi: 10.1016/j.patcog.2023.110218
-    url:
-    code:
   - title: "Learning attention in the frequency domain for flexible real photograph denoising"
     authors: "Ruijun Ma, Yaoxuan Zhang, <strong>Bob Zhang</strong>*, Leyuan Fang, Dong Huang, Long Qi"
     venue: "IEEE Transactions on Image Processing"
@@ -505,8 +580,6 @@ papers:
     type: journal
     detail: "vol. 33, pp. 3707–3721"
     doi: 10.1109/tip.2024.3404253
-    url:
-    code:
   - title: "Learning frequency-aware common feature for VIS-NIR heterogeneous palmprint recognition"
     authors: "Lunke Fei, Le Su, <strong>Bob Zhang</strong>, Shuping Zhao, Jie Wen, Xiaoping Li"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -514,8 +587,6 @@ papers:
     type: journal
     detail: "vol. 19, pp. 7604-7618"
     doi: 10.1109/tifs.2024.3441945
-    url:
-    code:
   - title: "Linear discriminant analysis"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*, Jian Yang, Jianhang Zhou, Yong Xu"
     venue: "Nature Reviews Methods Primers"
@@ -523,9 +594,6 @@ papers:
     type: journal
     detail: "vol. 4, no. 1, p. 70"
     note: "Highly Cited"
-    selected: true
-    url:
-    code:
   - title: "Physics-driven spectrum-consistent federated learning for palmprint verification"
     authors: "Ziyuan Yang, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Lu Leng, Yi Zhang"
     venue: "International Journal of Computer Vision"
@@ -533,8 +601,6 @@ papers:
     type: journal
     detail: "vol. 132, no. 10, pp. 4253–4268"
     doi: 10.1007/s11263-024-02077-9
-    url:
-    code:
   - title: "Probabilistic nuclear-norm matrix regression regularized by random graph theory"
     authors: "Jianhang Zhou, Shuyi Li, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Emerging Topics in Computational Intelligence"
@@ -542,8 +608,6 @@ papers:
     type: journal
     detail: "vol. 8, no. 4, pp. 2762–2774"
     doi: 10.1109/tetci.2024.3372406
-    url:
-    code:
   - title: "Robust and sparse least square regression for finger vein and finger knuckle print recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*, Lifang Wu, Ruijun Ma, Xin Ning"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -551,8 +615,6 @@ papers:
     type: journal
     detail: "vol. 19, pp. 2709–2719"
     doi: 10.1109/tifs.2024.3352389
-    url:
-    code:
   - title: "Sparse representation scheme with enhanced medium pixel intensity for face recognition"
     authors: "Xuexue Zhang, Yongjun Zhang, Zewei Wang, Wei Long, Weihao Gao, <strong>Bob Zhang</strong>"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -560,8 +622,6 @@ papers:
     type: journal
     detail: "vol. 9, no. 1, pp. 116–127"
     doi: 10.1049/cit2.12247
-    url:
-    code:
   - title: "Tensorized multi-view low-rank approximation based robust hand-print recognition"
     authors: "Shuping Zhao, Lunke Fei, <strong>Bob Zhang</strong>*, Jie Wen, Pengyang Zhao"
     venue: "IEEE Transactions on Image Processing"
@@ -569,8 +629,6 @@ papers:
     type: journal
     detail: "vol. 33, pp. 3328–3340"
     doi: 10.1109/tip.2024.3393291
-    url:
-    code:
   - title: "Uncertainty-aware prototypical learning for anomaly detection in medical images"
     authors: "Chao Huang, Yushu Shi, <strong>Bob Zhang</strong>*, Ke Lyu"
     venue: "Neural Networks"
@@ -578,8 +636,6 @@ papers:
     type: journal
     detail: "vol. 175, p. 106284"
     doi: 10.1016/j.neunet.2024.106284
-    url:
-    code:
   - title: "Unsupervised color-based nuclei segmentation in histopathology images with various color spaces and K values selection"
     authors: "Qi Zhang, Zuobin Ying, Jian Shen, Seng-Ka Kou, Jingzhang Sun, <strong>Bob Zhang</strong>*"
     venue: "International Journal of Image and Graphics"
@@ -587,8 +643,6 @@ papers:
     type: journal
     detail: "p. 2550061"
     doi: 10.1142/s0219467825500615
-    url:
-    code:
   - title: "Incomplete Multi-View Clustering with Regularized Hierarchical Graph"
     authors: "Shuping Zhao, Lunke Fei, Jie Wen, <strong>Bob Zhang</strong>*, Pengyang Zhao"
     venue: "ACM Multimedia 2023 – 31st ACM International Conference on Multimedia"
@@ -596,8 +650,6 @@ papers:
     type: conference
     detail: "Ottawa, ON, Canada, pp. 3060-3068"
     doi: 10.1145/3581783.3612241
-    url:
-    code:
   - title: "Tensorized incomplete multi-view clustering with intrinsic graph completion"
     authors: "Shuping Zhao, Jie Wen, Lunke Fei, <strong>Bob Zhang</strong>*"
     venue: "AAAI 2023 – 37th AAAI Conference on Artificial Intelligence"
@@ -605,16 +657,12 @@ papers:
     type: conference
     detail: "Washington, DC, USA, pp. 11327-11335"
     doi: 10.1609/aaai.v37i9.26340
-    url:
-    code:
   - title: "A deep learning method for predicting the minimum inhibitory concentration of antimicrobial peptides against Escherichia coli using Multi-Branch-CNN and Attention"
     authors: "Jielu Yan, <strong>Bob Zhang</strong>*, Mingliang Zhou, François-Xavier Campbell-Valois, Shirley W.I. Siu"
     venue: "mSystems"
     year: 2023
     type: journal
     detail: "vol. 8, no. 4, pp. e00345-23"
-    url:
-    code:
   - title: "A novel method using LSTM-RNN to generate smart contracts code templates for improved usability"
     authors: "Zhihao Hao, <strong>Bob Zhang</strong>*, Dianhui Mao, Jerome Yen, Zhihua Zhao, Min Zuo, Haisheng Li, Cheng-Zhong Xu"
     venue: "Multimedia Tools and Applications"
@@ -622,8 +670,6 @@ papers:
     type: journal
     detail: "vol. 82, no. 27, pp. 41669-41699"
     doi: 10.1007/s11042-023-14592-x
-    url:
-    code:
   - title: "A novel public sentiment analysis method based on an isomerism learning model via multiphase processing"
     authors: "Zhihao Hao, Guancheng Wang, <strong>Bob Zhang</strong>*, Zhuowen Feng, Haisheng Li, Fahui Chong, Yan Pan, Wei Li"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -631,8 +677,6 @@ papers:
     type: journal
     detail: "vol. 36, no. 1, pp. 249-259"
     doi: 10.1109/tnnls.2023.3274912
-    url:
-    code:
   - title: "A proportional-integral iterative algorithm for time-variant equality-constrained quadratic programming problem with applications"
     authors: "Guancheng Wang, Zhihao Hao, Haoen Huang, <strong>Bob Zhang</strong>*"
     venue: "Artificial Intelligence Review"
@@ -640,8 +684,6 @@ papers:
     type: journal
     detail: "vol. 56, no. 5, pp. 4535-4556"
     doi: 10.1007/s10462-022-10284-4
-    url:
-    code:
   - title: "A robust newton iterative algorithm for acoustic location based on solving linear matrix equations in the presence of various noises"
     authors: "Guancheng Wang, Zhihao Hao, <strong>Bob Zhang</strong>*, Leyuan Fang, Dianhui Mao"
     venue: "Applied Intelligence"
@@ -649,8 +691,6 @@ papers:
     type: journal
     detail: "vol. 53, no. 2, pp. 1219-1232"
     doi: 10.1007/s10489-022-03483-7
-    url:
-    code:
   - title: "Accelerated PALM for nonconvex low-rank matrix recovery with theoretical analysis"
     authors: "Hengmin Zhang, Bihan Wen, Zhiyuan Zha, <strong>Bob Zhang</strong>, Yang Tang, Guo Yu, Wenli Du"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -658,8 +698,6 @@ papers:
     type: journal
     detail: "vol. 34, no. 4, pp. 2304-2317"
     doi: 10.1109/tcsvt.2023.3306811
-    url:
-    code:
   - title: "Adversarially learning occlusions by backpropagation for face recognition"
     authors: "Carina Zhao, Ying Qin, <strong>Bob Zhang</strong>*"
     venue: "Sensors"
@@ -667,8 +705,6 @@ papers:
     type: journal
     detail: "vol. 23, no. 20, p. 8559"
     doi: 10.3390/s23208559
-    url:
-    code:
   - title: "AGP-Net: adaptive graph prior network for image denoising"
     authors: "Bo Jiang, Yao Lu, <strong>Bob Zhang</strong>, Guangming Lu"
     venue: "IEEE Transactions on Industrial Informatics"
@@ -676,8 +712,6 @@ papers:
     type: journal
     detail: "vol. 20, no. 3, pp. 4753-4764"
     doi: 10.1109/tii.2023.3316184
-    url:
-    code:
   - title: "An activated variable parameter gradient-based neural network for time-variant constrained quadratic programming and its applications"
     authors: "Guancheng Wang, Zhihao Hao, Haisheng Li, <strong>Bob Zhang</strong>*"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -685,8 +719,6 @@ papers:
     type: journal
     detail: "vol. 8, no. 3, pp. 670-679"
     doi: 10.1049/cit2.12192
-    url:
-    code:
   - title: "An isomerism learning model to solve time-varying problems through intelligent collaboration"
     authors: "Zhihao Hao, Guancheng Wang, <strong>Bob Zhang</strong>*, Leyuan Fang, Haisheng Li"
     venue: "IEEE/CAA Journal of Automatica Sinica"
@@ -694,8 +726,6 @@ papers:
     type: journal
     detail: "vol. 10, no. 8, pp. 1772-1774"
     doi: 10.1109/jas.2023.123360
-    url:
-    code:
   - title: "Application of improved virtual sample and sparse representation in face recognition"
     authors: "Yongjun Zhang, Zewei Wang, Xuexue Zhang, Zhongwei Cui, <strong>Bob Zhang</strong>, Jinrong Cui, Lamin L. Janneh"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -703,8 +733,6 @@ papers:
     type: journal
     detail: "vol. 8, no. 4, pp. 1391-1402"
     doi: 10.1049/cit2.12115
-    url:
-    code:
   - title: "Broad Learning Model with a Dual Feature Extraction Strategy for Classification"
     authors: "Qi Zhang, Zuobin Ying, Jianhang Zhou, Jingzhang Sun, <strong>Bob Zhang</strong>*"
     venue: "Mathematics"
@@ -712,8 +740,6 @@ papers:
     type: journal
     detail: "vol. 11, no. 19, p. 4087"
     doi: 10.3390/math11194087
-    url:
-    code:
   - title: "CO 3 Net: Coordinate-aware contrastive competitive neural network for palmprint recognition"
     authors: "Ziyuan Yang, Wenjun Xia, Yifan Qiao, Zexin Lu, <strong>Bob Zhang</strong>, Lu Leng, Yi Zhang"
     venue: "IEEE Transactions on Instrumentation and Measurement"
@@ -721,8 +747,6 @@ papers:
     type: journal
     detail: "vol. 72, pp. 1-14"
     doi: 10.1109/tim.2023.3276506
-    url:
-    code:
   - title: "Collaborative representation induced broad learning model for classification"
     authors: "Qi Zhang, Jianhang Zhou, Yong Xu, <strong>Bob Zhang</strong>*"
     venue: "Applied Intelligence"
@@ -730,8 +754,6 @@ papers:
     type: journal
     detail: "vol. 53, no. 20, pp. 23442-23456"
     doi: 10.1007/s10489-023-04709-y
-    url:
-    code:
   - title: "Comprehensive competition mechanism in palmprint recognition"
     authors: "Ziyuan Yang, Huijie Huangfu, Lu Leng, <strong>Bob Zhang</strong>, Andrew Beng Jin Teoh, Yi Zhang"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -739,8 +761,6 @@ papers:
     type: journal
     detail: "vol. 18, pp. 5160-5170"
     doi: 10.1109/tifs.2023.3306104
-    url:
-    code:
   - title: "Cross-database attack of different coding-based palmprint templates"
     authors: "Ziyuan Yang, Lu Leng, Andrew Beng Jin Teoh, <strong>Bob Zhang</strong>, Yi Zhang"
     venue: "Knowledge-Based Systems"
@@ -748,8 +768,6 @@ papers:
     type: journal
     detail: "vol. 264, pp. 110310"
     doi: 10.1016/j.knosys.2023.110310
-    url:
-    code:
   - title: "Few-shot learning for image denoising"
     authors: "Bo Jiang, Yao Lu, <strong>Bob Zhang</strong>, Guangming Lu"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -757,8 +775,6 @@ papers:
     type: journal
     detail: "vol. 33, no. 9, pp. 4741–4753"
     doi: 10.1109/tcsvt.2023.3248585
-    url:
-    code:
   - title: "Joint Augmented and Compressed Dictionaries for Robust Image Classification"
     authors: "Shaoning Zeng, Yunbo Rao, <strong>Bob Zhang</strong>*, Yong Xu"
     venue: "ACM Transactions on Multimedia Computing, Communications and Applications"
@@ -766,8 +782,6 @@ papers:
     type: journal
     detail: "vol. 19, no. 3s, pp. 1–24"
     doi: 10.1145/3572910
-    url:
-    code:
   - title: "Joint discriminative analysis with low-rank projection for finger vein feature extraction"
     authors: "Shuyi Li, Ruijun Ma, Jianhang Zhou, <strong>Bob Zhang</strong>, Lifang Wu"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -775,8 +789,6 @@ papers:
     type: journal
     detail: "vol. 19, pp. 959-969"
     doi: 10.1109/tifs.2023.3326364
-    url:
-    code:
   - title: "Learning salient self-representation for image recognition via orthogonal transformation"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "Expert Systems with Applications"
@@ -784,8 +796,6 @@ papers:
     type: journal
     detail: "vol. 212, pp. 118663"
     doi: 10.1016/j.eswa.2022.118663
-    url:
-    code:
   - title: "Learning with Euler Collaborative Representation for Robust Pattern Analysis"
     authors: "Jianhang Zhou, Guancheng Wang, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "ACM Transactions on Intelligent Systems and Technology"
@@ -793,8 +803,6 @@ papers:
     type: journal
     detail: "vol. 14, no. 6, pp. 1-25"
     doi: 10.1145/3625235
-    url:
-    code:
   - title: "Linear discriminant analysis with generalized kernel constraint for robust image classification"
     authors: "Shuyi Li, Hengmin Zhang, Ruijun Ma, Jianhang Zhou, Jie Wen, <strong>Bob Zhang</strong>*"
     venue: "Pattern Recognition"
@@ -802,8 +810,6 @@ papers:
     type: journal
     detail: "vol. 136, pp. 109196"
     doi: 10.1016/j.patcog.2022.109196
-    url:
-    code:
   - title: "Linear regression problem relaxations solved by nonconvex ADMM with convergence analysis"
     authors: "Hengmin Zhang, Junbin Gao, Jianjun Qian, Jian Yang, Chunyan Xu, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -811,8 +817,6 @@ papers:
     type: journal
     detail: "vol. 34, no. 2, pp. 828-838"
     doi: 10.1109/tcsvt.2023.3291821
-    url:
-    code:
   - title: "Logical relation inference and multiview information interaction for domain adaptation person re-identification"
     authors: "Shuang Li, Fan Li, Jinxing Li, Huafeng Li, <strong>Bob Zhang</strong>, Dapeng Tao, Xinbo Gao"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -820,8 +824,6 @@ papers:
     type: journal
     detail: "vol. 35, no. 10, pp. 14770-14782"
     doi: 10.1109/tnnls.2023.3281504
-    url:
-    code:
   - title: "Multi-stage image denoising with the wavelet transform"
     authors: "Chunwei Tian, Menghua Zheng, Wangmeng Zuo, <strong>Bob Zhang</strong>, Yanning Zhang, David Zhang"
     venue: "Pattern Recognition"
@@ -830,9 +832,6 @@ papers:
     detail: "vol. 134, pp. 109050"
     doi: 10.1016/j.patcog.2022.109050
     note: "Highly Cited"
-    selected: true
-    url:
-    code:
   - title: "Privacy-preserving biometrics image encryption and digital signature technique using Arnold and ElGamal"
     authors: "Ying Qin, <strong>Bob Zhang</strong>*"
     venue: "Applied Sciences"
@@ -840,8 +839,6 @@ papers:
     type: journal
     detail: "vol. 13, no. 14, p. 8117"
     doi: 10.3390/app13148117
-    url:
-    code:
   - title: "Two novel style-transfer palmprint reconstruction attacks"
     authors: "Ziyuan Yang, Lu Leng, <strong>Bob Zhang</strong>, Ming Li, Jun Chu"
     venue: "Applied Intelligence"
@@ -849,8 +846,6 @@ papers:
     type: journal
     detail: "vol. 53, no. 6, pp. 6354-6371"
     doi: 10.1007/s10489-022-03862-0
-    url:
-    code:
   - title: "Two-view attention-guided convolutional neural network for mammographic image classification"
     authors: "Lilei Sun, Jie Wen, Junqian Wang, Yong Zhao, <strong>Bob Zhang</strong>, Jian Wu, Yong Xu"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -858,8 +853,6 @@ papers:
     type: journal
     detail: "vol. 8, no. 2, pp. 453-467"
     doi: 10.1049/cit2.12096
-    url:
-    code:
   - title: "Unified framework for faster clustering via joint Schatten p-norm factorization with optimal mean"
     authors: "Hengmin Zhang, Jiaoyan Zhao, <strong>Bob Zhang</strong>*, Chen Gong, Jianjun Qian, Jian Yang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -867,8 +860,6 @@ papers:
     type: journal
     detail: "vol. 35, no. 3, pp. 3012-3026"
     doi: 10.1109/tnnls.2023.3327716
-    url:
-    code:
   - title: "Unpaired remote sensing image super-resolution with content-preserving weak supervision neural network"
     authors: "Jie Wu, Runmin Cong, Leyuan Fang, Chunle Guo, <strong>Bob Zhang</strong>, Pedram Ghamisi"
     venue: "Science China Information Sciences"
@@ -876,6 +867,12 @@ papers:
     type: journal
     detail: "vol. 66, no. 1"
     doi: 10.1007/s11432-021-3575-1
+  - title: "A Distributed Computation Model Based on Federated Learning Integrates Heterogeneous models and Consortium Blockchain for Solving Time-Varying Problems"
+    authors: "Z Hao, G Wang, C Tian, <strong>B Zhang</strong>"
+    venue: "arXiv preprint arXiv:2306.16023"
+    year: 2023
+    type: preprint
+    _needs_full_authors: true
     url:
     code:
   - title: "Information Fusion: Machine Learning Methods"
@@ -883,8 +880,6 @@ papers:
     venue: "Springer Singapore"
     year: 2022
     type: book
-    url:
-    code:
   - title: "Generative Adaptive Convolutions for Real-World Noisy Image Denoising"
     authors: "Ruijun Ma, Shuyi Li, <strong>Bob Zhang</strong>*, Zhengming Li"
     venue: "AAAI 2022 – 2022 AAAI Conference on Artificial Intelligence (AAAI)"
@@ -892,8 +887,6 @@ papers:
     type: conference
     detail: "pp. 1935-1943"
     doi: 10.1609/aaai.v36i2.20088
-    url:
-    code:
   - title: "Multi-Feature Representation for Fatty Liver Disease Detection with Breath Sample Analysis"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "BIBM 2022 – 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)"
@@ -901,8 +894,6 @@ papers:
     type: conference
     detail: "Las Vegas, NV, USA, pp. 3908-3910"
     doi: 10.1109/bibm55620.2022.9995678
-    url:
-    code:
   - title: "Row-Sparsity Binary Feature Learning for Open-Set Palmprint Recognition"
     authors: "Shuyi Li, Ruijun Ma, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "IJCB 2022 – 2022 IEEE International Joint Conference on Biometrics (IJCB)"
@@ -910,8 +901,6 @@ papers:
     type: conference
     detail: "pp. 1-8"
     doi: 10.1109/ijcb54206.2022.10007975
-    url:
-    code:
   - title: "A survey on incomplete multiview clustering"
     authors: "Jie Wen, Zheng Zhang, Lunke Fei, <strong>Bob Zhang</strong>*, Yong Xu, Zhao Zhang, Jinxing Li"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -920,9 +909,6 @@ papers:
     detail: "vol. 53, pp. 1136-1149"
     doi: 10.1109/tsmc.2022.3192635
     note: "Highly Cited"
-    selected: true
-    url:
-    code:
   - title: "Adaptive graph embedded preserving projection learning for feature extraction and selection"
     authors: "Shuping Zhao, Jigang Wu, <strong>Bob Zhang</strong>*, Lunke Fei, Shuyi Li, Pengyang Zhao"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -930,8 +916,6 @@ papers:
     type: journal
     detail: "vol. 53, pp. 1060-1073"
     doi: 10.1109/tsmc.2022.3193131
-    url:
-    code:
   - title: "Consensus sparsity: multi-context sparse image representation via L∞-induced matrix variate"
     authors: "Jianhang Zhou, <strong>Bob Zhang</strong>*, Shaoning Zeng"
     venue: "IEEE Transactions on Image Processing"
@@ -939,8 +923,6 @@ papers:
     type: journal
     detail: "vol. 32, pp. 603-616"
     doi: 10.1109/tip.2022.3231083
-    url:
-    code:
   - title: "Convergence and robustness of bounded recurrent neural networks for solving dynamic Lyapunov equations"
     authors: "Guancheng Wang, Zhihao Hao, <strong>Bob Zhang</strong>*, Long Jin"
     venue: "Information Sciences"
@@ -948,8 +930,6 @@ papers:
     type: journal
     detail: "vol. 588, pp. 106-123"
     doi: 10.1016/j.ins.2021.12.039
-    url:
-    code:
   - title: "Deep bilateral filtering network for point-supervised semantic segmentation in remote sensing images"
     authors: "Linshan Wu, Leyuan Fang, Jun Yue, <strong>Bob Zhang</strong>, Pedram Ghamisi, Min He"
     venue: "IEEE Transactions on Image Processing"
@@ -957,8 +937,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 7419-7434"
     doi: 10.1109/tip.2022.3222904
-    url:
-    code:
   - title: "Deep supervised dual cycle adversarial network for cross-modal retrieval"
     authors: "Lei Liao, Meng Yang, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -966,8 +944,6 @@ papers:
     type: journal
     detail: "vol. 33, pp. 920-934"
     doi: 10.1109/tcsvt.2022.3203247
-    url:
-    code:
   - title: "Discriminative regression with adaptive graph diffusion"
     authors: "Jie Wen, Shijie Deng, Lunke Fei, Zheng Zhang, <strong>Bob Zhang</strong>, Zhao Zhang, Yong Xu"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -975,8 +951,6 @@ papers:
     type: journal
     detail: "vol. 35, pp. 1797-1809"
     doi: 10.1109/tnnls.2022.3185408
-    url:
-    code:
   - title: "Domain adaptive subspace transfer model for sensor drift compensation in biologically inspired electronic nose"
     authors: "Tan Guo, Xiaoheng Tan, Liu Yang, Zhifang Liang, <strong>Bob Zhang</strong>, Lei Zhang"
     venue: "Expert Systems with Applications"
@@ -984,8 +958,6 @@ papers:
     type: journal
     detail: "vol. 208, pp. 118237"
     doi: 10.1016/j.eswa.2022.118237
-    url:
-    code:
   - title: "Double-cohesion learning based multiview and discriminant palmprint recognition"
     authors: "Shuping Zhao, Jigang Wu, Lunke Fei, <strong>Bob Zhang</strong>*, Pengyang Zhao"
     venue: "Information Fusion"
@@ -993,8 +965,6 @@ papers:
     type: journal
     detail: "vol. 83, pp. 96-109"
     doi: 10.1016/j.inffus.2022.03.005
-    url:
-    code:
   - title: "Flexible and generalized real photograph denoising exploiting dual meta attention"
     authors: "Ruijun Ma, Shuyi Li, <strong>Bob Zhang</strong>*, Leyuan Fang, Zhengming Li"
     venue: "IEEE Transactions on Cybernetics"
@@ -1002,8 +972,6 @@ papers:
     type: journal
     detail: "vol. 53, pp. 6395-6407"
     doi: 10.1109/tcyb.2022.3170472
-    url:
-    code:
   - title: "Fuzzy graph subspace convolutional network"
     authors: "Jianhang Zhou, Qi Zhang, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1011,8 +979,6 @@ papers:
     type: journal
     detail: "vol. 35, pp. 5641-5655"
     doi: 10.1109/tnnls.2022.3208557
-    url:
-    code:
   - title: "Geometric-spectral reconstruction learning for multi-source open-set classification with hyperspectral and LiDAR data"
     authors: "Leyuan Fang, Dingshun Zhu, Jun Yue, <strong>Bob Zhang</strong>, Min He"
     venue: "IEEE/CAA Journal of Automatica Sinica"
@@ -1020,8 +986,6 @@ papers:
     type: journal
     detail: "vol. 9, pp. 1892-1895"
     doi: 10.1109/jas.2022.105893
-    url:
-    code:
   - title: "Incorporating linear regression problems into an adaptive framework with feasible optimizations"
     authors: "Hengmin Zhang, Feng Qian, <strong>Bob Zhang</strong>, Wenli Du, Jianjun Qian, Jian Yang"
     venue: "IEEE Transactions on Multimedia"
@@ -1029,8 +993,6 @@ papers:
     type: journal
     detail: "vol. 25, pp. 4041-4051"
     doi: 10.1109/tmm.2022.3171088
-    url:
-    code:
   - title: "Innovative contactless palmprint recognition system based on dual-camera alignment"
     authors: "Xu Liang, Zhaoqun Li, Dandan Fan, <strong>Bob Zhang</strong>, Guangming Lu, David Zhang"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -1038,8 +1000,6 @@ papers:
     type: journal
     detail: "vol. 52, pp. 6464-6476"
     doi: 10.1109/tsmc.2022.3146777
-    url:
-    code:
   - title: "Kernel nonnegative representation-based classifier"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "Applied Intelligence"
@@ -1047,8 +1007,6 @@ papers:
     type: journal
     detail: "vol. 52, pp. 2269-2289"
     doi: 10.1007/s10489-021-02486-0
-    url:
-    code:
   - title: "Learning compact multirepresentation feature descriptor for finger-vein recognition"
     authors: "Shuyi Li, Ruijun Ma, Lunke Fei, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -1056,8 +1014,6 @@ papers:
     type: journal
     detail: "vol. 17, pp. 1946-1958"
     doi: 10.1109/tifs.2022.3172218
-    url:
-    code:
   - title: "Locality preserving projection with symmetric graph embedding for unsupervised dimensionality reduction"
     authors: "Xiaohuan Lu, Jiang Long, Jie Wen, Lunke Fei, <strong>Bob Zhang</strong>, Yong Xu"
     venue: "Pattern Recognition"
@@ -1065,8 +1021,6 @@ papers:
     type: journal
     detail: "vol. 131, pp. 108844"
     doi: 10.1016/j.patcog.2022.108844
-    url:
-    code:
   - title: "Low-rank inter-class sparsity based semi-flexible target least squares regression for feature representation"
     authors: "Shuping Zhao, Jigang Wu, <strong>Bob Zhang</strong>*, Lunke Fei"
     venue: "Pattern Recognition"
@@ -1074,8 +1028,6 @@ papers:
     type: journal
     detail: "vol. 123, pp. 108346"
     doi: 10.1016/j.patcog.2021.108346
-    url:
-    code:
   - title: "Meta PID attention network for flexible and efficient real-world noisy image denoising"
     authors: "Ruijun Ma, Shuyi Li, <strong>Bob Zhang</strong>*, Haifeng Hu"
     venue: "IEEE Transactions on Image Processing"
@@ -1083,8 +1035,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 2053-2066"
     doi: 10.1109/tip.2022.3150294
-    url:
-    code:
   - title: "Meta-pixel-driven embeddable discriminative target and background dictionary pair learning for hyperspectral target detection"
     authors: "Tan Guo, Fulin Luo, Leyuan Fang, <strong>Bob Zhang</strong>"
     venue: "Remote Sensing"
@@ -1092,8 +1042,6 @@ papers:
     type: journal
     detail: "vol. 14, pp. 481"
     doi: 10.3390/rs14030481
-    url:
-    code:
   - title: "Missing-view completion for fatty liver disease detection"
     authors: "Qi Zhang, Jie Wen, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "Computers in Biology and Medicine"
@@ -1101,8 +1049,6 @@ papers:
     type: journal
     detail: "vol. 150, pp. 106097"
     doi: 10.1016/j.compbiomed.2022.106097
-    url:
-    code:
   - title: "Multi-Branch-CNN: Classification of ion channel interacting peptides using multi-branch convolutional neural network"
     authors: "Jielu Yan, <strong>Bob Zhang</strong>*, Mingliang Zhou, Hang Fai Kwok, Shirley WI Siu"
     venue: "Computers in Biology and Medicine"
@@ -1110,8 +1056,6 @@ papers:
     type: journal
     detail: "vol. 147, pp. 105717"
     doi: 10.1016/j.compbiomed.2022.105717
-    url:
-    code:
   - title: "New zeroing neural network with finite-time convergence for dynamic complex-value linear equation and its applications"
     authors: "Guancheng Wang, Qinrou Li, Shaoqing Liu, Hua Xiao, <strong>Bob Zhang</strong>*"
     venue: "Chaos, Solitons & Fractals"
@@ -1119,8 +1063,6 @@ papers:
     type: journal
     detail: "vol. 164, pp. 112674"
     doi: 10.1016/j.chaos.2022.112674
-    url:
-    code:
   - title: "NFANet: A novel method for weakly supervised water extraction from high-resolution remote-sensing imagery"
     authors: "Ming Lu, Leyuan Fang, Muxing Li, <strong>Bob Zhang</strong>, Yi Zhang, Pedram Ghamisi"
     venue: "IEEE Transactions on Geoscience and Remote Sensing"
@@ -1128,8 +1070,6 @@ papers:
     type: journal
     detail: "vol. 60, pp. 1-14"
     doi: 10.1109/tgrs.2022.3140323
-    url:
-    code:
   - title: "Recent progress in the discovery and design of antimicrobial peptides using traditional machine learning and deep learning"
     authors: "Jielu Yan, Jianxiu Cai, <strong>Bob Zhang</strong>*, Yapeng Wang, Derek F Wong, Shirley WI Siu"
     venue: "Antibiotics"
@@ -1137,8 +1077,6 @@ papers:
     type: journal
     detail: "vol. 11, pp. 1451"
     doi: 10.3390/antibiotics11101451
-    url:
-    code:
   - title: "Renal cancer detection: fusing deep and texture features from histopathology images"
     authors: "Jianxiu Cai, Manting Liu, Qi Zhang, Ziqi Shao, Jingwen Zhou, Yongjian Guo, Juan Liu, Xiaobin Wang, <strong>Bob Zhang</strong>*, Xi Li"
     venue: "BioMed Research International"
@@ -1146,8 +1084,6 @@ papers:
     type: journal
     detail: "vol. 2022, pp. 9821773"
     doi: 10.1155/2022/9821773
-    url:
-    code:
   - title: "Structure suture learning-based robust multiview palmprint recognition"
     authors: "Shuping Zhao, Lunke Fei, Jie Wen, <strong>Bob Zhang</strong>*, Pengyang Zhao, Shuyi Li"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1155,8 +1091,6 @@ papers:
     type: journal
     detail: "vol. 35, pp. 8401-8413"
     doi: 10.1109/tnnls.2022.3227473
-    url:
-    code:
   - title: "Toward efficient palmprint feature extraction by learning a single-layer convolution network"
     authors: "Lunke Fei, Shuping Zhao, Wei Jia, <strong>Bob Zhang</strong>, Jie Wen, Yong Xu"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1164,8 +1098,6 @@ papers:
     type: journal
     detail: "vol. 34, pp. 9783-9794"
     doi: 10.1109/tnnls.2022.3160597
-    url:
-    code:
   - title: "Weighted correlation embedding learning for domain adaptation"
     authors: "Yuwu Lu, Qi Zhu, <strong>Bob Zhang</strong>*, Zhihui Lai, Xuelong Li"
     venue: "IEEE Transactions on Image Processing"
@@ -1173,8 +1105,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 5303-5316"
     doi: 10.1109/tip.2022.3193758
-    url:
-    code:
   - title: "Deep Learning-Based Hyperspectral Multimodal Biometric Authentication System Using Palmprint and Dorsal Hand Vein"
     authors: "S. Zhao, W. Nie, and <strong>B. Zhang</strong>*"
     venue: "AI and Deep Learning in Biometric Security"
@@ -1182,8 +1112,6 @@ papers:
     type: chapter
     detail: "G. Jaswal, V. Kanhangad, and R. Ramachandra, Eds., USA: CRC Press-Taylor and Francis"
     doi: 10.1201/9781003003489-1
-    url:
-    code:
   - title: "An Adaptive Discriminant and Sparsity Feature Descriptor for Finger Vein Recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*"
     venue: "ICASSP 2021 – 2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
@@ -1191,8 +1119,6 @@ papers:
     type: conference
     detail: "Toronto, ON, Canada, pp. 2140-2144"
     doi: 10.1109/icassp39728.2021.9413688
-    url:
-    code:
   - title: "Cdimc-net: Cognitive deep incomplete multi-view clustering network"
     authors: "Jie Wen, Zheng Zhang, Yong Xu, <strong>Bob Zhang</strong>, Lunke Fei, Guo-Sen Xie"
     venue: "Twenty-Ninth International Conference on International Joint Conferences on Artificial Intelligence"
@@ -1200,8 +1126,6 @@ papers:
     type: conference
     detail: "New York, USA, pp. 3230-3236"
     doi: 10.24963/ijcai.2020/447
-    url:
-    code:
   - title: "COMASNet: Precise Face Mask Detector Network"
     authors: "Shuang Gu, Guancheng Wang, <strong>Bob Zhang</strong>*"
     venue: "2021 4th International Conference on Pattern Recognition and Artificial Intelligence (PRAI)"
@@ -1209,8 +1133,6 @@ papers:
     type: conference
     detail: "Yibin, China, pp. 129-133"
     doi: 10.1109/prai53619.2021.9551060
-    url:
-    code:
   - title: "Discriminative Multi-feature Representation for Renal Cancer Detection based on Histopathology Images"
     authors: "Jianxiu Cai, Qi Zhang, <strong>Bob Zhang</strong>*, Bihui Cao, Manting Liu, Cheng Zhi, Deji Che, Kangshun Zhu"
     venue: "2021 7th International Conference on Computer and Communications (ICCC)"
@@ -1218,8 +1140,6 @@ papers:
     type: conference
     detail: "Chengdu, China, pp. 1848-1852"
     doi: 10.1109/iccc54389.2021.9674381
-    url:
-    code:
   - title: "Hierarchical Automatic COVID-19 Detection via CT Scan Images"
     authors: "Yuwei Zhang, <strong>Bob Zhang</strong>*"
     venue: "2021 IEEE 4th International Conference on Big Data and Artificial Intelligence (BDAI)"
@@ -1227,8 +1147,6 @@ papers:
     type: conference
     detail: "Qingdao, China, pp. 219-224"
     doi: 10.1109/bdai52447.2021.9515302
-    url:
-    code:
   - title: "Jointly Learning Multiple Curvature Descriptor for 3D Palmprint Recognition"
     authors: "Lunke Fei, Jianyang Qin, Peng Liu, Jie Wen, Chunwei Tian, <strong>Bob Zhang</strong>*, Shuping Zhao"
     venue: "2020 25th International Conference on Pattern Recognition (ICPR)"
@@ -1236,8 +1154,6 @@ papers:
     type: conference
     detail: "Milan, Italy, pp. 302-308"
     doi: 10.1109/icpr48806.2021.9413188
-    url:
-    code:
   - title: "Low Rank Based Discriminative Least Squares Regression with Sparse Autoencoder Processing for Image Classification"
     authors: "Qi Zhang, <strong>Bob Zhang</strong>*"
     venue: "2021 7th International Conference on Computer and Communications (ICCC)"
@@ -1245,8 +1161,6 @@ papers:
     type: conference
     detail: "Chengdu, China, pp. 836-840"
     doi: 10.1109/iccc54389.2021.9674436
-    url:
-    code:
   - title: "Noise Homogenization via Multi-Channel Wavelet Filtering for High-Fidelity Sample Generation in Gans"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "2021 IEEE International Conference on Multimedia and Expo (ICME)"
@@ -1254,16 +1168,12 @@ papers:
     type: conference
     detail: "Shenzhen, China, pp. 1-6"
     doi: 10.1109/icme51207.2021.9428452
-    url:
-    code:
   - title: "Regression Methods: Optimizations"
     authors: "Hengmin Zhang, Wenli Dul, Xiaoqian Liu, <strong>Bob Zhang</strong>, Feng Qian"
     venue: "Cognitive Systems and Signal Processing: 5th International Conference, ICCSIP 2020"
     year: 2021
     type: conference
     detail: "Zhuhai, China, vol. 1387, p. 121"
-    url:
-    code:
   - title: "Robust recovery of low rank matrix by nonconvex rank regularization"
     authors: "Hengmin Zhang, Wei Luo, Wenli Du, Jianjun Qian, Jian Yang, <strong>Bob Zhang</strong>*"
     venue: "International Conference on Image and Graphics"
@@ -1271,8 +1181,6 @@ papers:
     type: conference
     detail: "pp. 106-119"
     doi: 10.1007/978-3-030-87358-5_9
-    url:
-    code:
   - title: "Structural Deep Incomplete Multi-view Clustering Network"
     authors: "Jie Wen, Zhihao Wu, Zheng Zhang, Lunke Fei, <strong>Bob Zhang</strong>*, Yong Xu"
     venue: "2021 30th ACM International Conference on Information & Knowledge Management (CIKM’21)"
@@ -1280,8 +1188,6 @@ papers:
     type: conference
     detail: "New York, USA, pp. 3538–3542"
     doi: 10.1145/3459637.3482192
-    url:
-    code:
   - title: "Unified Tensor Framework for Incomplete Multi-view Clustering and Missing-view Inferring"
     authors: "Jie Wen, Zheng Zhang, Zhao Zhang, Lei Zhu, Lunke Fei, <strong>Bob Zhang</strong>, Yong Xu"
     venue: "AAAI Conference on Artificial Intelligence"
@@ -1289,8 +1195,6 @@ papers:
     type: conference
     detail: "pp. 10273-10281"
     doi: 10.1609/aaai.v35i11.17231
-    url:
-    code:
   - title: "A novel method for food market regulation by emotional tendencies predictions from food reviews based on blockchain and SAES"
     authors: "Zhihao Hao, Guancheng Wang, Dianhui Mao, <strong>Bob Zhang</strong>*, Haisheng Li, Min Zuo, Zhihua Zhao, Jerome Yen"
     venue: "Foods"
@@ -1298,8 +1202,6 @@ papers:
     type: journal
     detail: "vol. 10, no. 6, p. 1398"
     doi: 10.3390/foods10061398
-    url:
-    code:
   - title: "A survey on dorsal hand vein biometrics"
     authors: "Wei Jia, Wei Xia, <strong>Bob Zhang</strong>*, Yang Zhao, Lunke Fei, Wenxiong Kang, Di Huang, Guodong Guo"
     venue: "Pattern Recognition"
@@ -1307,8 +1209,6 @@ papers:
     type: journal
     detail: "vol. 120, p. 108122"
     doi: 10.1016/j.patcog.2021.108122
-    url:
-    code:
   - title: "An automatic multi-view disease detection system via collective deep region-based feature representation"
     authors: "Jianhang Zhou, Qi Zhang, <strong>Bob Zhang</strong>*"
     venue: "Future Generation Computer Systems"
@@ -1316,8 +1216,6 @@ papers:
     type: journal
     detail: "vol. 115, pp. 59-75"
     doi: 10.1016/j.future.2020.08.038
-    url:
-    code:
   - title: "Asymmetric Gaussian process multi-view learning for visual classification"
     authors: "Jinxing Li, Zhaoqun Li, Guangming Lu, Yong Xu, <strong>Bob Zhang</strong>, David Zhang"
     venue: "Information Fusion"
@@ -1325,8 +1223,6 @@ papers:
     type: journal
     detail: "vol. 65, pp. 108-118"
     doi: 10.1016/j.inffus.2020.08.020
-    url:
-    code:
   - title: "Computational traditional Chinese medicine diagnosis: A literature survey"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "Computers in Biology and Medicine"
@@ -1334,8 +1230,6 @@ papers:
     type: journal
     detail: "vol. 133, p. 104358"
     doi: 10.1016/j.compbiomed.2021.104358
-    url:
-    code:
   - title: "Consensus guided incomplete multi-view spectral clustering"
     authors: "Jie Wen, Huijie Sun, Lunke Fei, Jinxing Li, Zheng Zhang, <strong>Bob Zhang</strong>*"
     venue: "Neural Networks"
@@ -1343,8 +1237,6 @@ papers:
     type: journal
     detail: "vol. 133, pp. 207-219"
     doi: 10.1016/j.neunet.2020.10.014
-    url:
-    code:
   - title: "Deformable template network (DTN) for object detection"
     authors: "Shuai Wu, Yong Xu, <strong>Bob Zhang</strong>, Jian Yang, David Zhang"
     venue: "IEEE Transactions on Multimedia"
@@ -1352,8 +1244,6 @@ papers:
     type: journal
     detail: "vol. 24, pp. 2058-2068"
     doi: 10.1109/tmm.2021.3075323
-    url:
-    code:
   - title: "DsNet: Dual stack network for detecting diabetes mellitus and chronic kidney disease"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*, Enhua Wu"
     venue: "Information Sciences"
@@ -1361,8 +1251,6 @@ papers:
     type: journal
     detail: "vol. 547, pp. 945-962"
     doi: 10.1016/j.ins.2020.08.074
-    url:
-    code:
   - title: "Fast and robust dictionary-based classification for image data"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>, Jianping Gou, Yong Xu, Wei Huang"
     venue: "ACM Transactions on Knowledge Discovery from Data"
@@ -1370,8 +1258,6 @@ papers:
     type: journal
     detail: "vol. 15, no. 6, pp. 1-22"
     doi: 10.1145/3449360
-    url:
-    code:
   - title: "FVSR-Net: An end-to-end finger vein image scattering removal network"
     authors: "Shanshan Du, Jinfeng Yang, Haigang Zhang, <strong>Bob Zhang</strong>, Zhigang Su"
     venue: "Multimedia Tools and Applications"
@@ -1379,8 +1265,6 @@ papers:
     type: journal
     detail: "vol. 80, no. 7, pp. 10705-10722"
     doi: 10.1007/s11042-020-09270-1
-    url:
-    code:
   - title: "Intrinsic and complete structure learning based incomplete multiview clustering"
     authors: "Shuping Zhao, Lunke Fei, Jie Wen, Jigang Wu, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Multimedia"
@@ -1388,8 +1272,6 @@ papers:
     type: journal
     detail: "vol. 25, pp. 1098-1110"
     doi: 10.1109/tmm.2021.3138638
-    url:
-    code:
   - title: "Joint discriminative feature learning for multimodal finger recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*, Lunke Fei, Shuping Zhao"
     venue: "Pattern Recognition"
@@ -1397,8 +1279,6 @@ papers:
     type: journal
     detail: "vol. 111, p. 107704"
     doi: 10.1016/j.patcog.2020.107704
-    url:
-    code:
   - title: "Joint discriminative latent subspace learning for image classification"
     authors: "Jianhang Zhou, <strong>Bob Zhang</strong>*, Shaoning Zeng, Qi Lai"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -1406,8 +1286,6 @@ papers:
     type: journal
     detail: "vol. 32, pp. 4653-4666"
     doi: 10.1109/tcsvt.2021.3135316
-    url:
-    code:
   - title: "Joint discriminative sparse coding for robust hand-based multimodal recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Information Forensics and Security"
@@ -1415,16 +1293,12 @@ papers:
     type: journal
     detail: "vol. 16, pp. 3186-3198"
     doi: 10.1109/tifs.2021.3074315
-    url:
-    code:
   - title: "Jointly heterogeneous palmprint discriminant feature learning"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Yong Xu, Chunwei Tian, Imad Rida, David Zhang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
     year: 2021
     type: journal
     detail: "vol. 33, no. 9, pp. 4979-4990"
-    url:
-    code:
   - title: "Jointly learning compact multi-view hash codes for few-shot FKP recognition"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Jie Wen, Shaohua Teng, Shuyi Li, David Zhang"
     venue: "Pattern Recognition"
@@ -1432,8 +1306,6 @@ papers:
     type: journal
     detail: "vol. 115, p. 107894"
     doi: 10.1016/j.patcog.2021.107894
-    url:
-    code:
   - title: "Jointly learning multi-instance hand-based biometric descriptor"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Chunwei Tian, Shaohua Teng, Jie Wen"
     venue: "Information Sciences"
@@ -1441,8 +1313,6 @@ papers:
     type: journal
     detail: "vol. 562, pp. 1-12"
     doi: 10.1016/j.ins.2021.01.086
-    url:
-    code:
   - title: "Learning sparse and discriminative multimodal feature codes for finger recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*, Lunke Fei, Shuping Zhao, Yicong Zhou"
     venue: "IEEE Transactions on Multimedia"
@@ -1450,8 +1320,6 @@ papers:
     type: journal
     detail: "vol. 25, pp. 805-815"
     doi: 10.1109/tmm.2021.3132166
-    url:
-    code:
   - title: "Local discriminant coding based convolutional feature representation for multimodal finger recognition"
     authors: "Shuyi Li, <strong>Bob Zhang</strong>*, Shuping Zhao, Jinfeng Yang"
     venue: "Information Sciences"
@@ -1459,8 +1327,6 @@ papers:
     type: journal
     detail: "vol. 547, pp. 1170-1181"
     doi: 10.1016/j.ins.2020.09.045
-    url:
-    code:
   - title: "Multi-feature representation for burn depth classification via burn images"
     authors: "<strong>Bob Zhang</strong>*, Jianhang Zhou"
     venue: "Artificial Intelligence in Medicine"
@@ -1468,8 +1334,6 @@ papers:
     type: journal
     detail: "vol. 118, p. 102128"
     doi: 10.1016/j.artmed.2021.102128
-    url:
-    code:
   - title: "PID controller-guided attention neural network learning for fast and effective real photographs denoising"
     authors: "Ruijun Ma, <strong>Bob Zhang</strong>*, Yicong Zhou, Zhengming Li, Fangyuan Lei"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1477,8 +1341,6 @@ papers:
     type: journal
     detail: "vol. 33, no. 7, pp. 3010-3023"
     doi: 10.1109/tnnls.2020.3048031
-    url:
-    code:
   - title: "Sentiment analysis of review data using blockchain and LSTM to improve regulation for a sustainable market"
     authors: "Zhihua Zhao, Zhihao Hao, Guancheng Wang, Dianhui Mao, <strong>Bob Zhang</strong>*, Min Zuo, Jerome Yen, Guangjian Tu"
     venue: "Journal of Theoretical and Applied Electronic Commerce Research"
@@ -1486,8 +1348,6 @@ papers:
     type: journal
     detail: "vol. 17, pp. 1-19"
     doi: 10.3390/jtaer17010001
-    url:
-    code:
   - title: "Sparsity-induced graph convolutional network for semisupervised learning"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Artificial Intelligence"
@@ -1495,8 +1355,6 @@ papers:
     type: journal
     detail: "vol. 2, pp. 549-563"
     doi: 10.1109/tai.2021.3096489
-    url:
-    code:
   - title: "Subspace-level dictionary fusion for robust multimedia classification"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "Multimedia Tools and Applications"
@@ -1504,8 +1362,6 @@ papers:
     type: journal
     detail: "vol. 80, no. 14, pp. 21885-21898"
     doi: 10.1007/s11042-021-10661-1
-    url:
-    code:
   - title: "Super resolution guided deep network for land cover classification from remote sensing images"
     authors: "Jie Xie, Leyuan Fang, <strong>Bob Zhang</strong>, Jocelyn Chanussot, Shutao Li"
     venue: "IEEE Transactions on Geoscience and Remote Sensing"
@@ -1513,8 +1369,6 @@ papers:
     type: journal
     detail: "vol. 60, pp. 1-12"
     doi: 10.1109/tgrs.2021.3120891
-    url:
-    code:
   - title: "Towards fast and robust real image denoising with attentive neural network and PID controller"
     authors: "Ruijun Ma, Shuyi Li, <strong>Bob Zhang</strong>*, Zhengming Li"
     venue: "IEEE Transactions on Multimedia"
@@ -1522,8 +1376,6 @@ papers:
     type: journal
     detail: "vol. 24, pp. 2366-2377"
     doi: 10.1109/tmm.2021.3079697
-    url:
-    code:
   - title: "Two-phase non-invasive multi-disease detection via sublingual region"
     authors: "Jianhang Zhou, Qi Zhang, <strong>Bob Zhang</strong>*"
     venue: "Computers in Biology and Medicine"
@@ -1531,8 +1383,6 @@ papers:
     type: journal
     detail: "vol. 137, p. 104782"
     doi: 10.1016/j.compbiomed.2021.104782
-    url:
-    code:
   - title: "A Noninvasive Method to Detect Diabetes Mellitus and Lung Cancer Using the Stacked Sparse Autoencoder"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
@@ -1540,8 +1390,6 @@ papers:
     type: conference
     detail: "pp. 1409–1413"
     doi: 10.1109/icassp40776.2020.9054412
-    url:
-    code:
   - title: "A Progressive Stack Face-Based Network for Detecting Diabetes Mellitus and Breast Cancer"
     authors: "Jianhang Zhou, Qi Zhang, <strong>Bob Zhang</strong>*"
     venue: "2020 IEEE International Joint Conference on Biometrics (IJCB)"
@@ -1549,8 +1397,6 @@ papers:
     type: conference
     detail: "pp. 1–9"
     doi: 10.1109/ijcb48548.2020.9304887
-    url:
-    code:
   - title: "Deep Inverse Rendering for Practical Object Appearance Scan with Uncalibrated Illumination"
     authors: "Jianzhao Zhang, Guojun Chen, Yue Dong, Jian Shi, <strong>Bob Zhang</strong>, Enhua Wu"
     venue: "Computer Graphics International Conference"
@@ -1558,8 +1404,6 @@ papers:
     type: conference
     detail: "pp. 71–82"
     doi: 10.1007/978-3-030-61864-3_7
-    url:
-    code:
   - title: "Dimc-net: Deep Incomplete Multi-View Clustering Network"
     authors: "Jie Wen, Zheng Zhang, Zhao Zhang, Zhihao Wu, Lunke Fei, Yong Xu, <strong>Bob Zhang</strong>*"
     venue: "Proceedings of the 28th ACM International Conference on Multimedia"
@@ -1567,8 +1411,6 @@ papers:
     type: conference
     detail: "pp. 3753–3761"
     doi: 10.1145/3394171.3413807
-    url:
-    code:
   - title: "Discriminant and Sparsity Based Least Squares Regression with L1 Regularization for Feature Representation"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*, Shuyi Li"
     venue: "ICASSP 2020-2020 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
@@ -1576,8 +1418,6 @@ papers:
     type: conference
     detail: "pp. 1504–1508"
     doi: 10.1109/icassp40776.2020.9054291
-    url:
-    code:
   - title: "Factored Trace Lasso Based Linear Regression Methods: Optimizations and Applications"
     authors: "Hengmin Zhang, Wenli Du, Xiaoqian Liu, <strong>Bob Zhang</strong>, Feng Qian"
     venue: "International Conference on Cognitive Systems and Signal Processing"
@@ -1585,8 +1425,6 @@ papers:
     type: conference
     detail: "pp. 121–130"
     doi: 10.1007/978-981-16-2336-3_11
-    url:
-    code:
   - title: "A Novel Visual Analysis Method of Food Safety Risk Traceability Based on Blockchain"
     authors: "Zhihao Hao, Dianhui Mao, <strong>Bob Zhang</strong>*, Min Zuo, Zhihua Zhao"
     venue: "International Journal of Environmental Research and Public Health"
@@ -1594,8 +1432,6 @@ papers:
     type: journal
     detail: "vol. 17, p. 2300"
     doi: 10.3390/ijerph17072300
-    url:
-    code:
   - title: "Adaptive Graph Completion Based Incomplete Multi-View Clustering"
     authors: "Jie Wen, Ke Yan, Zheng Zhang, Yong Xu, Junqian Wang, Lunke Fei, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Multimedia"
@@ -1603,8 +1439,6 @@ papers:
     type: journal
     detail: "vol. 23, pp. 2493–2504"
     doi: 10.1109/tmm.2020.3013408
-    url:
-    code:
   - title: "An Improved Solution for Deformation Simulation of Nonorthotropic Geometric Models"
     authors: "Wei Cao, Zhixin Yang, Xiaohua Ren, Luan Lyu, <strong>Bob Zhang</strong>, Yanci Zhang, Enhua Wu"
     venue: "Computer Animation and Virtual Worlds"
@@ -1612,8 +1446,6 @@ papers:
     type: journal
     detail: "vol. 31, p. e1915"
     doi: 10.1002/cav.1915
-    url:
-    code:
   - title: "Automatic Epicardial Fat Segmentation and Quantification of CT Scans Using Dual U-Nets with a Morphological Processing Layer"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*, Weijia Jia, Enhua Wu"
     venue: "IEEE Access"
@@ -1621,8 +1453,6 @@ papers:
     type: journal
     detail: "vol. 8, pp. 128032–128041"
     doi: 10.1109/access.2020.3008190
-    url:
-    code:
   - title: "Coarse-to-Fine CNN for Image Super-Resolution"
     authors: "Chunwei Tian, Yong Xu, Wangmeng Zuo, <strong>Bob Zhang</strong>, Lunke Fei, Chia-Wen Lin"
     venue: "IEEE Transactions on Multimedia"
@@ -1630,8 +1460,6 @@ papers:
     type: journal
     detail: "vol. 23, pp. 1489–1502"
     doi: 10.1109/tmm.2020.2999182
-    url:
-    code:
   - title: "Deep Discriminative Representation for Generic Palmprint Recognition"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*"
     venue: "Pattern Recognition"
@@ -1639,8 +1467,6 @@ papers:
     type: journal
     detail: "vol. 98, p. 107071"
     doi: 10.1016/j.patcog.2019.107071
-    url:
-    code:
   - title: "DRPL: Deep Regression Pair Learning for Multi-Focus Image Fusion"
     authors: "Jinxing Li, Xiaobao Guo, Guangming Lu, <strong>Bob Zhang</strong>, Yong Xu, Feng Wu, David Zhang"
     venue: "IEEE Transactions on Image Processing"
@@ -1648,8 +1474,6 @@ papers:
     type: journal
     detail: "vol. 29, pp. 4816–4831"
     doi: 10.1109/tip.2020.2976190
-    url:
-    code:
   - title: "Dual Sparse Learning via Data Augmentation for Robust Facial Image Classification"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Yanghao Zhang, Jianping Gou"
     venue: "International Journal of Machine Learning and Cybernetics"
@@ -1657,8 +1481,6 @@ papers:
     type: journal
     detail: "vol. 11, pp. 1717–1734"
     doi: 10.1007/s13042-020-01067-w
-    url:
-    code:
   - title: "Feature Extraction for 3-D Palmprint Recognition: A Survey"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Wei Jia, Jie Wen, David Zhang"
     venue: "IEEE Transactions on Instrumentation and Measurement"
@@ -1666,8 +1488,6 @@ papers:
     type: journal
     detail: "vol. 69, pp. 645–656"
     doi: 10.1109/tim.2020.2964076
-    url:
-    code:
   - title: "Fracture Patterns Design for Anisotropic Models with the Material Point Method"
     authors: "Wei Cao, Luan Lyu, Xiaohua Ren, <strong>Bob Zhang</strong>, Zhixin Yang, Enhua Wu"
     venue: "Computer Graphics Forum"
@@ -1675,8 +1495,6 @@ papers:
     type: journal
     detail: "pp. 93–104"
     doi: 10.1111/cgf.14129
-    url:
-    code:
   - title: "Gaussian Pyramid of Conditional Generative Adversarial Network for Real-World Noisy Image Denoising"
     authors: "Ruijun Ma, <strong>Bob Zhang</strong>, Haifeng Hu"
     venue: "Neural Processing Letters"
@@ -1684,8 +1502,6 @@ papers:
     type: journal
     detail: "vol. 51, pp. 2669–2684"
     doi: 10.1007/s11063-020-10215-w
-    url:
-    code:
   - title: "Graph Based Multichannel Feature Fusion for Wrist Pulse Diagnosis"
     authors: "Qi Zhang, Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "IEEE Journal of Biomedical and Health Informatics"
@@ -1693,8 +1509,6 @@ papers:
     type: journal
     detail: "vol. 25, pp. 3732–3743"
     doi: 10.1109/jbhi.2020.3045274
-    url:
-    code:
   - title: "Harmonization Shared Autoencoder Gaussian Process Latent Variable Model with Relaxed Hamming Distance"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, Yong Xu, Feng Wu, David Zhang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1702,8 +1516,6 @@ papers:
     type: journal
     detail: "vol. 32, pp. 5093–5107"
     doi: 10.1109/tnnls.2020.3026876
-    url:
-    code:
   - title: "Illuminance Compensation and Texture Enhancement via the Hodge Decomposition"
     authors: "Jian Wu, <strong>Bob Zhang</strong>, Yong Xu, David Zhang"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -1711,8 +1523,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 956–971"
     doi: 10.1109/tcsvt.2020.2997856
-    url:
-    code:
   - title: "Image Decomposition Based Matrix Regression with Applications to Robust Face Recognition"
     authors: "Jianjun Qian, Jian Yang, Yong Xu, Jin Xie, Zhihui Lai, <strong>Bob Zhang</strong>"
     venue: "Pattern Recognition"
@@ -1720,8 +1530,6 @@ papers:
     type: journal
     detail: "vol. 102, p. 107204"
     doi: 10.1016/j.patcog.2020.107204
-    url:
-    code:
   - title: "Joint Constrained Least-Square Regression with Deep Convolutional Feature for Palmprint Recognition"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -1729,8 +1537,6 @@ papers:
     type: journal
     detail: "vol. 52, pp. 511–522"
     doi: 10.1109/tsmc.2020.3003021
-    url:
-    code:
   - title: "Joint Multiview Feature Learning for Hand-Print Recognition"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Shaohua Teng, Zhenhua Guo, Shuyi Li, Wei Jia"
     venue: "IEEE Transactions on Instrumentation and Measurement"
@@ -1738,8 +1544,6 @@ papers:
     type: journal
     detail: "vol. 69, pp. 9743–9755"
     doi: 10.1109/tim.2020.3002463
-    url:
-    code:
   - title: "Learning Compact Multifeature Codes for Palmprint Recognition from a Single Training Image per Palm"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Lin Zhang, Wei Jia, Jie Wen, Jigang Wu"
     venue: "IEEE Transactions on Multimedia"
@@ -1747,8 +1551,6 @@ papers:
     type: journal
     detail: "vol. 23, pp. 2930–2942"
     doi: 10.1109/tmm.2020.3019701
-    url:
-    code:
   - title: "Learning Complete and Discriminative Direction Pattern for Robust Palmprint Recognition"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Image Processing"
@@ -1756,8 +1558,6 @@ papers:
     type: journal
     detail: "vol. 30, pp. 1001–1014"
     doi: 10.1109/tip.2020.3039895
-    url:
-    code:
   - title: "Learning Double Weights via Data Augmentation for Robust Sparse and Collaborative Representation-Based Classification"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Jianping Gou"
     venue: "Multimedia Tools and Applications"
@@ -1765,8 +1565,6 @@ papers:
     type: journal
     detail: "vol. 79, pp. 20617–20638"
     doi: 10.1007/s11042-020-08918-2
-    url:
-    code:
   - title: "Learning Salient and Discriminative Descriptor for Palmprint Feature Extraction and Identification"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1774,8 +1572,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 5219–5230"
     doi: 10.1109/tnnls.2020.2964799
-    url:
-    code:
   - title: "Learning Structurally Incoherent Background and Target Dictionaries for Hyperspectral Target Detection"
     authors: "Tan Guo, Fulin Luo, Lei Zhang, <strong>Bob Zhang</strong>, Xiaoheng Tan, Xiaocheng Zhou"
     venue: "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing"
@@ -1783,8 +1579,6 @@ papers:
     type: journal
     detail: "vol. 13, pp. 3521–3533"
     doi: 10.1109/jstars.2020.3002549
-    url:
-    code:
   - title: "Linear Representation-Based Methods for Image Classification: A Survey"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "IEEE Access"
@@ -1792,8 +1586,6 @@ papers:
     type: journal
     detail: "vol. 8, pp. 216645–216670"
     doi: 10.1109/access.2020.3041154
-    url:
-    code:
   - title: "Regularization on Augmented Data to Diversify Sparse Representation for Robust Image Classification"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Jianping Gou, Yong Xu"
     venue: "IEEE Transactions on Cybernetics"
@@ -1801,8 +1593,6 @@ papers:
     type: journal
     detail: "vol. 52, pp. 4935–4948"
     doi: 10.1109/tcyb.2020.3025757
-    url:
-    code:
   - title: "Similarity and Diversity Induced Paired Projection for Cross-Modal Retrieval"
     authors: "Jinxing Li, Mu Li, Guangming Lu, <strong>Bob Zhang</strong>, Hongpeng Yin, David Zhang"
     venue: "Information Sciences"
@@ -1810,8 +1600,6 @@ papers:
     type: journal
     detail: "vol. 539, pp. 215–228"
     doi: 10.1016/j.ins.2020.06.032
-    url:
-    code:
   - title: "Two-Stage Knowledge Transfer Framework for Image Classification"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "Pattern Recognition"
@@ -1819,8 +1607,6 @@ papers:
     type: journal
     detail: "vol. 107, p. 107529"
     doi: 10.1016/j.patcog.2020.107529
-    url:
-    code:
   - title: "A novel fusion strategy for probabilistic sparse representation classifier guided by support vector machines"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "ICDIP 2019 – 11th International Conference on Digital Image Processing"
@@ -1828,8 +1614,6 @@ papers:
     type: conference
     detail: "vol. 11179"
     doi: 10.1117/12.2539642
-    url:
-    code:
   - title: "A novel hyperspectral based dorsal hand recognition system"
     authors: "Wei Nie, <strong>Bob Zhang</strong>*, Shuping Zhao"
     venue: "ICMLC 2019 – Proceedings of the 11th International Conference on Machine Learning and Computing"
@@ -1837,8 +1621,6 @@ papers:
     type: conference
     detail: "pp. 362-367"
     doi: 10.1145/3318299.3318316
-    url:
-    code:
   - title: "Applying L-SRC for non-invasive disease detection using facial chromaticity and texture features"
     authors: "Jianhang Zhou, Qi Zhang, <strong>Bob Zhang</strong>*"
     venue: "ICBCB 2019 – IEEE 7th International Conference on Bioinformatics and Computational Biology"
@@ -1846,8 +1628,6 @@ papers:
     type: conference
     detail: "pp. 156-161"
     doi: 10.1109/icbcb.2019.8854637
-    url:
-    code:
   - title: "Initial investigation of different classifiers for plant leaf classification using multiple features"
     authors: "Qi Zhang, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "ICDIP 2019 – 11th International Conference on Digital Image Processing"
@@ -1855,8 +1635,6 @@ papers:
     type: conference
     detail: "vol. 11179"
     doi: 10.1117/12.2539654
-    url:
-    code:
   - title: "Learning discriminative finger-knuckle-print descriptor"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Shaohua Teng, An Zeng, Chunwei Tian, Wei Zhang"
     venue: "ICASSP 2019 – 2019 IEEE International Conference on Acoustics, Speech and Signal Processing"
@@ -1864,8 +1642,6 @@ papers:
     type: conference
     detail: "pp. 2137-2141"
     doi: 10.1109/icassp.2019.8683156
-    url:
-    code:
   - title: "Super sparse convolutional neural networks"
     authors: "Yao Lu, Guangming Lu, <strong>Bob Zhang</strong>, Yuanrong Xu, Jinxing Li"
     venue: "AAAI 2019 – Proceedings of the AAAI 2019 Conference on Artificial Intelligence"
@@ -1873,15 +1649,11 @@ papers:
     type: conference
     detail: "pp. 4440-4447"
     doi: 10.1609/aaai.v33i01.33014440
-    url:
-    code:
   - title: "Two-stage image classification supervised by a single teacher single student model"
     authors: "Jianhang Zhou, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "BMVC 2019 – 30th British Machine Vision Conference"
     year: 2019
     type: conference
-    url:
-    code:
   - title: "Unified embedding alignment with missing views inferring for incomplete multi-view clustering"
     authors: "Jie Wen, Zheng Zhang, Yong Xu, <strong>Bob Zhang</strong>, Lunke Fei, Hong Liu"
     venue: "AAAI 2019 – Proceedings of the AAAI 2019 Conference on Artificial Intelligence"
@@ -1889,8 +1661,6 @@ papers:
     type: conference
     detail: "pp. 5393-5400"
     doi: 10.1609/aaai.v33i01.33015393
-    url:
-    code:
   - title: "A general moving detection method using dual-target nonparametric background model"
     authors: "Zuofeng Zhong, Jiajun Wen, <strong>Bob Zhang</strong>, Yong Xu"
     venue: "Knowledge-Based Systems"
@@ -1898,8 +1668,6 @@ papers:
     type: journal
     detail: "vol. 164, pp. 85-95"
     doi: 10.1016/j.knosys.2018.10.031
-    url:
-    code:
   - title: "A shell dataset, for shell features extraction and recognition"
     authors: "Qi Zhang, Jianhang Zhou, Jing He, Xiaodong Cun, Shaoning Zeng, <strong>Bob Zhang</strong>*"
     venue: "Scientific Data"
@@ -1907,8 +1675,6 @@ papers:
     type: journal
     detail: "vol. 6, pp. 226"
     doi: 10.1038/s41597-019-0230-3
-    url:
-    code:
   - title: "Body surface feature-based multi-modal learning for diabetes mellitus detection"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, Jane You, David Zhang"
     venue: "Information Sciences"
@@ -1916,8 +1682,6 @@ papers:
     type: journal
     detail: "vol. 472, pp. 1-14"
     doi: 10.1016/j.ins.2018.09.010
-    url:
-    code:
   - title: "Class-specific reconstruction transfer learning for visual recognition across domains"
     authors: "Shanshan Wang, Lei Zhang, Wangmeng Zuo, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Image Processing"
@@ -1925,8 +1689,6 @@ papers:
     type: journal
     detail: "vol. 29, pp. 2424-2438"
     doi: 10.1109/tip.2019.2948480
-    url:
-    code:
   - title: "Collaborative representation using non-negative samples for image classification"
     authors: "Jianhang Zhou, <strong>Bob Zhang</strong>*"
     venue: "Sensors"
@@ -1934,8 +1696,6 @@ papers:
     type: journal
     detail: "vol. 19, pp. 2609"
     doi: 10.3390/s19112609
-    url:
-    code:
   - title: "Deep cascade model-based face recognition: when deep-layered learning meets small data"
     authors: "Lei Zhang, Ji Liu, <strong>Bob Zhang</strong>, David Zhang, Ce Zhu"
     venue: "IEEE Transactions on Image Processing"
@@ -1943,8 +1703,6 @@ papers:
     type: journal
     detail: "vol. 29, pp. 1016-1029"
     doi: 10.1109/tip.2019.2938307
-    url:
-    code:
   - title: "Discriminative local feature for hyperspectral hand biometrics by adjusting image acutance"
     authors: "Wei Nie, <strong>Bob Zhang</strong>*, Shuping Zhao"
     venue: "Applied Sciences"
@@ -1952,8 +1710,6 @@ papers:
     type: journal
     detail: "vol. 9, pp. 4178"
     doi: 10.3390/app9194178
-    url:
-    code:
   - title: "Dual asymmetric deep hashing learning"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, David Zhang"
     venue: "IEEE Access"
@@ -1961,8 +1717,6 @@ papers:
     type: journal
     detail: "vol. 7, pp. 113372-113384"
     doi: 10.1109/access.2019.2927524
-    url:
-    code:
   - title: "Efficient recovery of low-rank matrix via double nonconvex nonsmooth rank minimization"
     authors: "Hengmin Zhang, Chen Gong, Jianjun Qian, <strong>Bob Zhang</strong>, Chunyan Xu, Jian Yang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -1970,8 +1724,6 @@ papers:
     type: journal
     detail: "vol. 30, pp. 2916-2925"
     doi: 10.1109/tnnls.2019.2900572
-    url:
-    code:
   - title: "Generative multi-view and multi-feature learning for classification"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, David Zhang"
     venue: "Information Fusion"
@@ -1979,8 +1731,6 @@ papers:
     type: journal
     detail: "vol. 45, pp. 215-226"
     doi: 10.1016/j.inffus.2018.02.005
-    url:
-    code:
   - title: "Joint deep convolutional feature representation for hyperspectral palmprint recognition"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*, CL Philip Chen"
     venue: "Information Sciences"
@@ -1988,8 +1738,6 @@ papers:
     type: journal
     detail: "vol. 489, pp. 167-181"
     doi: 10.1016/j.ins.2019.03.027
-    url:
-    code:
   - title: "Learning discriminant direction binary palmprint descriptor"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Yong Xu, Zhenhua Guo, Jie Wen, Wei Jia"
     venue: "IEEE Transactions on Image Processing"
@@ -1997,8 +1745,6 @@ papers:
     type: journal
     detail: "vol. 28, pp. 3808-3820"
     doi: 10.1109/tip.2019.2903307
-    url:
-    code:
   - title: "Local apparent and latent direction extraction for palmprint recognition"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Wei Zhang, Shaohua Teng"
     venue: "Information Sciences"
@@ -2006,8 +1752,6 @@ papers:
     type: journal
     detail: "vol. 473, pp. 59-72"
     doi: 10.1016/j.ins.2018.09.032
-    url:
-    code:
   - title: "Local discriminant direction binary pattern for palmprint representation and recognition"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>*, Yong Xu, Di Huang, Wei Jia, Jie Wen"
     venue: "IEEE Transactions on Circuits and Systems for Video Technology"
@@ -2015,8 +1759,6 @@ papers:
     type: journal
     detail: "vol. 30, pp. 468-481"
     doi: 10.1109/tcsvt.2019.2890835
-    url:
-    code:
   - title: "Low-rank matrix recovery via modified Schatten-p norm minimization with convergence guarantees"
     authors: "Hengmin Zhang, Jianjun Qian, <strong>Bob Zhang</strong>, Jian Yang, Chen Gong, Yang Wei"
     venue: "IEEE Transactions on Image Processing"
@@ -2024,8 +1766,6 @@ papers:
     type: journal
     detail: "vol. 29, pp. 3132-3142"
     doi: 10.1109/tip.2019.2957925
-    url:
-    code:
   - title: "Multi-view classification via a fast and effective multi-view nearest-subspace classifier"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "IEEE Access"
@@ -2033,8 +1773,6 @@ papers:
     type: journal
     detail: "vol. 7, pp. 49669-49679"
     doi: 10.1109/access.2019.2910322
-    url:
-    code:
   - title: "Precision direction and compact surface type representation for 3D palmprint identification"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>, Yong Xu, Wei Jia, Jie Wen, Jigang Wu"
     venue: "Pattern Recognition"
@@ -2042,8 +1780,6 @@ papers:
     type: journal
     detail: "vol. 87, pp. 237-247"
     doi: 10.1016/j.patcog.2018.10.018
-    url:
-    code:
   - title: "Relaxed asymmetric deep hashing learning: point-to-angle matching"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, Jane You, David Zhang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -2051,8 +1787,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 4791-4805"
     doi: 10.1109/tnnls.2019.2958061
-    url:
-    code:
   - title: "Robust and adaptive algorithm for hyperspectral palmprint region of interest extraction"
     authors: "Shuping Zhao, <strong>Bob Zhang</strong>*"
     venue: "IET Biometrics"
@@ -2060,8 +1794,6 @@ papers:
     type: journal
     detail: "vol. 8, pp. 391-400"
     doi: 10.1049/iet-bmt.2018.5051
-    url:
-    code:
   - title: "Robust and adaptive ROI extraction for hyperspectral dorsal hand vein images"
     authors: "Wei Nie, <strong>Bob Zhang</strong>*"
     venue: "IET Computer Vision"
@@ -2069,8 +1801,6 @@ papers:
     type: journal
     detail: "vol. 13, pp. 595-604"
     doi: 10.1049/iet-cvi.2018.5732
-    url:
-    code:
   - title: "Robust collaborative representation-based classification via regularization of truncated total least squares"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Yuandong Lan, Jianping Gou"
     venue: "Neural Computing and Applications"
@@ -2078,8 +1808,6 @@ papers:
     type: journal
     detail: "vol. 31, pp. 5689–5697"
     doi: 10.1007/s00521-018-3403-7
-    url:
-    code:
   - title: "Robust joint representation with triple local feature for face recognition with single sample per person"
     authors: "Xing Wang, <strong>Bob Zhang</strong>, Meng Yang, Kangyin Ke, Weishi Zheng"
     venue: "Knowledge-Based Systems"
@@ -2087,8 +1815,6 @@ papers:
     type: journal
     detail: "vol. 181, pp. 104790"
     doi: 10.1016/j.knosys.2019.05.033
-    url:
-    code:
   - title: "Shared linear encoder-based multikernel Gaussian process latent variable model for visual classification"
     authors: "Jinxing Li, Guangming Lu, <strong>Bob Zhang</strong>, Jane You, David Zhang"
     venue: "IEEE Transactions on Cybernetics"
@@ -2096,8 +1822,6 @@ papers:
     type: journal
     detail: "vol. 51, pp. 534-547"
     doi: 10.1109/tcyb.2019.2915789
-    url:
-    code:
   - title: "Similarity learning-induced symmetric nonnegative matrix factorization for image clustering"
     authors: "Wei Yan, <strong>Bob Zhang</strong>*, Zuyuan Yang, Shengli Xie"
     venue: "IEEE Access"
@@ -2105,8 +1829,6 @@ papers:
     type: journal
     detail: "vol. 7, pp. 166380-166389"
     doi: 10.1109/access.2019.2951393
-    url:
-    code:
   - title: "Tongue image alignment via conformal mapping for disease detection"
     authors: "Jian Wu, <strong>Bob Zhang</strong>, Yong Xu, David Zhang"
     venue: "IEEE Access"
@@ -2114,8 +1836,6 @@ papers:
     type: journal
     detail: "vol. 8, pp. 9796-9808"
     doi: 10.1109/access.2019.2960578
-    url:
-    code:
   - title: "TongueNet: a precise and fast tongue segmentation system using U-Net with a morphological processing layer"
     authors: "Jianhang Zhou, Qi Zhang, <strong>Bob Zhang</strong>*, Xiaojiao Chen"
     venue: "Applied Sciences"
@@ -2123,8 +1843,6 @@ papers:
     type: journal
     detail: "vol. 9, pp. 3128"
     doi: 10.3390/app9153128
-    url:
-    code:
   - title: "Triple-translation GAN with multi-layer sparse representation for face image synthesis"
     authors: "Linbin Ye, <strong>Bob Zhang</strong>, Meng Yang, Wei Lian"
     venue: "Neurocomputing"
@@ -2132,16 +1850,12 @@ papers:
     type: journal
     detail: "vol. 358, pp. 294-308"
     doi: 10.1016/j.neucom.2019.04.074
-    url:
-    code:
   - title: "Facial Multi-Characteristics and Applications"
     authors: "<strong>Bob Zhang</strong>*, Qijun Zhao, David Zhang"
     venue: "World Scientific Publishing Co. Pte Ltd"
     year: 2018
     type: book
     doi: 10.1142/10835
-    url:
-    code:
   - title: "Robust Constrained Concept Factorization"
     authors: "Y. Wei, and <strong>B. Zhang</strong>*"
     venue: "Computational Intelligence for Pattern Recognition"
@@ -2149,8 +1863,6 @@ papers:
     type: chapter
     detail: "W. Pedrycz, and S.Y. Chen, Eds., Springer International Publishing, pp. 207-225"
     doi: 10.1007/978-3-319-89629-8_7
-    url:
-    code:
   - title: "A probabilistic hierarchical model for multi-view and multi-feature classification"
     authors: "Jinxing Li, Hongwei Yong, <strong>Bob Zhang</strong>, Mu Li, Lei Zhang, David Zhang"
     venue: "Proceedings of the AAAI Conference on Artificial Intelligence (AAAI)"
@@ -2158,8 +1870,6 @@ papers:
     type: conference
     detail: "pp. 3498-3505"
     doi: 10.1609/aaai.v32i1.11611
-    url:
-    code:
   - title: "AAR-CNNs: Auto Adaptive Regularized Convolutional Neural Networks"
     authors: "Yao Lu, Guangming Lu, Yuanrong Xu, <strong>Bob Zhang</strong>"
     venue: "International Joint Conference on Artificial Intelligence (IJCAI)"
@@ -2167,16 +1877,12 @@ papers:
     type: conference
     detail: "pp. 2511-2517"
     doi: 10.24963/ijcai.2018/348
-    url:
-    code:
   - title: "Collaboratively weighting deep and classic representation via l2 regularization for image classification"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Yanghao Zhang, Jianping Gou"
     venue: "Asian Conference on Machine Learning (ACML)"
     year: 2018
     type: conference
     detail: "pp. 502-517"
-    url:
-    code:
   - title: "Computer-assisted non-invasive diabetes mellitus detection system via facial key block analysis"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan-Yan Tang"
     venue: "2018 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)"
@@ -2185,9 +1891,6 @@ papers:
     detail: "pp. 101-106"
     doi: 10.1109/icwapr.2018.8521271
     note: "Best Paper Award"
-    selected: true
-    url:
-    code:
   - title: "Guided learning: A new paradigm for multi-task classification"
     authors: "Jingru Fu, Lei Zhang, <strong>Bob Zhang</strong>, Wei Jia"
     venue: "Chinese Conference on Biometric Recognition (CCBR)"
@@ -2195,8 +1898,6 @@ papers:
     type: conference
     detail: "pp. 239-246"
     doi: 10.1007/978-3-319-97909-0_26
-    url:
-    code:
   - title: "Multi-feature fusion using collaborative residual for hyperspectral palmprint recognition"
     authors: "Shuping Zhao, Wei Nie, <strong>Bob Zhang</strong>*"
     venue: "2018 IEEE 4th International Conference on Computer and Communications (ICCC)"
@@ -2204,8 +1905,6 @@ papers:
     type: conference
     detail: "pp. 1402-1406"
     doi: 10.1109/compcomm.2018.8780748
-    url:
-    code:
   - title: "Non-invasive multi-disease classification via facial image analysis using a convolutional neural network"
     authors: "Li Zhang, <strong>Bob Zhang</strong>*"
     venue: "2018 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)"
@@ -2213,8 +1912,6 @@ papers:
     type: conference
     detail: "pp. 66-71"
     doi: 10.1109/icwapr.2018.8521262
-    url:
-    code:
   - title: "Shared linear encoder-based Gaussian process latent variable model for visual classification"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, David Zhang"
     venue: "Proceedings of the 26th ACM International Conference on Multimedia (ACM MM)"
@@ -2222,8 +1919,6 @@ papers:
     type: conference
     detail: "pp. 26-34"
     doi: 10.1145/3240508.3240520
-    url:
-    code:
   - title: "A novel Color Rendition Chart for digital tongue image calibration"
     authors: "<strong>Bob Zhang</strong>*, Wei Nie, Shuping Zhao"
     venue: "Color Research & Application"
@@ -2231,8 +1926,6 @@ papers:
     type: journal
     detail: "vol. 43, no. 5, pp. 749-759"
     doi: 10.1002/col.22234
-    url:
-    code:
   - title: "A novel regularized nonnegative matrix factorization for spectral-spatial dimension reduction of hyperspectral imagery"
     authors: "Wei Yan, <strong>Bob Zhang</strong>*, Zuyuan Yang"
     venue: "IEEE Access"
@@ -2240,8 +1933,6 @@ papers:
     type: journal
     detail: "vol. 6, pp. 77953-77964"
     doi: 10.1109/access.2018.2884501
-    url:
-    code:
   - title: "Adaptive weighted nonnegative low-rank representation"
     authors: "Jie Wen, <strong>Bob Zhang</strong>*, Yong Xu, Jian Yang, Na Han"
     venue: "Pattern Recognition"
@@ -2249,8 +1940,6 @@ papers:
     type: journal
     detail: "vol. 81, pp. 326-340"
     doi: 10.1016/j.patcog.2018.04.004
-    url:
-    code:
   - title: "An improved noninvasive method to detect diabetes mellitus using the probabilistic collaborative representation based classifier"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "Information Sciences"
@@ -2258,8 +1947,6 @@ papers:
     type: journal
     detail: "vol. 467, pp. 477-488"
     doi: 10.1016/j.ins.2018.08.011
-    url:
-    code:
   - title: "Facial beauty analysis based on features prediction and beautification models"
     authors: "<strong>Bob Zhang</strong>*, Xihua Xiao, Guangming Lu"
     venue: "Pattern Analysis and Applications"
@@ -2267,8 +1954,6 @@ papers:
     type: journal
     detail: "vol. 21, no. 2, pp. 529-542"
     doi: 10.1007/s10044-017-0647-2
-    url:
-    code:
   - title: "Nonparametric Bayesian correlated group regression with applications to image classification"
     authors: "Lei Luo, Jian Yang, <strong>Bob Zhang</strong>, Jielin Jiang, Heng Huang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -2276,8 +1961,6 @@ papers:
     type: journal
     detail: "vol. 29, no. 11, pp. 5330-5344"
     doi: 10.1109/tnnls.2018.2797539
-    url:
-    code:
   - title: "Shared autoencoder Gaussian process latent variable model for visual classification"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, David Zhang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -2285,8 +1968,6 @@ papers:
     type: journal
     detail: "vol. 29, no. 9, pp. 4272-4286"
     doi: 10.1109/tnnls.2017.2761401
-    url:
-    code:
   - title: "Sparse supervised representation-based classifier for uncontrolled and imbalanced classification"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "IEEE Transactions on Neural Networks and Learning Systems"
@@ -2294,8 +1975,6 @@ papers:
     type: journal
     detail: "vol. 31, no. 8, pp. 2847-2856"
     doi: 10.1109/tnnls.2018.2884444
-    url:
-    code:
   - title: "Visual classification with multikernel shared Gaussian process latent variable model"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, Guangming Lu, Hu Ren, David Zhang"
     venue: "IEEE Transactions on Cybernetics"
@@ -2303,15 +1982,11 @@ papers:
     type: journal
     detail: "vol. 49, no. 8, pp. 2886-2899"
     doi: 10.1109/tcyb.2018.2831457
-    url:
-    code:
   - title: "Tongue Image Analysis"
     authors: "David Zhang, Hongzhi Zhang, <strong>Bob Zhang</strong>"
     venue: "Springer Singapore"
     year: 2017
     type: book
-    url:
-    code:
   - title: "Tongue Pattern Recognition to Detect Diabetes Mellitus and Non-Proliferative Diabetic Retinopathy"
     authors: "<strong>B. Zhang</strong>*"
     venue: "Pattern Recognition and Big Data"
@@ -2319,8 +1994,6 @@ papers:
     type: chapter
     detail: "A. Pal, and S.K. Pal, Eds., Singapore: World Scientific Publishing, pp. 663-686"
     doi: 10.1142/9789813144552_0020
-    url:
-    code:
   - title: "Computerized analysis of tongue sub-lingual veins to detect lung and breast cancers"
     authors: "Feng Chen, David Zhang, Jian Wu, <strong>Bob Zhang</strong>"
     venue: "ICCC 2017 – 2017 3rd IEEE International Conference on Computer and Communications (ICCC)"
@@ -2328,8 +2001,6 @@ papers:
     type: conference
     detail: "Chengdu, China, pp. 2708-2712"
     doi: 10.1109/compcomm.2017.8323025
-    url:
-    code:
   - title: "Robust semi-supervised concept factorization"
     authors: "Wei Yan, <strong>Bob Zhang</strong>*, Sihan Ma"
     venue: "IJCNN 2017 – 2017 International Joint Conference on Neural Networks (IJCNN)"
@@ -2337,8 +2008,6 @@ papers:
     type: conference
     detail: "Anchorage, AK, USA, pp. 1011-1017"
     doi: 10.1109/ijcnn.2017.7965963
-    url:
-    code:
   - title: "A novel regularized concept factorization for document clustering"
     authors: "Wei Yan, <strong>Bob Zhang</strong>*, Sihan Ma, Zuyuan Yang"
     venue: "Knowledge-Based Systems"
@@ -2346,8 +2015,6 @@ papers:
     type: journal
     detail: "vol. 135, pp. 147-158"
     doi: 10.1016/j.knosys.2017.08.010
-    url:
-    code:
   - title: "An adaptive background modeling method for foreground segmentation"
     authors: "Zuofeng Zhong, <strong>Bob Zhang</strong>, Guangming Lu, Yong Zhao, Yong Xu"
     venue: "IEEE Transactions on Intelligent Transportation Systems"
@@ -2355,8 +2022,6 @@ papers:
     type: journal
     detail: "vol. 18, no. 5, pp. 1109-1121"
     doi: 10.1109/tits.2016.2597441
-    url:
-    code:
   - title: "An extensive analysis of various texture feature extractors to detect Diabetes Mellitus using facial specific regions"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "Computers in Biology and Medicine"
@@ -2364,8 +2029,6 @@ papers:
     type: journal
     detail: "vol. 83, issue C, pp. 69-83"
     doi: 10.1016/j.compbiomed.2017.02.005
-    url:
-    code:
   - title: "Effective heart disease detection based on quantitative computerized traditional chinese medicine using representation based classifiers"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "Evidence-Based Complementary and Alternative Medicine"
@@ -2373,8 +2036,6 @@ papers:
     type: journal
     detail: "7483639"
     doi: 10.1155/2017/7483639
-    url:
-    code:
   - title: "Ensemble correlation-based low-rank matrix completion with applications to traffic data imputation"
     authors: "Xiaobo Chen, Zhongjie Wei, Zuoyong Li, Jun Liang, Yingfeng Cai, <strong>Bob Zhang</strong>"
     venue: "Knowledge-Based Systems"
@@ -2382,8 +2043,6 @@ papers:
     type: journal
     detail: "vol. 132, pp. 249-262"
     doi: 10.1016/j.knosys.2017.06.010
-    url:
-    code:
   - title: "Improving texture analysis performance in biometrics by adjusting image sharpness"
     authors: "Kunai Zhang, Da Huang, <strong>Bob Zhang</strong>, David Zhang"
     venue: "Pattern Recognition"
@@ -2391,8 +2050,6 @@ papers:
     type: journal
     detail: "vol. 66, pp. 16-25"
     doi: 10.1016/j.patcog.2016.11.025
-    url:
-    code:
   - title: "Joint discriminative and collaborative representation for fatty liver disease diagnosis"
     authors: "Jinxing Li, <strong>Bob Zhang</strong>, David Zhang"
     venue: "Expert Systems with Applications"
@@ -2400,8 +2057,6 @@ papers:
     type: journal
     detail: "vol. 89, pp. 31-40"
     doi: 10.1016/j.eswa.2017.07.023
-    url:
-    code:
   - title: "Joint distances by sparse representation and locality-constrained dictionary learning for robust leaf recognition"
     authors: "Shaoning Zeng, <strong>Bob Zhang</strong>*, Yong Du"
     venue: "Computers and Electronics in Agriculture"
@@ -2409,8 +2064,6 @@ papers:
     type: journal
     detail: "vol. 142, part B, pp. 563-571"
     doi: 10.1016/j.compag.2017.11.013
-    url:
-    code:
   - title: "Joint similar and specific learning for diabetes mellitus and impaired glucose regulation detection"
     authors: "Jinxing Li, David Zhang, Yongcheng Li, Jian Wu, <strong>Bob Zhang</strong>"
     venue: "Information Sciences"
@@ -2418,8 +2071,6 @@ papers:
     type: journal
     detail: "vol. 384, pp. 191-204"
     doi: 10.1016/j.ins.2016.09.031
-    url:
-    code:
   - title: "Novel Noninvasive Brain Disease Detection System Using a Facial Image Sensor"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "Sensors"
@@ -2427,8 +2078,6 @@ papers:
     type: journal
     detail: "vol. 17, 2843"
     doi: 10.3390/s17122843
-    url:
-    code:
   - title: "Palmprint recognition based on complete direction representation"
     authors: "Wei Jia, <strong>Bob Zhang</strong>*, Jingting Lu, Yihai Zhu, Yang Zhao, Wangmeng Zuo, Haibin Ling"
     venue: "IEEE Transactions on Image Processing"
@@ -2436,8 +2085,6 @@ papers:
     type: journal
     detail: "vol. 26, issue 9, pp. 4483-4498"
     doi: 10.1109/tip.2017.2705424
-    url:
-    code:
   - title: "Sample diversity, representation effectiveness and robust dictionary learning for face recognition"
     authors: "Yong Xu, Zhengming Li, <strong>Bob Zhang</strong>, Jian Yang, Jane You"
     venue: "Information Sciences"
@@ -2445,8 +2092,6 @@ papers:
     type: journal
     detail: "vol. 375, pp. 171-182"
     doi: 10.1016/j.ins.2016.09.059
-    url:
-    code:
   - title: "Weighted sparse coding regularized nonconvex matrix regression for robust face recognition"
     authors: "Hengmin Zhang, Jian Yang, Jianchun Xie, Jianjun Qian, <strong>Bob Zhang</strong>"
     venue: "Information Sciences"
@@ -2454,8 +2099,6 @@ papers:
     type: journal
     detail: "vol. 394-395, 1-17"
     doi: 10.1016/j.ins.2017.02.020
-    url:
-    code:
   - title: "A performance evaluation of local descriptors, direction coding and correlation filters for palm vein recognition"
     authors: "Jingting Lu, Hui Ye, Wei Jia, Yang Zhao, Hai Min, Wenxiong Kang, <strong>Bob Zhang</strong>"
     venue: "Chinese Conference on Biometric Recognition"
@@ -2463,8 +2106,6 @@ papers:
     type: conference
     detail: "pp. 279-287"
     doi: 10.1007/978-3-319-46654-5_31
-    url:
-    code:
   - title: "A study of diabetes mellitus detection using sparse representation algorithms with facial block color features"
     authors: "Peng Zhang, <strong>Bob Zhang</strong>*"
     venue: "2016 IEEE International Conference on Signal and Image Processing (ICSIP)"
@@ -2472,8 +2113,6 @@ papers:
     type: conference
     detail: "pp. 563-567"
     doi: 10.1109/siprocess.2016.7888325
-    url:
-    code:
   - title: "Digital tongue image analysis in medical applications using a new tongue ColorChecker"
     authors: "Qiang Zhao, David Zhang, <strong>Bob Zhang</strong>"
     venue: "IEEE International Conference on Computer and Communications (ICCC)"
@@ -2481,8 +2120,6 @@ papers:
     type: conference
     detail: "pp. 803-807"
     doi: 10.1109/compcomm.2016.7924814
-    url:
-    code:
   - title: "Facial color feature extraction for disease diagnosis using non-base colors"
     authors: "Shuhua Chen, David Zhang, Jian Wu, <strong>Bob Zhang</strong>"
     venue: "IEEE International Conference on Computer and Communications (ICCC)"
@@ -2490,16 +2127,12 @@ papers:
     type: conference
     detail: "pp. 808-813"
     doi: 10.1109/compcomm.2016.7924815
-    url:
-    code:
   - title: "Using k-NN with weights to detect diabetes mellitus based on genetic algorithm feature selection"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "2016 International Conference on Wavelet Analysis and Pattern Recognition (ICWAPR)"
     year: 2016
     type: conference
     doi: 10.1109/icwapr.2016.7731621
-    url:
-    code:
   - title: "Background modeling methods in video analysis: A review and comparative evaluation"
     authors: "Yong Xu, Jixiang Dong, <strong>Bob Zhang</strong>, Daoyun Xu"
     venue: "CAAI Transactions on Intelligence Technology"
@@ -2507,8 +2140,6 @@ papers:
     type: journal
     detail: "vol. 1, no. 1, pp. 43–60"
     doi: 10.1016/j.trit.2016.03.005
-    url:
-    code:
   - title: "Local line directional pattern for palmprint recognition"
     authors: "Yue-Tong Luo, Lan-Ying Zhao, <strong>Bob Zhang</strong>, Wei Jia, Feng Xue, Jing-Ting Lu, Yi-Hai Zhu, Bing-Qing Xu"
     venue: "Pattern Recognition"
@@ -2516,8 +2147,6 @@ papers:
     type: journal
     detail: "vol. 50, pp. 26–44"
     doi: 10.1016/j.patcog.2015.08.025
-    url:
-    code:
   - title: "Low-rank representation integrated with principal line distance for contactless palmprint recognition"
     authors: "Lunke Fei, Yong Xu, <strong>Bob Zhang</strong>, Xiaozhao Fang, Jie Wen"
     venue: "Neurocomputing"
@@ -2525,8 +2154,6 @@ papers:
     type: journal
     detail: "vol. 218, pp. 264-275"
     doi: 10.1016/j.neucom.2016.08.048
-    url:
-    code:
   - title: "Online 3D ear recognition by combining global and local features"
     authors: "Yahui Liu, <strong>Bob Zhang</strong>, Guangming Lu, David Zhang"
     venue: "PLOS ONE"
@@ -2534,8 +2161,6 @@ papers:
     type: journal
     detail: "vol. 11, no. 12, p. e0166204"
     doi: 10.1371/journal.pone.0166204
-    url:
-    code:
   - title: "Palmprint recognition using neighboring direction indicator"
     authors: "Lunke Fei, <strong>Bob Zhang</strong>, Yong Xu, Liping Yan"
     venue: "IEEE Transactions on Human-Machine Systems"
@@ -2543,8 +2168,6 @@ papers:
     type: journal
     detail: "vol. 46, no. 6, pp. 787–798"
     doi: 10.1109/thms.2016.2586474
-    url:
-    code:
   - title: "Tensor manifold discriminant projections for acceleration-based human activity recognition"
     authors: "Yanan Guo, Dapeng Tao, Jun Cheng, Alan Dougherty, Yaotang Li, Kun Yue, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Multimedia"
@@ -2552,8 +2175,6 @@ papers:
     type: journal
     detail: "vol. 18, no. 10, pp. 1977–1987"
     doi: 10.1109/tmm.2016.2597007
-    url:
-    code:
   - title: "Tree-structured nuclear norm approximation with applications to robust face recognition"
     authors: "Lei Luo, Liang Chen, Jian Yang, Jianjun Qian, <strong>Bob Zhang</strong>"
     venue: "IEEE Transactions on Image Processing"
@@ -2561,8 +2182,6 @@ papers:
     type: journal
     detail: "vol. 25, no. 12, pp. 5757–5767"
     doi: 10.1109/tip.2016.2612885
-    url:
-    code:
   - title: "Facial color analysis of Overweight-Obesity and its relationship to Healthy and Diabetes Mellitus using statistical pattern recognition"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*"
     venue: "TENCON 2015-2015 IEEE Region 10 Conference"
@@ -2570,8 +2189,6 @@ papers:
     type: conference
     detail: "IEEE, pp. 1-4"
     doi: 10.1109/tencon.2015.7372724
-    url:
-    code:
   - title: "Simplified and improved patch ordering for diabetes mellitus detection"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*, Yuan Yan Tang"
     venue: "2015 IEEE 2nd International Conference on Cybernetics (CYBCONF)"
@@ -2579,8 +2196,6 @@ papers:
     type: conference
     detail: "IEEE, pp. 371-376"
     doi: 10.1109/cybconf.2015.7175962
-    url:
-    code:
   - title: "Ear-parotic face angle: A unique feature for 3D ear recognition"
     authors: "Yahui Liu, <strong>Bob Zhang</strong>*, David Zhang"
     venue: "Pattern Recognition Letters"
@@ -2588,8 +2203,6 @@ papers:
     type: journal
     detail: "vol. 53, pp. 9-15"
     doi: 10.1016/j.patrec.2014.10.014
-    url:
-    code:
   - title: "Multiple representations and sparse representation for image classification"
     authors: "Yong Xu, <strong>Bob Zhang</strong>, Zuofeng Zhong"
     venue: "Pattern Recognition Letters"
@@ -2597,8 +2210,6 @@ papers:
     type: journal
     detail: "vol. 68, pp. 9-14"
     doi: 10.1016/j.patrec.2015.07.032
-    url:
-    code:
   - title: "Non-invasive health status detection system using gabor filters based on facial block texture features"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*"
     venue: "Journal of Medical Systems"
@@ -2606,8 +2217,6 @@ papers:
     type: journal
     detail: "vol. 39, no. 4, 41"
     doi: 10.1007/s10916-015-0227-1
-    url:
-    code:
   - title: "Significant geometry features in tongue image analysis"
     authors: "<strong>Bob Zhang</strong>* and Han Zhang"
     venue: "Evidence-Based Complementary and Alternative Medicine"
@@ -2615,8 +2224,6 @@ papers:
     type: journal
     detail: "vol. 2015, no. 1, 897580"
     doi: 10.1155/2015/897580
-    url:
-    code:
   - title: "Diabetes mellitus detection based on facial block texture features using the Gabor filter"
     authors: "Ting Shu, <strong>Bob Zhang</strong>*"
     venue: "2014 IEEE 17th International Conference on Computational Science and Engineering"
@@ -2624,8 +2231,6 @@ papers:
     type: conference
     detail: "IEEE, pp. 1-6"
     doi: 10.1109/cse.2014.35
-    url:
-    code:
   - title: "Disease detection using tongue geometry features with sparse representation classifier"
     authors: "Han Zhang, <strong>Bob Zhang</strong>*"
     venue: "2014 International Conference on Medical Biometrics"
@@ -2633,16 +2238,12 @@ papers:
     type: conference
     detail: "IEEE, pp. 102-107"
     doi: 10.1109/icmb.2014.25
-    url:
-    code:
   - title: "Computerized facial diagnosis using both color and texture features"
     authors: "<strong>Bob Zhang</strong>, Xingzheng Wang, Fakhri Karray, Zhimin Yang, David Zhang"
     venue: "Information Sciences"
     year: 2013
     type: journal
     detail: "vol. 221, pp. 49-59"
-    url:
-    code:
   - title: "Detecting diabetes mellitus and nonproliferative diabetic retinopathy using tongue color, texture, and geometry features"
     authors: "<strong>Bob Zhang</strong>*, V.K. Vijaya Kumar, David Zhang"
     venue: "IEEE Transactions on Biomedical Engineering"
@@ -2650,8 +2251,6 @@ papers:
     type: journal
     detail: "vol. 61, no. 2, pp. 491-501"
     doi: 10.1109/tbme.2013.2282625
-    url:
-    code:
   - title: "Facial image medical analysis system using quantitative chromatic feature"
     authors: "Xingzheng Wang, <strong>Bob Zhang</strong>, Zhenhua Guo, David Zhang"
     venue: "Expert Systems with Applications"
@@ -2659,8 +2258,6 @@ papers:
     type: journal
     detail: "vol. 40, no. 9, pp. 3738-3746"
     doi: 10.1016/j.eswa.2012.12.079
-    url:
-    code:
   - title: "Noninvasive diabetes mellitus detection using facial block color with a sparse representation classifier"
     authors: "<strong>Bob Zhang</strong>*, B.V.K. Vijaya Kumar, David Zhang"
     venue: "IEEE Transactions on Biomedical Engineering"
@@ -2668,8 +2265,6 @@ papers:
     type: journal
     detail: "vol. 61, no. 4, pp. 1027-1033"
     doi: 10.1109/tbme.2013.2292936
-    url:
-    code:
   - title: "Palm-print classification by global features"
     authors: "<strong>Bob Zhang</strong>, Wei Li, Pei Qing, David Zhang"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics: Systems"
@@ -2677,8 +2272,6 @@ papers:
     type: journal
     detail: "vol. 43, no. 2, pp. 370-378"
     doi: 10.1109/tsmca.2012.2201465
-    url:
-    code:
   - title: "Statistical analysis of tongue images for feature extraction and diagnostics"
     authors: "Xingzheng Wang, <strong>Bob Zhang</strong>, Zhimin Yang, Haoqian Wang, David Zhang"
     venue: "IEEE Transactions on Image Processing"
@@ -2686,16 +2279,12 @@ papers:
     type: journal
     detail: "vol. 22, no. 12, pp. 5336-5347"
     doi: 10.1109/tip.2013.2284070
-    url:
-    code:
   - title: "Tongue color analysis for medical application"
     authors: "<strong>Bob Zhang</strong>, Xingzheng Wang, Jane You, David Zhang"
     venue: "Evidence‐Based Complementary and Alternative Medicine"
     year: 2013
     type: journal
     detail: "vol. 2013, no. 1, 264742"
-    url:
-    code:
   - title: "Detecting optic disc on Asians by multiscale Gaussian filtering"
     authors: "<strong>Bob Zhang</strong>*, Jane You, and Fakhri Karray"
     venue: "International Journal of Biomedical Imaging"
@@ -2703,8 +2292,6 @@ papers:
     type: journal
     detail: "vol. 2012"
     doi: 10.1155/2012/727154
-    url:
-    code:
   - title: "Principal line-based alignment refinement for palmprint recognition"
     authors: "Wei Li, <strong>Bob Zhang</strong>, Lei Zhang, and J. Yan"
     venue: "IEEE Transactions on Systems, Man, and Cybernetics, Part C (Applications and Reviews)"
@@ -2712,8 +2299,6 @@ papers:
     type: journal
     detail: "vol. 42, no. 6, pp. 1491–1499"
     doi: 10.1109/tsmcc.2012.2195653
-    url:
-    code:
   - title: "Sparse representation classifier for microaneurysm detection and retinal blood vessel extraction"
     authors: "<strong>Bob Zhang</strong>*, Fakhri Karray, Qin Li, and Lei Zhang"
     venue: "Information Sciences"
@@ -2721,8 +2306,6 @@ papers:
     type: journal
     detail: "vol. 200, pp. 78–90"
     doi: 10.1016/j.ins.2012.03.003
-    url:
-    code:
   - title: "Microaneurysm (MA) detection via sparse representation classifier with MA and non-MA dictionary learning"
     authors: "<strong>Bob Zhang</strong>, Lei Zhang, Jane You, and Fakhri Karray"
     venue: "Proceedings of the 2010 20th International Conference on Pattern Recognition (ICPR 2010)"
@@ -2730,8 +2313,6 @@ papers:
     type: conference
     detail: "Istanbul, Turkey, pp. 277–280"
     doi: 10.1109/icpr.2010.77
-    url:
-    code:
   - title: "Optic disc and fovea detection via multi-scale matched filters and a vessels’ directional matched filter"
     authors: "<strong>Bob Zhang</strong>, Fakhri Karray"
     venue: "Proceedings of the 2010 International Conference on Autonomous and Intelligent Systems (AIS 2010)"
@@ -2739,8 +2320,6 @@ papers:
     type: conference
     detail: "Povoa de Varzim, Portugal, pp. 1–5"
     doi: 10.1109/ais.2010.5547050
-    url:
-    code:
   - title: "Optic disc detection by multi-scale Gaussian filtering with scale production and a vessels’ directional matched filter"
     authors: "<strong>Bob Zhang</strong>, Fakhri Karray"
     venue: "Proceedings of the Second International Conference on Medical Biometrics (ICMB 2010)"
@@ -2748,8 +2327,6 @@ papers:
     type: conference
     detail: "Hong Kong, China, pp. 173–180"
     doi: 10.1007/978-3-642-13923-9_18
-    url:
-    code:
   - title: "Refractive error detection via group sparse representation"
     authors: "Qin Li, Jun Wang, Jane You, <strong>Bob Zhang</strong>, and Fakhri Karray"
     venue: "Proceedings of the 2010 International Conference on Autonomous and Intelligent Systems (AIS 2010)"
@@ -2757,8 +2334,6 @@ papers:
     type: conference
     detail: "Povoa de Varzim, Portugal, pp. 1–5"
     doi: 10.1109/ais.2010.5547046
-    url:
-    code:
   - title: "Retinal vessel centerline extraction using multiscale matched filter and sparse representation-based classifier"
     authors: "<strong>Bob Zhang</strong>, Qin Li, Lei Zhang, Jane You, and Fakhri Karray"
     venue: "Proceedings of the Second International Conference on Medical Biometrics (ICMB 2010)"
@@ -2766,8 +2341,6 @@ papers:
     type: conference
     detail: "Hong Kong, China, pp. 181–190"
     doi: 10.1007/978-3-642-13923-9_19
-    url:
-    code:
   - title: "Detection of microaneurysms using multi-scale correlation coefficients"
     authors: "<strong>Bob Zhang</strong>, Xiangqian Wu, Jane You, Qin Li, and Fakhri Karray"
     venue: "Pattern Recognition"
@@ -2775,8 +2348,6 @@ papers:
     type: journal
     detail: "vol. 43, no. 6, pp. 2237–2248"
     doi: 10.1016/j.patcog.2009.12.017
-    url:
-    code:
   - title: "Retinal vessel extraction by matched filter with first-order derivative of Gaussian"
     authors: "<strong>Bob Zhang</strong>, Lin Zhang, Lei Zhang, Fakhri Karray"
     venue: "Computers in Biology and Medicine"
@@ -2784,8 +2355,6 @@ papers:
     type: journal
     detail: "vol. 40, no. 4, pp. 438–445"
     doi: 10.1016/j.compbiomed.2010.02.008
-    url:
-    code:
   - title: "Retinopathy Online Challenge: Automatic Detection of Microaneurysms in Digital Color Fundus Photographs"
     authors: "Meindert Niemeijer, Bram van Ginneken, Michael J. Cree, Atsushi Mizutani, Gwénolé Quellec, Clara I. Sanchez, <strong>Bob Zhang</strong>, Roberto Hornero, Mathieu Lamard, Chisako Muramatsu, Xiangqian Wu, Guy Cazuguel, Jane You, Agustín Mayo, Qin Li, Yuji Hatanaka, Béatrice Cochener, Christian Roux, Fakhri Karray, María Garcia, Hiroshi Fujita, and Michael D. Abramoff"
     venue: "IEEE Transactions on Medical Imaging"
@@ -2793,16 +2362,12 @@ papers:
     type: journal
     detail: "vol. 29, no. 1, pp. 185–195"
     doi: 10.1109/tmi.2009.2033909
-    url:
-    code:
   - title: "Astigmatism and eye shape"
     authors: "<strong>Bob Zhang</strong>, Jia You, Fakhri Karray, Chea Su Kee, and Qin Li"
     venue: "Proceedings of the 2009 International Conference on Image Processing, Computer Vision, and Pattern Recognition (IPCV 2009)"
     year: 2009
     type: conference
     detail: "pp. 72–77, Dec. 1"
-    url:
-    code:
   - title: "Hierarchical detection of red lesions in retinal images by multiscale correlation filtering"
     authors: "<strong>Bob Zhang</strong>, Jane You, Qin Li, and Fakhri Karray"
     venue: "Proceedings of SPIE"
@@ -2810,13 +2375,9 @@ papers:
     type: conference
     detail: "2009"
     doi: 10.1117/12.813913
-    url:
-    code:
   - title: "Palm vein extraction and matching for personal authentication"
     authors: "<strong>Yi-Bo Zhang</strong>, Qin Li, Jane You, and Prabir Bhattacharya"
     venue: "Advances in Visual Information Systems"
     year: 2007
     type: conference
     detail: "Q. Qiu, C. Leung, X. Xue, and R. Laurini, Eds., Berlin, Heidelberg: Springer, pp. 154–164"
-    url:
-    code:

@@ -1,10 +1,9 @@
 ---
 title: Pinxian Zeng 曾品闲
 pname: Pinxian Zeng 曾品闲
-layout: people
-permalink: /people/Pinxian_Zeng
+photo: /assets/img/people/Pinxian_Zeng.jpg
 status: PhD
-position: Ph.D. Candidate
+position:
 joined:
 office: 
 eml: yc57911@um.edu.mo

@@ -33,32 +33,26 @@ Two files, then one check. Nothing else needs editing.
 
 ### 2. Create `_people/Firstname_Lastname.md`
 
-The filename decides the URL and the photo path, so keep it stable even if the person
-later changes how their name is displayed. `pname` is the display name and can be
-anything; `permalink` is the identity.
+不会为成员单独生成页面：卡片上的姓名直接链到本人主页（`website`），没填主页就是纯文本。
 
 ```yaml
 ---
 # ---------- 必填 ----------
-title: Firstname Lastname 中文名        # 浏览器标签页 / og:title / 搜索结果标题
-pname: Firstname Lastname 中文名        # 页面上显示的姓名，可用惯用英文名
-layout: people
-permalink: /people/Firstname_Lastname   # 照片路径 = /assets/img + 这个 + .jpg
+title: Firstname Lastname 中文名        # 浏览器标签页 / og:title
+pname: Firstname Lastname 中文名        # 页面上显示的姓名，用本人惯用写法即可
+photo: /assets/img/people/Firstname_Lastname.jpg
 status: PhD                             # Director | Postdoc | PhD | MSc | Visiting | RA
-position: Ph.D. Student                 # 卡片上显示的身份文字
 eml: ycXXXXX@um.edu.mo
 desp: >-
-  Firstname Lastname received the B.Eng. degree from XXX University in 20XX.
-  They are currently pursuing the Ph.D. degree in Computer Science at the PAMI
-  Group, Faculty of Science and Technology, University of Macau, under the
-  supervision of Prof. Bob Zhang. Their research interests include A, B, and C.
+  三到五句英文第三人称简介，用本人给的原文，不要替他补写。
 
 # ---------- 选填, 留空即可 ----------
-joined: 2026                            # 入组年份, 用于组内排序; 留空的排在有值的后面
+joined: 2026                            # 进入 UM 的年份，决定组内排序
+position:                               # 只在职称不能由分组标题表达时才填（例如 Associate Professor）
 office:
-website:
+website:                                # 个人主页；填了姓名就会链到这里
 google_scholar:
-orcid:                                  # 用公开链接 https://orcid.org/0000-XXXX-XXXX-XXXX
+orcid:                                  # 公开链接 https://orcid.org/0000-XXXX-XXXX-XXXX
 github:
 linkedin:
 twitter:
@@ -66,13 +60,17 @@ cv:
 ---
 ```
 
-`status` 决定此人出现在 People 页的哪一组，**拼错就整个人不显示且不报错**，
-所以改完一定要跑第 4 步的自检。
+两个容易出错的地方：
+
+- `status` 决定此人出现在 People 页的哪一组，**拼错就整个人不显示且不报错**。
+- `joined` 决定组内顺序（进入 UM 越早排越前）。**不填的会排在填了的后面**，
+  按 UM 邮箱学号排，只是近似。
+
+成员没有提供的信息就留空，不要替他推断补写。
 
 ### 3. Add the photo
 
-必须是 `assets/img/people/<permalink 末段>.jpg`，**真正的 JPEG**，**正方形**。
-布局按 permalink 拼路径并写死了 `.jpg`。
+路径写在 `photo` 字段里，习惯放 `assets/img/people/`。必须是**真正的 JPEG**、**正方形**。
 
 ```bash
 python3 - <<'PY'
@@ -108,7 +106,6 @@ python3 tools/check_site.py
 | 成员 | `_people/*.md` + `assets/img/people/*.jpg` | 一人一文件 |
 | 校友 | `_data/alumni.yml` | |
 | 出版物 | `_data/publications.yml` | **唯一数据源**，页面自动按年份分组 |
-| 代码 | `_data/software.yml` | |
 | 招生 | `pages/positions.md` | 记得同步更新页首的 `last-updated` |
 | 样式 | `assets/css/lab.css` | 自定义样式都放这里，不要改主题的 `main.css` |
 
@@ -124,16 +121,21 @@ python3 tools/check_site.py
     authors: "First Author, <strong>Bob Zhang</strong>*, Third Author"
     venue: "IEEE Transactions on Image Processing"
     year: 2026
-    type: journal            # book | journal | conference | chapter
+    type: journal            # book | journal | conference | chapter | preprint
     detail: "vol. 35, pp. 1-12"
     doi: 10.1109/TIP.2026.xxxxxxx
     url:                     # 没有 DOI 时填官方链接
     code:                    # 代码仓库
-    selected: true           # 出现在页面顶部的 Selected Publications
 ```
 
 `<strong>` 标出本组作者，`*` 表示通讯作者。年份分组、锚点、DOI 徽章、
 类型筛选和搜索都是自动的，不用改页面。
+
+数据与 [Bob Zhang 的 Google Scholar](https://scholar.google.com/citations?hl=en&user=dlZuABAAAAAJ&sortby=pubdate)
+对齐。文件里两个待人工处理的标记，处理完把该行删掉：
+
+- `_needs_full_authors: true` 作者名来自 Scholar 缩写（CrossRef 尚无记录），待补全名和通讯作者星号。
+- `_doi_unresolved: ...` DOI 存疑，原因写在值里。
 
 ## Tools
 
@@ -143,6 +145,7 @@ python3 tools/check_site.py
 | `tools/parse_publications.py` | 从旧的 Markdown 出版物列表解析出结构化记录（一次性迁移用） |
 | `tools/backfill_dois.py` | 用 CrossRef 严格回填 DOI，匹配不确定时宁可留空 |
 | `tools/gen_publications_yml.py` | 由上面两步的结果生成 `_data/publications.yml` |
+| `tools/add_from_scholar.py` | 把 Google Scholar 上有、数据文件里没有的论文补进来 |
 
 ## Building locally (optional)
 

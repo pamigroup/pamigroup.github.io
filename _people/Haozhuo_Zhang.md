@@ -1,10 +1,9 @@
 ---
 title: Haozhuo Zhang 张皓卓
 pname: Haozhuo Zhang 张皓卓
-layout: people
-permalink: /people/haozhuo_zhang
+photo: /assets/img/people/haozhuo_zhang.jpg
 status: MSc
-position: M.Sc. Student
+position:
 joined:
 eml: znick468@gmail.com
 website: https://adasiii.github.io/

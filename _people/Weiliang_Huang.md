@@ -1,10 +1,9 @@
 ---
 title: Weiliang Huang 黄伟樑
 pname: Weiliang Huang 黄伟樑
-layout: people
-permalink: /people/Weiliang_Huang
+photo: /assets/img/people/Weiliang_Huang.jpg
 status: PhD
-position: Ph.D. Student
+position:
 joined:
 office: E11-2091
 eml: yc47492@um.edu.mo

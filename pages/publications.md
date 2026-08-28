@@ -13,24 +13,14 @@ permalink: /publications
   for citation counts. <span class="text-muted">An asterisk marks the corresponding author.</span>
 </p>
 
-{% assign selected = site.data.publications.papers | where: "selected", true %}
-{% if selected.size > 0 %}
-<section class="pub-selected">
-  <h2 class="people-section-title">Selected Publications</h2>
-  <ol class="pub-list">
-    {% for p in selected %}{% include publication.html paper=p %}{% endfor %}
-  </ol>
-</section>
-{% endif %}
-
 <section>
-  <h2 class="people-section-title">All Publications</h2>
 
   {% assign papers = site.data.publications.papers %}
   {% assign n_journal = papers | where: "type", "journal" | size %}
   {% assign n_conf    = papers | where: "type", "conference" | size %}
   {% assign n_book    = papers | where: "type", "book" | size %}
   {% assign n_chap    = papers | where: "type", "chapter" | size %}
+  {% assign n_pre     = papers | where: "type", "preprint" | size %}
 
   <div class="pub-controls" hidden>
     <div class="pub-filters" role="group" aria-label="Filter publications by type">
@@ -39,6 +29,9 @@ permalink: /publications
       <button type="button" class="pub-filter" data-filter="conference" aria-pressed="false">Conference <span>{{ n_conf }}</span></button>
       <button type="button" class="pub-filter" data-filter="book" aria-pressed="false">Books <span>{{ n_book }}</span></button>
       <button type="button" class="pub-filter" data-filter="chapter" aria-pressed="false">Chapters <span>{{ n_chap }}</span></button>
+      {%- if n_pre > 0 %}
+      <button type="button" class="pub-filter" data-filter="preprint" aria-pressed="false">Preprints <span>{{ n_pre }}</span></button>
+      {%- endif %}
     </div>
     <label class="sr-only" for="pub-search">Search publications</label>
     <input type="search" id="pub-search" class="pub-search" placeholder="Filter by title, author or venue…" autocomplete="off">

@@ -1,14 +1,13 @@
 ---
 title: Bob Zhang 張一博
 pname: Bob Zhang 張一博
-layout: people
-permalink: /people/Bob_Zhang
+photo: /assets/img/people/Bob_Zhang.jpg
 status: Director
-position: Associate Professor, Director of the PAMI Research Group
+position: Associate Professor
 joined:
 office: E11-4093
 eml: bobzhang@um.edu.mo
-website: https://www.fst.um.edu.mo/personal/bobzhang/
+website: https://fic.um.edu.mo/zh-hant/people/bobzhang/
 google_scholar: https://scholar.google.com/citations?user=dlZuABAAAAAJ&hl=en&oi=ao
 orcid: 
 github:

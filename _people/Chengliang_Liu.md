@@ -1,10 +1,9 @@
 ---
 title: Chengliang Liu 刘成亮
 pname: Chengliang Liu 刘成亮
-layout: people
-permalink: /people/Chengliang_Liu
+photo: /assets/img/people/Chengliang_Liu.jpg
 status: Postdoc
-position: Post-doctoral Fellow
+position:
 joined:
 eml: liucl1996@163.com
 website: https://justsmart.github.io/

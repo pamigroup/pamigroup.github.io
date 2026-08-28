@@ -237,29 +237,6 @@
 .news-tag-people  { background: #f3e8ff; color: #5b2d8e; }
 .news-tag-release { background: #e0f7fa; color: #00646e; }
 
-/* ---------- 软件 ---------- */
 
-.sw-list { list-style: none; padding-left: 0; }
-.sw-item { padding: 0.8rem 0; border-bottom: 1px solid #f0f0f0; }
-.sw-name { font-weight: 600; font-size: 1.05rem; }
-.sw-paper {
-  margin-left: 0.5rem;
-  font-size: 0.82rem;
-  color: #666;
-  background: #f2f4f8;
-  border-radius: 3px;
-  padding: 0.05rem 0.4rem;
-}
-.sw-desc { margin: 0.3rem 0 0; color: #444; }
 
-.sw-prior {
-  margin-left: 0.4rem;
-  font-size: 0.74rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: #6b5b00;
-  background: #fff8e1;
-  border-radius: 3px;
-  padding: 0 0.35rem;
-}
 .pub-years a[hidden] { display: none; }
