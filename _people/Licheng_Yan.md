@@ -5,6 +5,7 @@ photo: /assets/img/people/Licheng_Yan.jpg
 status: PhD
 position:
 joined:
+um_id: yc48110
 eml: yc48110@um.edu.mo
 website:
 google_scholar: https://scholar.google.com/citations?user=MtduHO0AAAAJ&hl=en

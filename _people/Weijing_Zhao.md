@@ -5,6 +5,7 @@ photo: /assets/img/people/Weijing_Zhao.jpg
 status: PhD
 position:
 joined:
+um_id: yc47428
 office: E11-2039
 eml: yc47428@um.edu.mo
 website: 

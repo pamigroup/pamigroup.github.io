@@ -5,6 +5,7 @@ photo: /assets/img/people/Yuqi_Wang.jpg
 status: PhD
 position:
 joined:
+um_id: yc37500
 eml: yc37500@um.edu.mo
 website:
 orcid: https://orcid.org/0000-0003-0571-243X

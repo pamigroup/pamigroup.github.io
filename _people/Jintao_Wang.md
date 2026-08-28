@@ -5,6 +5,7 @@ photo: /assets/img/people/Jintao_Wang.jpg
 status: PhD
 position:
 joined:
+um_id: yc27444
 office: 
 eml: yc27444@um.edu.mo
 website: 

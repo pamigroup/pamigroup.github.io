@@ -5,6 +5,7 @@ photo: /assets/img/people/Bob_Zhang.jpg
 status: Director
 position: Associate Professor
 joined:
+um_id: 
 office: E11-4093
 eml: bobzhang@um.edu.mo
 website: https://fic.um.edu.mo/zh-hant/people/bobzhang/

@@ -48,6 +48,7 @@ desp: >-
 
 # ---------- 选填, 留空即可 ----------
 joined: 2026                            # 进入 UM 的年份，决定组内排序
+um_id: ycXXXXX                          # UM 学号；joined 留空时按它排序（学号本身按入学先后递增）
 position:                               # 只在职称不能由分组标题表达时才填（例如 Associate Professor）
 office:
 website:                                # 个人主页；填了姓名就会链到这里
@@ -63,8 +64,7 @@ cv:
 两个容易出错的地方：
 
 - `status` 决定此人出现在 People 页的哪一组，**拼错就整个人不显示且不报错**。
-- `joined` 决定组内顺序（进入 UM 越早排越前）。**不填的会排在填了的后面**，
-  按 UM 邮箱学号排，只是近似。
+- `joined` 决定组内顺序（进入 UM 越早排越前）。不填的会排在填了的后面，按 `um_id` 排。
 
 成员没有提供的信息就留空，不要替他推断补写。
 
@@ -93,7 +93,17 @@ python3 tools/check_site.py
 
 ### When a member graduates
 
-把 `_people/<name>.md` 删掉，然后在 `_data/alumni.yml` 里加一条。
+1. 删掉 `_people/<name>.md` 和 `assets/img/people/<name>.jpg`。
+2. 在 `_data/alumni.yml` 对应分类（`postdoc` / `phd` / `msc`）的**顶部**加一条：
+
+```yaml
+  - name: Firstname Lastname
+    years: '2024-2026'      # 在组年份
+    now: Ph.D.              # 选填，毕业去向
+    where: Some University  # 选填
+    note: XXX Award         # 选填
+    url: https://...        # 选填，个人主页；填了姓名就会链过去
+```
 
 ---
 

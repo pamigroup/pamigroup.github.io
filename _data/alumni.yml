@@ -1,7 +1,7 @@
 # PAMI Research Group alumni.
 # 由 pages/people.html 中原本硬编码的 <li> 列表结构化而来。
 # 除 Caijie Zhao 按本人惯用英文名改为 Carina Zhao 外，文字内容未改动。
-# 字段: name(必填) / years / now(现职) / where(现单位) / note(奖项等)
+# 字段: name(必填) / years / now(现职) / where(现单位) / note(奖项等) / url(个人主页)
 
 postdoc:
   - name: Lunke Fei
@@ -69,6 +69,9 @@ phd:
     where: Guangdong Avi Low Carbon Technology Co., LTD
 
 msc:
+  - name: Haozhuo Zhang
+    years:          # TODO 待补：在组年份，例如 '2024-2026'
+    url: https://adasiii.github.io/
   - name: Tak Hei Wan
     years: '2023-2025'
   - name: Hao Yang

@@ -27,7 +27,7 @@ permalink: /people
       <ul class="alumni-list">
         {% for a in list %}
         <li>
-          <span class="alumni-name">{{ a.name }}</span>{%- if a.years %} <span class="alumni-years">({{ a.years }})</span>{%- endif -%}
+          <span class="alumni-name">{%- if a.url -%}<a href="{{ a.url }}">{{ a.name }}</a>{%- else -%}{{ a.name }}{%- endif -%}</span>{%- if a.years %} <span class="alumni-years">({{ a.years }})</span>{%- endif -%}
           {%- if a.now %}<span class="alumni-now">, {{ a.now }}{% if a.where %}, {{ a.where }}{% endif %}</span>{%- elsif a.where %}<span class="alumni-now">, {{ a.where }}</span>{%- endif -%}
           {%- if a.note %} <span class="alumni-note">🏆 {{ a.note }}</span>{%- endif %}
         </li>

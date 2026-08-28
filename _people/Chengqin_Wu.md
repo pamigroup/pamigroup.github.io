@@ -5,6 +5,7 @@ photo: /assets/img/people/Chengqin_Wu.jpg
 status: MSc
 position:
 joined:
+um_id: mc55216
 eml: mc55216@um.edu.mo
 website:
 google_scholar:

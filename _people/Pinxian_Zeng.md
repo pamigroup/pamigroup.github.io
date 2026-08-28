@@ -5,6 +5,7 @@ photo: /assets/img/people/Pinxian_Zeng.jpg
 status: PhD
 position:
 joined:
+um_id: yc57911
 office: 
 eml: yc57911@um.edu.mo
 website:

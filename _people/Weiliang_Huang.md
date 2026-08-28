@@ -5,6 +5,7 @@ photo: /assets/img/people/Weiliang_Huang.jpg
 status: PhD
 position:
 joined:
+um_id: yc47492
 office: E11-2091
 eml: yc47492@um.edu.mo
 website: 

@@ -5,6 +5,7 @@ photo: /assets/img/people/Yifan_Lyu.jpg
 status: MSc
 position:
 joined:
+um_id: mc45158
 office: 
 eml: mc45158@um.edu.mo
 website: 
